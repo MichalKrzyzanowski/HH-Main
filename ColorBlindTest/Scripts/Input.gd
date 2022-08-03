@@ -68,7 +68,7 @@ func _process(delta):
 				else:
 					finalPlates.get_child(i).get_node("RightWrong").set_texture(wrongTex)
 			highestVerdict = max(highestVerdict, verdict)
-			ColorBlindData.highestVerdict = highestVerdict
+			ColorBlindData.highestVerdict = max(highestVerdict, ColorBlindData.highestVerdict)
 		#if the test is still ongoing after answering, change the number plate to display the current number in the sequence
 		if answered == true && sequenceIterator < 6:
 			answered = false

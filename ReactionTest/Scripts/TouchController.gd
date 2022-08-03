@@ -27,7 +27,13 @@ func _ready() -> void:
 
 func shapeTouched():
 	shapesTouched += 1
-	if shapesTouched >= shapesAmount: isGameOver = true
+	if shapesTouched >= shapesAmount: endGame()
+
+func endGame():
+	isGameOver = true
+	ReactionTestData.highscore = max(score, ReactionTestData.highscore)
+	ReactionTestData.fastestTime = min(timeSpent, ReactionTestData.fastestTime)
+	ReactionTestData.isCleared = true
 
 func setScore(newScore: float) -> void:
 	score += newScore
@@ -40,7 +46,7 @@ func setMultiplier(newMultiplier: float):
 func _process(delta: float) -> void:
 	if !isGameOver:
 		timeSpent += delta
-		timeLeftLabel.text = "Time Spent: " + str(stepify(timeSpent, 0.01))
+		timeLeftLabel.text = "Time Spent: " + str(stepify(timeSpent, 0.01)) + "s"
 
 func setupShapeGrid():
 	for i in shapesAmount:
