@@ -92,6 +92,13 @@ margin_right = 86.0
 margin_bottom = 246.0
 text = "Color Blind Test"
 
+[node name="ColorBlindTestVerdict" type="Label" parent="StatsMenu"]
+margin_left = 10.0
+margin_top = 264.0
+margin_right = 111.0
+margin_bottom = 278.0
+text = "Highest Verdict: "
+
 [node name="Control" type="Control" parent="."]
 anchor_left = 1.0
 anchor_right = 1.0

@@ -26,6 +26,7 @@ var endTest = false
 var endUI
 var finalPlates
 var verdict = 0
+var highestVerdict = 0
 #Main Menu Variables
 var menuUI
 var tutorialScreen
@@ -58,6 +59,7 @@ func _process(delta):
 			gameplayControl.visible = false
 			gameplayControl.set_process(false)
 			endTest = true
+			ColorBlindData.isGameClear = true
 			_end_screen_display()
 			endUI.get_node("DisplayedVerdict").text = "Verdict: " + String(verdict) + "/6"
 			for i in rightWrongMarks.size():
@@ -65,6 +67,8 @@ func _process(delta):
 					finalPlates.get_child(i).get_node("RightWrong").set_texture(rightTex)
 				else:
 					finalPlates.get_child(i).get_node("RightWrong").set_texture(wrongTex)
+			highestVerdict = max(highestVerdict, verdict)
+			ColorBlindData.highestVerdict = max(highestVerdict, ColorBlindData.highestVerdict)
 		#if the test is still ongoing after answering, change the number plate to display the current number in the sequence
 		if answered == true && sequenceIterator < 6:
 			answered = false
