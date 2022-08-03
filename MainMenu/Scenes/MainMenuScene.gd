@@ -1,7 +1,15 @@
 extends Control
 
+onready var progressBar = $Control/ProgressBar
+onready var reactionScoreLabel = $StatsMenu/ReactionTestScore
+onready var reactionTimeLabel = $StatsMenu/ReactionTestClearTime
+onready var statsMenu = $StatsMenu
+
 func _ready() -> void:
-    $BinocularsProjectButton.grab_focus()
+	$BinocularsProjectButton.grab_focus()
+	progressBar.value = getProgress()
+	reactionScoreLabel.text = "Highscore: " + str(ReactionTestData.highscore) + "pts"
+	reactionTimeLabel.text = "Clear Time: " + str(ReactionTestData.fastestTime) + "s"
 
 func _on_ColorBlindTestButton_button_up() -> void:
 	get_tree().root.get_node("Root").queue_free()
@@ -18,3 +26,11 @@ func _on_ReactionTestButton_button_up() -> void:
 
 func _on_QuitButton_button_up() -> void:
 	get_tree().quit()
+
+func getProgress():
+	return ReactionTestData.isCleared as int
+
+func _on_ProgressBar_gui_input(event:InputEvent) -> void:
+	if event is InputEventScreenTouch:
+		if event.pressed:
+			statsMenu.visible = !statsMenu.visible

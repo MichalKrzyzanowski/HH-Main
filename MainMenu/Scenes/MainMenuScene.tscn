@@ -51,7 +51,74 @@ margin_right = 100.0
 margin_bottom = 81.0002
 text = "Color Blind Test"
 
+[node name="StatsMenu" type="PopupMenu" parent="."]
+margin_left = 683.0
+margin_top = 80.0
+margin_right = 1014.0
+margin_bottom = 492.0
+
+[node name="BinocularsStats" type="Label" parent="StatsMenu"]
+margin_left = 10.0
+margin_top = 13.0
+margin_right = 86.0
+margin_bottom = 22.0
+text = "Binoculars"
+
+[node name="ReactionTestStats" type="Label" parent="StatsMenu"]
+margin_left = 10.0
+margin_top = 123.0
+margin_right = 96.0
+margin_bottom = 137.0
+text = "Reaction Test"
+
+[node name="ReactionTestScore" type="Label" parent="StatsMenu"]
+margin_left = 10.0
+margin_top = 145.0
+margin_right = 96.0
+margin_bottom = 159.0
+text = "Highscore: "
+
+[node name="ReactionTestClearTime" type="Label" parent="StatsMenu"]
+margin_left = 10.0
+margin_top = 166.0
+margin_right = 96.0
+margin_bottom = 180.0
+text = "Clear Time: "
+
+[node name="ColorBlindTestStats" type="Label" parent="StatsMenu"]
+margin_left = 10.0
+margin_top = 237.0
+margin_right = 86.0
+margin_bottom = 246.0
+text = "Color Blind Test"
+
+[node name="Control" type="Control" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -341.0
+margin_top = 40.0
+margin_bottom = 80.0
+
+[node name="ProgressBar" type="ProgressBar" parent="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 10.0
+margin_right = -10.0
+max_value = 3.0
+step = 1.0
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -341.0
+margin_right = -10.0
+margin_bottom = 50.0
+text = "Game Completion"
+align = 1
+valign = 1
+
 [connection signal="button_up" from="ReactionTestButton" to="." method="_on_ReactionTestButton_button_up"]
 [connection signal="button_up" from="BinocularsProjectButton" to="." method="_on_BinocularsProjectButton_button_up"]
 [connection signal="button_up" from="QuitButton" to="." method="_on_QuitButton_button_up"]
 [connection signal="button_up" from="ColorBlindTestButton" to="." method="_on_ColorBlindTestButton_button_up"]
+[connection signal="gui_input" from="Control/ProgressBar" to="." method="_on_ProgressBar_gui_input"]
