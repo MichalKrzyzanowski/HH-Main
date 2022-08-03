@@ -4,7 +4,8 @@ func _ready() -> void:
     $BinocularsProjectButton.grab_focus()
 
 func _on_ColorBlindTestButton_button_up() -> void:
-	pass # Replace with function body.
+	get_tree().root.get_node("Root").queue_free()
+	get_tree().change_scene("res://ColorBlindTest/Scenes/ColorBlind.tscn")
 
 
 func _on_BinocularsProjectButton_button_up() -> void:
