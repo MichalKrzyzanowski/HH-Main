@@ -1,0 +1,11 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=2]
+
+[ext_resource path="res://Shaders/dissolveShader.gdshader" type="Shader" id=1]
+[ext_resource path="res://ShaderTextures/noise.tres" type="Texture" id=2]
+
+[resource]
+shader = ExtResource( 1 )
+shader_param/dissolveState = 0.0
+shader_param/dissolveThickness = 0.01
+shader_param/dissolveColor = Color( 0, 0, 0, 1 )
+shader_param/dissolveNoise = ExtResource( 2 )

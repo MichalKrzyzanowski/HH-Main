@@ -1,0 +1,52 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://ReactionTest/Menu/Help.gd" type="Script" id=1]
+[ext_resource path="res://ReactionTest/Theme/theme.tres" type="Theme" id=2]
+[ext_resource path="res://ReactionTest/Menu/blackboard.jpg" type="Texture" id=3]
+[ext_resource path="res://ReactionTest/Menu/HelpTitle.png" type="Texture" id=4]
+
+[node name="Root" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 2 )
+script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 513.177, 300.293 )
+rotation = 1.5708
+scale = Vector2( 0.836166, 1.1337 )
+texture = ExtResource( 3 )
+
+[node name="Control" type="Control" parent="."]
+margin_left = 256.0
+margin_top = 216.0
+margin_right = 768.0
+margin_bottom = 512.0
+theme = ExtResource( 2 )
+
+[node name="TextureRect" type="TextureRect" parent="Control"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -52.0
+margin_top = -96.0
+margin_right = 52.0
+margin_bottom = -53.0
+texture = ExtResource( 4 )
+
+[node name="DescriptionLabel" type="Label" parent="Control"]
+anchor_right = 1.0
+margin_bottom = 177.0
+text = "Tap the red circles while moving one finger on the grey circle in the bottom-right corner of the screen.
+You can increase the score you get from tapping red circles by moving your finger faster on the grey circle."
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Button" type="Button" parent="Control"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -45.0
+text = "RETURN"
+
+[connection signal="button_up" from="Control/Button" to="." method="_on_Button_button_up"]

@@ -1,0 +1,55 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://ReactionTest/Shape/Shape.gd" type="Script" id=1]
+[ext_resource path="res://ReactionTest/Peg/woodenPeg.png" type="Texture" id=2]
+[ext_resource path="res://ReactionTest/Sounds/HitSound.wav" type="AudioStream" id=3]
+
+[sub_resource type="Animation" id=2]
+resource_name = "Spin"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1.5, 1.5 ), Vector2( 1.5, 1.5 ), Vector2( 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:rect_rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0, 180.0 ]
+}
+
+[node name="Shape" type="TextureRect"]
+modulate = Color( 0.870588, 0.870588, 0.870588, 1 )
+margin_right = 48.0
+margin_bottom = 48.0
+rect_pivot_offset = Vector2( 24, 25 )
+texture = ExtResource( 2 )
+stretch_mode = 3
+script = ExtResource( 1 )
+inactiveColor = Color( 0.584314, 0.584314, 0.584314, 1 )
+activeColor = Color( 0.870588, 0.870588, 0.870588, 1 )
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+volume_db = -10.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Spin = SubResource( 2 )
+
+[connection signal="gui_input" from="." to="." method="_on_Shape_gui_input"]

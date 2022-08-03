@@ -1,0 +1,63 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://ReactionTest/Menu/Menu.gd" type="Script" id=1]
+[ext_resource path="res://ReactionTest/Theme/theme.tres" type="Theme" id=2]
+[ext_resource path="res://ReactionTest/Menu/blackboard.jpg" type="Texture" id=3]
+[ext_resource path="res://ReactionTest/Menu/ReactionTestTitle.png" type="Texture" id=4]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Fade In"
+
+[node name="Root" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 2 )
+script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 513.177, 300.293 )
+rotation = 1.5708
+scale = Vector2( 0.836166, 1.1337 )
+texture = ExtResource( 3 )
+
+[node name="Control" type="Control" parent="."]
+margin_left = 256.0
+margin_top = 256.0
+margin_right = 768.0
+margin_bottom = 448.0
+
+[node name="TextureRect" type="TextureRect" parent="Control"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -170.5
+margin_top = -136.0
+margin_right = 170.5
+margin_bottom = -93.0
+texture = ExtResource( 4 )
+
+[node name="PlayButton" type="Button" parent="Control"]
+anchor_right = 1.0
+margin_bottom = 45.0
+text = "PLAY"
+
+[node name="HelpButton" type="Button" parent="Control"]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_top = -22.5
+margin_bottom = 22.5
+text = "HOW TO PLAY"
+
+[node name="BackButton" type="Button" parent="Control"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -45.0
+text = "BACK"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+"anims/Fade In" = SubResource( 1 )
+
+[connection signal="button_up" from="Control/PlayButton" to="." method="_on_PlayButton_button_up"]
+[connection signal="button_up" from="Control/HelpButton" to="." method="_on_HelpButton_button_up"]
+[connection signal="button_up" from="Control/BackButton" to="." method="_on_BackButton_button_up"]
