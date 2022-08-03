@@ -33,6 +33,5 @@ func getProgress():
 	return ReactionTestData.isCleared as int + ColorBlindData.isGameClear as int
 
 func _on_ProgressBar_gui_input(event:InputEvent) -> void:
-	if event is InputEventScreenTouch:
-		if event.pressed:
-			statsMenu.visible = !statsMenu.visible
+	if Input.is_action_just_released("click"):
+		statsMenu.visible = !statsMenu.visible
