@@ -1,7 +1,7 @@
 extends Control
 
 func _ready() -> void:
-    $BinocularsProjectButton.grab_focus()
+	$BinocularsProjectButton.grab_focus()
 
 func _on_ColorBlindTestButton_button_up() -> void:
 	get_tree().root.get_node("Root").queue_free()
@@ -17,4 +17,5 @@ func _on_ReactionTestButton_button_up() -> void:
 
 
 func _on_QuitButton_button_up() -> void:
-	get_tree().quit()
+	get_tree().root.get_node("Root").queue_free()
+	get_tree().change_scene("res://MainMenu/Scenes/SplashScene.tscn")
