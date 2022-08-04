@@ -2,7 +2,7 @@ extends Node
 
 var timer := 0.0
 var threshold := 60
-var kickTime := 40
+var kickTime := threshold + 40
 
 func reset():
     timer = 0.0
