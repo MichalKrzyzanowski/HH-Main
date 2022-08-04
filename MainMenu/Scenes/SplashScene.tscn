@@ -1,0 +1,145 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://ColorBlindTest/Fonts/BebasNeue-Regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://ColorBlindTest/Themes/Main.tres" type="Theme" id=2]
+[ext_resource path="res://MainMenu/Scenes/SplashScene.gd" type="Script" id=3]
+[ext_resource path="res://MainMenu/Sprites/UpArrow.png" type="Texture" id=4]
+[ext_resource path="res://MainMenu/Sprites/DownArrow.png" type="Texture" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 54
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 54
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 62
+font_data = ExtResource( 1 )
+
+[node name="Root" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+
+[node name="StartButton" type="Button" parent="."]
+margin_left = 454.0
+margin_top = 264.0
+margin_right = 570.0
+margin_bottom = 336.0
+rect_pivot_offset = Vector2( 58, 36 )
+custom_fonts/font = SubResource( 1 )
+text = "Start"
+
+[node name="QuitButton" type="Button" parent="."]
+margin_left = 454.0
+margin_top = 350.0
+margin_right = 570.0
+margin_bottom = 422.0
+rect_pivot_offset = Vector2( 58, 36 )
+custom_fonts/font = SubResource( 1 )
+text = "Quit"
+
+[node name="NameEntry" type="Control" parent="."]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="NameEntry"]
+margin_left = 412.0
+margin_top = 159.0
+margin_right = 612.0
+margin_bottom = 459.0
+color = Color( 0.764706, 0.764706, 0.764706, 1 )
+
+[node name="FirstChar" type="Label" parent="NameEntry"]
+margin_left = 442.0
+margin_top = 219.0
+margin_right = 482.0
+margin_bottom = 289.0
+rect_pivot_offset = Vector2( 20, 35 )
+theme = ExtResource( 2 )
+custom_fonts/font = SubResource( 2 )
+text = "A"
+align = 1
+
+[node name="IncreaseButton" type="Button" parent="NameEntry/FirstChar"]
+margin_left = -1.0
+margin_top = -53.0
+margin_right = 41.0
+margin_bottom = -3.0
+icon = ExtResource( 4 )
+
+[node name="DecreaseButton" type="Button" parent="NameEntry/FirstChar"]
+margin_left = -1.0
+margin_top = 73.0
+margin_right = 41.0
+margin_bottom = 123.0
+icon = ExtResource( 5 )
+
+[node name="SecondChar" type="Label" parent="NameEntry"]
+margin_left = 492.0
+margin_top = 219.0
+margin_right = 532.0
+margin_bottom = 289.0
+theme = ExtResource( 2 )
+custom_fonts/font = SubResource( 2 )
+text = "A"
+align = 1
+
+[node name="IncreaseButton" type="Button" parent="NameEntry/SecondChar"]
+margin_left = -1.0
+margin_top = -53.0
+margin_right = 41.0
+margin_bottom = -3.0
+icon = ExtResource( 4 )
+
+[node name="DecreaseButton" type="Button" parent="NameEntry/SecondChar"]
+margin_left = -1.0
+margin_top = 73.0
+margin_right = 41.0
+margin_bottom = 123.0
+icon = ExtResource( 5 )
+
+[node name="ThirdChar" type="Label" parent="NameEntry"]
+margin_left = 542.0
+margin_top = 219.0
+margin_right = 582.0
+margin_bottom = 289.0
+theme = ExtResource( 2 )
+custom_fonts/font = SubResource( 2 )
+text = "A"
+align = 1
+
+[node name="IncreaseButton" type="Button" parent="NameEntry/ThirdChar"]
+margin_left = -1.0
+margin_top = -53.0
+margin_right = 41.0
+margin_bottom = -3.0
+icon = ExtResource( 4 )
+
+[node name="DecreaseButton" type="Button" parent="NameEntry/ThirdChar"]
+margin_left = -1.0
+margin_top = 73.0
+margin_right = 41.0
+margin_bottom = 123.0
+icon = ExtResource( 5 )
+
+[node name="EnterButton" type="Button" parent="NameEntry"]
+margin_left = 446.0
+margin_top = 349.0
+margin_right = 578.0
+margin_bottom = 430.0
+custom_fonts/font = SubResource( 3 )
+text = "Enter"
+
+[connection signal="button_down" from="StartButton" to="." method="_on_StartButton_button_down"]
+[connection signal="button_up" from="QuitButton" to="." method="_on_QuitButton_button_up"]
+[connection signal="button_down" from="NameEntry/FirstChar/IncreaseButton" to="." method="_on_IncreaseButton_button_down" binds= [ "FirstChar" ]]
+[connection signal="button_down" from="NameEntry/FirstChar/DecreaseButton" to="." method="_on_DecreaseButton_button_down" binds= [ "FirstChar" ]]
+[connection signal="button_down" from="NameEntry/SecondChar/IncreaseButton" to="." method="_on_IncreaseButton_button_down" binds= [ "SecondChar" ]]
+[connection signal="button_down" from="NameEntry/SecondChar/DecreaseButton" to="." method="_on_DecreaseButton_button_down" binds= [ "SecondChar" ]]
+[connection signal="button_down" from="NameEntry/ThirdChar/IncreaseButton" to="." method="_on_IncreaseButton_button_down" binds= [ "ThirdChar" ]]
+[connection signal="button_down" from="NameEntry/ThirdChar/DecreaseButton" to="." method="_on_DecreaseButton_button_down" binds= [ "ThirdChar" ]]
+[connection signal="button_down" from="NameEntry/EnterButton" to="." method="_on_EnterButton_button_down"]

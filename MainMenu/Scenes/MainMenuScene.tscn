@@ -51,6 +51,14 @@ margin_right = 100.0
 margin_bottom = 81.0002
 text = "Color Blind Test"
 
+[node name="PlayerName" type="Label" parent="."]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 50.0
+margin_bottom = 24.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Player Name: AAA"
+
 [node name="StatsMenu" type="PopupMenu" parent="."]
 margin_left = 683.0
 margin_top = 80.0
