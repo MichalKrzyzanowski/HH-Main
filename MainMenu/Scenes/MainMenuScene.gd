@@ -15,6 +15,9 @@ func _ready() -> void:
 	colorBlindVerdictLabel.text = "Highest Verdict: " + str(ColorBlindData.highestVerdict)
 	playerNameLabel.text = "PlayerName: " + str(PlayerData.playerName)
 
+func _input(event: InputEvent) -> void:
+	GlobalTimer.reset()
+
 func _on_ColorBlindTestButton_button_up() -> void:
 	get_tree().root.get_node("Root").queue_free()
 	get_tree().change_scene("res://ColorBlindTest/Scenes/ColorBlind.tscn")
@@ -31,6 +34,9 @@ func _on_ReactionTestButton_button_up() -> void:
 func _on_QuitButton_button_up() -> void:
 	get_tree().root.get_node("Root").queue_free()
 	get_tree().change_scene("res://MainMenu/Scenes/SplashScene.tscn")
+	resetData()
+
+func resetData():
 	ColorBlindData.reset()
 	PlayerData.reset()
 	ReactionTestData.reset()
