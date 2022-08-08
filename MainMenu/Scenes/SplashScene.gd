@@ -22,6 +22,9 @@ func _ready():
 	secondCharLabel.text = "A"
 	thirdCharLabel.text = "A"
 
+func _input(event: InputEvent) -> void:
+	GlobalTimer.reset()
+
 func _on_EnterButton_button_down():
 	PlayerData.playerName = firstChar + secondChar + thirdChar
 	get_tree().root.get_node("Root").queue_free()

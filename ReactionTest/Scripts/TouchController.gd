@@ -4,7 +4,6 @@ extends Node2D
 onready var multiplierLabel = get_node("HUD/Theme/MultiplierLabel")
 onready var scoreLabel = get_node("HUD/Theme/ScoreLabel")
 onready var timeLeftLabel = get_node("HUD/Theme/TimeLeftLabel")
-onready var endTimer = get_node("EndTimer")
 onready var grid = get_node("CanvasLayer/GridContainer")
 onready var quitConfirm = get_node("HUD/Theme/WindowDialog")
 onready var shapeScene = preload("res://ReactionTest/Shape/Shape.tscn")
@@ -42,6 +41,9 @@ func setScore(newScore: float) -> void:
 
 func setMultiplier(newMultiplier: float):
 	multiplierLabel.text = "Multiplier: x" + str(stepify(newMultiplier, 0.01))
+
+func _input(event: InputEvent) -> void:
+	GlobalTimer.reset()
 
 func _process(delta: float) -> void:
 	if !isGameOver:

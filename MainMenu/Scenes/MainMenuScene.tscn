@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://MainMenu/Scenes/MainMenuScene.gd" type="Script" id=1]
+[ext_resource path="res://GlobalTimer/ResetGamePopup.tscn" type="PackedScene" id=2]
 
 [node name="Root" type="Control"]
 anchor_right = 1.0
@@ -131,6 +132,18 @@ margin_bottom = 50.0
 text = "Game Completion"
 align = 1
 valign = 1
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Popup" parent="CanvasLayer" instance=ExtResource( 2 )]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -128.0
+margin_top = -50.0
+margin_right = -88.0
+margin_bottom = -10.0
 
 [connection signal="button_up" from="ReactionTestButton" to="." method="_on_ReactionTestButton_button_up"]
 [connection signal="button_up" from="BinocularsProjectButton" to="." method="_on_BinocularsProjectButton_button_up"]
