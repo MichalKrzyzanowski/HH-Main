@@ -17,7 +17,7 @@ func _ready() -> void:
 
 func _on_ColorBlindTestButton_button_up() -> void:
 	get_tree().root.get_node("Root").queue_free()
-	get_tree().change_scene("res://ColorBlindTest/Scenes/ColorBlind.tscn")
+	get_tree().change_scene("res://ColorBlindTest/Scenes/Menu.tscn")
 
 
 func _on_BinocularsProjectButton_button_up() -> void:

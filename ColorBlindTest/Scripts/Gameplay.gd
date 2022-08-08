@@ -27,15 +27,13 @@ var endUI
 var finalPlates
 var verdict = 0
 var highestVerdict = 0
-#Main Menu Variables
-var menuUI
-var tutorialScreen
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	gameplayControl = get_node("Gameplay")
-	gameplayControl.visible = false
-	gameplayControl.set_process(false)
+	gameplayControl.visible = true
+	gameplayControl.set_process(true)
+	endTest = false
 	inputUIGroup = get_node("Gameplay/InputUI")
 	numPlate = get_node("Gameplay/Plate")
 	displayedNum = get_node("Gameplay/InputUI/DisplayedNum")
@@ -44,11 +42,28 @@ func _ready():
 	endUI.visible = false
 	endUI.get_node("RestartButton").set_disabled(true)
 	endUI.get_node("MenuReturn").set_disabled(true)
-	menuUI = get_node("MainMenu")
-	menuUI.visible = true
-	tutorialScreen = get_node("TutorialScreen")
-	tutorialScreen.visible = false
 	finalPlates = get_node("EndUI/FinalPlates")
+	currentAnswer = ""
+	verdict = 0
+	sequenceIterator = 0
+	timer = maxTime
+	for i in rightWrongMarks.size():
+		rightWrongMarks[i] = 0
+	randomize()
+	sequence.shuffle()
+	match sequence[sequenceIterator]:
+		"Blind 45":
+			numPlate.set_texture(blindPlateTex)
+		"5":
+			numPlate.set_texture(fivePlateTex)
+		"6":
+			numPlate.set_texture(sixPlateTex)
+		"7":
+			numPlate.set_texture(sevenPlateTex)
+		"15":
+			numPlate.set_texture(fifteenPlateTex)
+		"26":
+			numPlate.set_texture(twentySixPlateTex)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -127,16 +142,6 @@ func _check_answer():
 				verdict += 1
 				rightWrongMarks[5] = 1
 
-func _main_menu_display():
-	if !menuUI.visible:
-		menuUI.get_node("StartButton").set_disabled(false)
-		menuUI.get_node("HelpButton").set_disabled(false)
-		menuUI.visible = true
-	else:
-		menuUI.get_node("StartButton").set_disabled(true)
-		menuUI.get_node("HelpButton").set_disabled(true)
-		menuUI.visible = false
-
 func _end_screen_display():
 	if !endUI.visible && endTest:
 		endUI.get_node("RestartButton").set_disabled(false)
@@ -147,7 +152,7 @@ func _end_screen_display():
 		endUI.get_node("MenuReturn").set_disabled(true)
 		endUI.visible = false
 
-# Called whenever a button is pressed in the Numpad during the test.
+# Called whenever a button is pressed in the Numpad during the test. extra_arg_0 is an identifier to see which button was pressed
 func _on_Button_button_down(extra_arg_0: String):
 	if(currentAnswer.length() < 14):
 		match extra_arg_0:
@@ -186,7 +191,6 @@ func _on_Button_button_down(extra_arg_0: String):
 		
 	displayedNum.text = currentAnswer
 
-
 func _on_Restart_button_down():
 	gameplayControl.visible = true
 	gameplayControl.set_process(true)
@@ -214,33 +218,6 @@ func _on_Restart_button_down():
 		"26":
 			numPlate.set_texture(twentySixPlateTex)
 
-
-func _on_Start_button_down():
-	_main_menu_display()
-	_on_Restart_button_down()
-	currentAnswer = ""
-
-
 func _on_MenuReturn_button_down():
-	_main_menu_display()
-	_end_screen_display()
-	gameplayControl.visible = false
-	gameplayControl.set_process(false)
-	currentAnswer = ""
-
-
-func _on_HelpButton_button_down():
-	_main_menu_display()
-	tutorialScreen.visible = true
-	tutorialScreen.get_node("ReturnButton").set_disabled(false)
-
-#Returns to the menu from the tutorial/help screen
-func _on_ReturnButton_button_down():
-	_main_menu_display()
-	tutorialScreen.visible = false
-	tutorialScreen.get_node("ReturnButton").set_disabled(true)
-
-#return to Main Menu to select another game
-func _on_BackButton_button_down():
 	get_tree().root.get_node("Root").queue_free()
-	get_tree().change_scene("res://MainMenu/Scenes/MainMenuScene.tscn")
+	get_tree().change_scene("res://ColorBlindTest/Scenes/Menu.tscn")
