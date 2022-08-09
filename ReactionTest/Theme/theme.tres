@@ -4,6 +4,11 @@
 [ext_resource path="res://ReactionTest/Menu/chalkButton.png" type="Texture" id=2]
 [ext_resource path="res://ReactionTest/Theme/chalkButtonStyle.tres" type="StyleBox" id=3]
 
+[sub_resource type="DynamicFont" id=1]
+size = 26
+extra_spacing_char = 1
+font_data = ExtResource( 1 )
+
 [sub_resource type="StyleBoxTexture" id=3]
 resource_local_to_scene = true
 content_margin_left = 10.0
@@ -47,11 +52,6 @@ margin_top = 810.0
 margin_bottom = 810.0
 modulate_color = Color( 0.611765, 0.611765, 0.611765, 1 )
 
-[sub_resource type="DynamicFont" id=1]
-size = 26
-extra_spacing_char = 1
-font_data = ExtResource( 1 )
-
 [resource]
 default_font = SubResource( 1 )
 Button/colors/font_color = Color( 0.780392, 0.780392, 0.780392, 1 )
@@ -59,7 +59,7 @@ Button/colors/font_color_disabled = Color( 0.9, 0.9, 0.9, 0.2 )
 Button/colors/font_color_hover = Color( 1, 1, 1, 1 )
 Button/colors/font_color_pressed = Color( 0.611765, 0.611765, 0.611765, 1 )
 Button/constants/hseparation = 2
-Button/fonts/font = null
+Button/fonts/font = SubResource( 1 )
 Button/styles/disabled = SubResource( 3 )
 Button/styles/focus = SubResource( 4 )
 Button/styles/hover = SubResource( 5 )
