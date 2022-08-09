@@ -12,6 +12,9 @@ func _ready():
 	tutorialScreen.visible = false
 
 
+func _input(event: InputEvent) -> void:
+	GlobalTimer.reset()
+
 func _main_menu_display():
 	if !menuUI.visible:
 		menuUI.get_node("StartButton").set_disabled(false)
