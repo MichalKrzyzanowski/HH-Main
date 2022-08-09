@@ -1,0 +1,38 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://ReactionTest/Shape/rectangle.png" type="Texture" id=1]
+[ext_resource path="res://GlobalTimer/IdleTracker.gd" type="Script" id=2]
+
+[node name="Popup" type="Popup"]
+pause_mode = 2
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 2 )
+
+[node name="ColorRect" type="TextureRect" parent="."]
+modulate = Color( 0.219608, 0.219608, 0.219608, 1 )
+margin_left = 268.0
+margin_top = -34.0
+margin_right = 736.0
+margin_bottom = 920.0
+rect_min_size = Vector2( 256, 150 )
+rect_rotation = 90.0
+rect_scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 1 )
+expand = true
+
+[node name="Label" type="Label" parent="."]
+margin_right = 256.0
+margin_bottom = 27.0
+text = "INACTIVE"
+align = 1
+
+[node name="Body" type="Label" parent="."]
+margin_left = 11.3333
+margin_top = 27.3333
+margin_right = 245.333
+margin_bottom = 69.3333
+text = "Return to splash
+menu in 0s"
+align = 1
+valign = 1

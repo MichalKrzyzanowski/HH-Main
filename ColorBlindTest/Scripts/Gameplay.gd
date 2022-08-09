@@ -66,6 +66,9 @@ func _ready():
 			numPlate.set_texture(twentySixPlateTex)
 
 
+func _input(event: InputEvent) -> void:
+	GlobalTimer.reset()
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if gameplayControl.is_processing():
