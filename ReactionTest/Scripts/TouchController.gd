@@ -47,10 +47,6 @@ func setMultiplier(newMultiplier: float):
 
 func _input(event: InputEvent) -> void:
 	GlobalTimer.reset()
-	#if event is InputEventKey:
-		#if event.pressed && event.scancode == KEY_A:
-			#isGameOver = true
-			#endGame()
 
 func _process(delta: float) -> void:
 	if !isGameOver:
