@@ -139,6 +139,70 @@ margin_right = 68.0
 margin_bottom = 70.0
 text = "NO"
 
+[node name="EndPopUp" type="Popup" parent="HUD/Theme"]
+pause_mode = 2
+visible = true
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -128.0
+margin_top = -75.0
+margin_right = 128.0
+margin_bottom = 75.0
+mouse_filter = 1
+script = ExtResource( 6 )
+
+[node name="ColorRect" type="TextureRect" parent="HUD/Theme/EndPopUp"]
+margin_left = 268.0
+margin_top = -34.0
+margin_right = 1268.0
+margin_bottom = 966.0
+rect_min_size = Vector2( 256, 150 )
+rect_rotation = 90.0
+rect_scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 5 )
+stretch_mode = 1
+
+[node name="Label" type="Label" parent="HUD/Theme/EndPopUp"]
+margin_left = -10.0
+margin_top = 10.0
+margin_right = 246.0
+margin_bottom = 37.0
+text = "GAME OVER"
+align = 1
+
+[node name="Label2" type="Label" parent="HUD/Theme/EndPopUp"]
+margin_left = -10.0
+margin_top = 50.0
+margin_right = 246.0
+margin_bottom = 100.0
+text = "FINAL SCORE:"
+align = 1
+valign = 1
+
+[node name="ReplayButton" type="Button" parent="HUD/Theme/EndPopUp"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -118.0
+margin_top = 45.0
+margin_right = -18.0
+margin_bottom = 90.0
+text = "REPLAY"
+
+[node name="QuitButton" type="Button" parent="HUD/Theme/EndPopUp"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -8.0
+margin_top = 45.0
+margin_right = 92.0
+margin_bottom = 90.0
+text = "QUIT"
+
 [node name="CanvasLayer" type="CanvasLayer" parent="HUD/Theme"]
 layer = 2
 
@@ -187,4 +251,6 @@ margin_bottom = 0.0
 
 [connection signal="button_up" from="HUD/Theme/WindowDialog/ConfirmButton" to="." method="_on_ConfirmButton_button_up"]
 [connection signal="button_up" from="HUD/Theme/WindowDialog/CancelButton" to="." method="_on_CancelButton_button_up"]
+[connection signal="button_up" from="HUD/Theme/EndPopUp/ReplayButton" to="." method="_on_ReplayButton_button_up"]
+[connection signal="button_up" from="HUD/Theme/EndPopUp/QuitButton" to="." method="_on_ConfirmButton_button_up"]
 [connection signal="button_up" from="HUD/Theme/CanvasLayer/QuitButton" to="." method="_on_QuitButton_button_up"]

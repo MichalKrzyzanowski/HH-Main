@@ -6,6 +6,7 @@ onready var scoreLabel = get_node("HUD/Theme/ScoreLabel")
 onready var timeLeftLabel = get_node("HUD/Theme/TimeLeftLabel")
 onready var grid = get_node("CanvasLayer/GridContainer")
 onready var quitConfirm = get_node("HUD/Theme/WindowDialog")
+onready var endPop = get_node("HUD/Theme/EndPopUp")
 onready var shapeScene = preload("res://ReactionTest/Shape/Shape.tscn")
 
 var screenSize := OS.get_window_safe_area()
@@ -33,6 +34,8 @@ func endGame():
 	ReactionTestData.highscore = max(score, ReactionTestData.highscore)
 	ReactionTestData.fastestTime = min(timeSpent, ReactionTestData.fastestTime)
 	ReactionTestData.isCleared = true
+	endPop.show()
+	endPop.get_node("Label2").text = "Final Score: " + String(score)
 
 func setScore(newScore: float) -> void:
 	score += newScore
@@ -71,3 +74,8 @@ func _on_ConfirmButton_button_up() -> void:
 func _on_CancelButton_button_up() -> void:
 	quitConfirm.hide()
 	get_tree().paused = false
+
+
+func _on_ReplayButton_button_up():
+	endPop.hide()
+	get_tree().reload_current_scene()

@@ -195,31 +195,7 @@ func _on_Button_button_down(extra_arg_0: String):
 	displayedNum.text = currentAnswer
 
 func _on_Restart_button_down():
-	gameplayControl.visible = true
-	gameplayControl.set_process(true)
-	endTest = false
-	_end_screen_display()
-	currentAnswer = ""
-	verdict = 0
-	sequenceIterator = 0
-	timer = maxTime
-	for i in rightWrongMarks.size():
-		rightWrongMarks[i] = 0
-	randomize()
-	sequence.shuffle()
-	match sequence[sequenceIterator]:
-		"Blind 45":
-			numPlate.set_texture(blindPlateTex)
-		"5":
-			numPlate.set_texture(fivePlateTex)
-		"6":
-			numPlate.set_texture(sixPlateTex)
-		"7":
-			numPlate.set_texture(sevenPlateTex)
-		"15":
-			numPlate.set_texture(fifteenPlateTex)
-		"26":
-			numPlate.set_texture(twentySixPlateTex)
+	get_tree().reload_current_scene()
 
 func _on_MenuReturn_button_down():
 	get_tree().root.get_node("Root").queue_free()

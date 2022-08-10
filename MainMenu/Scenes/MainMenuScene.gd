@@ -47,3 +47,6 @@ func getProgress():
 func _on_ProgressBar_gui_input(event:InputEvent) -> void:
 	if Input.is_action_just_released("click"):
 		statsMenu.visible = !statsMenu.visible
+	if event is InputEventScreenTouch:
+		if event.pressed:
+			statsMenu.visible = !statsMenu.visible
