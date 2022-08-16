@@ -9,7 +9,7 @@ var is_zooming = false
 var movement := Vector2()
 var movementWeight := 0.2
 onready var slider = $Control/VSlider
-
+var eventId = -1
 #####################################
 #		Public Functions			#
 #####################################
@@ -19,17 +19,30 @@ func _ready():
 	slider.value = $Camera.fov
 	pass
 
-
-func _input(event):
+func _input(event: InputEvent) -> void:
+	# print("unhandled_input")
 	if get_parent().visible && !is_zooming:
-		if event is InputEventScreenDrag:
-			movement = event.relative * mouse_speed
-			movement.x += rotation.y
-			movement.y += rotation.x
+		if event is InputEventMouseButton:
+			if event.pressed && event.button_index == BUTTON_LEFT:
+				eventId = 1
+			else:
+				eventId = -1
 		elif event is InputEventMouseMotion:
-			movement = event.relative * mouse_speed
-			movement.x += rotation.y
-			movement.y += rotation.x
+			if eventId == 1:
+				movement = event.relative * mouse_speed
+				movement.x += rotation.y
+				movement.y += rotation.x
+		
+		if event is InputEventScreenTouch:
+			if event.pressed:
+				eventId = event.index
+			else:
+				eventId = -1
+		elif event is InputEventScreenDrag:
+			if eventId == event.index:
+				movement = event.relative * mouse_speed
+				movement.x += rotation.y
+				movement.y += rotation.x
 
 func _process(_delta):
 	rotation.x = lerp(rotation.x, movement.y, movementWeight)
@@ -68,3 +81,12 @@ func _on_VSlider_drag_started():
 
 func _on_VSlider_drag_ended(value_changed:bool):
 	is_zooming = false
+
+func _on_VSlider_gui_input(event: InputEvent):
+	if event is InputEventMouseButton:
+		if event.pressed:
+			eventId = -1
+			
+	if event is InputEventScreenTouch:
+		if event.pressed:
+			eventId = -1

@@ -11,7 +11,8 @@ func _on_TutorialButton_pressed():
 
 
 func _on_QuitButton_pressed():
-	pass # Go back to main scene
+	get_tree().root.get_node("Control").queue_free()
+	get_tree().change_scene("res://MainMenu/Scenes/MainMenuScene.tscn")
 
 func _on_EasyButton_pressed():
 	GameData.enemyAmount = 6
