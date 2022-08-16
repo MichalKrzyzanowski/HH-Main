@@ -32,7 +32,6 @@ func _input(event: InputEvent) -> void:
 				movement = event.relative * mouse_speed
 				movement.x += rotation.y
 				movement.y += rotation.x
-		
 		if event is InputEventScreenTouch:
 			if event.pressed:
 				eventId = event.index
@@ -86,7 +85,6 @@ func _on_VSlider_gui_input(event: InputEvent):
 	if event is InputEventMouseButton:
 		if event.pressed:
 			eventId = -1
-			
 	if event is InputEventScreenTouch:
 		if event.pressed:
 			eventId = -1

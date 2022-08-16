@@ -1,8 +1,9 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://RadarGame/Scripts/EndScript.gd" type="Script" id=1]
+[ext_resource path="res://GlobalTimer/ResetGamePopup.tscn" type="PackedScene" id=2]
 
-[node name="Control" type="Control"]
+[node name="Root" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = -2.0
@@ -55,6 +56,18 @@ margin_top = 251.0
 margin_right = 372.0
 margin_bottom = 271.0
 text = "Main Menu"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Popup" parent="CanvasLayer" instance=ExtResource( 2 )]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -128.0
+margin_top = -50.0
+margin_right = -88.0
+margin_bottom = -10.0
 
 [connection signal="pressed" from="Panel/PlayButton" to="." method="_on_PlayButton_pressed"]
 [connection signal="pressed" from="Panel/MainMenuButton" to="." method="_on_MainMenuButton_pressed"]

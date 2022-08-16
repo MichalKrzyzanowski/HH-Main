@@ -1,5 +1,7 @@
 extends Control
 
+func _input(event: InputEvent) -> void:
+	GlobalTimer.reset()
 
 func _on_PlayButton_pressed():
 	$CenterContainer.visible = false;
@@ -11,7 +13,7 @@ func _on_TutorialButton_pressed():
 
 
 func _on_QuitButton_pressed():
-	get_tree().root.get_node("Control").queue_free()
+	get_tree().root.get_node("Root").queue_free()
 	get_tree().change_scene("res://MainMenu/Scenes/MainMenuScene.tscn")
 
 func _on_EasyButton_pressed():
@@ -27,5 +29,5 @@ func _on_NormalButton_pressed():
 	startGame()
 
 func startGame():
-	get_tree().root.get_node("Control").queue_free()
+	get_tree().root.get_node("Root").queue_free()
 	get_tree().change_scene("res://RadarGame/Scenes/GameplayScreen.tscn")

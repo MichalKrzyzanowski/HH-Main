@@ -13,10 +13,13 @@ func _ready():
 	GameData.pingNodes = get_tree().get_nodes_in_group("PingNodes")
 	GameData.planeNodes = get_tree().get_nodes_in_group("PlaneNodes")
 
+func _input(event: InputEvent) -> void:
+	GlobalTimer.reset()
+
 func _process(delta):
 	$Control/Score.text = "Score: " + str(GameData.score)
 	if GameData.planeNodes.size() == 0 || GameData.pingNodes.size() == 0:
-		get_tree().root.get_node("Gameplay").queue_free()
+		get_tree().root.get_node("Root").queue_free()
 		get_tree().change_scene("res://RadarGame/Scenes/EndScene.tscn")
 
 func _physics_process(delta):
