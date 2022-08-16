@@ -24,7 +24,8 @@ func _on_ColorBlindTestButton_button_up() -> void:
 
 
 func _on_BinocularsProjectButton_button_up() -> void:
-	pass # Replace with function body.
+	get_tree().root.get_node("Root").queue_free()
+	get_tree().change_scene("res://RadarGame/Scenes/MainMenu.tscn")
 
 func _on_ReactionTestButton_button_up() -> void:
 	get_tree().root.get_node("Root").queue_free()
