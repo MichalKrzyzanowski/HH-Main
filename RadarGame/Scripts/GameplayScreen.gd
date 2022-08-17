@@ -17,7 +17,8 @@ func _input(event: InputEvent) -> void:
 	GlobalTimer.reset()
 
 func _process(delta):
-	$Control/Score.text = "Score: " + str(GameData.score)
+	GameData.currentTime += delta
+	$Control/Score.text = "Score: " + str(GameData.currentScore)
 	if GameData.planeNodes.size() == 0 || GameData.pingNodes.size() == 0:
 		get_tree().root.get_node("Root").queue_free()
 		get_tree().change_scene("res://RadarGame/Scenes/EndScene.tscn")
@@ -37,3 +38,7 @@ func _on_RadarButton_pressed():
 	if cheatSheet.visible:
 		cheatSheet.visible = false
 	handbookButton.visible = !handbookButton.visible
+
+func _on_QuitButton_pressed():
+	get_tree().root.get_node("Root").queue_free()
+	get_tree().change_scene("res://RadarGame/Scenes/MainMenu.tscn")

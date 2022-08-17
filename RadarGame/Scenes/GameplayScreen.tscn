@@ -25,6 +25,13 @@ margin_right = 972.0
 margin_bottom = 572.0
 text = "Radar"
 
+[node name="RadarButton" type="Button" parent="Pivot/RadarButton"]
+margin_left = 878.0
+margin_top = 549.0
+margin_right = 972.0
+margin_bottom = 572.0
+text = "Radar"
+
 [node name="HandbookButton" type="Button" parent="Pivot"]
 margin_left = 878.0
 margin_top = 520.0
@@ -68,5 +75,17 @@ margin_top = -50.0
 margin_right = -88.0
 margin_bottom = -10.0
 
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="QuitButton" type="Button" parent="."]
+margin_left = 15.7734
+margin_top = 572.006
+margin_right = 55.7734
+margin_bottom = 592.006
+text = "Quit"
+
 [connection signal="pressed" from="Pivot/RadarButton" to="." method="_on_RadarButton_pressed"]
+[connection signal="pressed" from="Pivot/RadarButton/RadarButton" to="." method="_on_RadarButton_pressed"]
 [connection signal="button_down" from="Pivot/HandbookButton" to="." method="_on_HandbookButton_button_down"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_QuitButton_pressed"]

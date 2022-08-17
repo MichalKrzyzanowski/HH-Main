@@ -6,6 +6,10 @@ onready var reactionScoreLabel = $StatsMenu/ReactionTestScore
 onready var reactionTimeLabel = $StatsMenu/ReactionTestClearTime
 onready var colorBlindVerdictLabel = $StatsMenu/ColorBlindTestVerdict
 onready var playerNameLabel = $PlayerName
+onready var binoScoreLabel = $StatsMenu/BinocularsScore
+onready var binoAccuracyLabel = $StatsMenu/BinocularsAccuracy
+onready var binoLevelLabel = $StatsMenu/BinocularsLevel
+onready var binoTimeLabel = $StatsMenu/BinocularsTime
 
 func _ready() -> void:
 	$BinocularsProjectButton.grab_focus()
@@ -13,7 +17,13 @@ func _ready() -> void:
 	reactionScoreLabel.text = "Highscore: " + str(ReactionTestData.highscore) + "pts"
 	reactionTimeLabel.text = "Clear Time: " + str(ReactionTestData.fastestTime) + "s"
 	colorBlindVerdictLabel.text = "Highest Verdict: " + str(ColorBlindData.highestVerdict)
+	binoScoreLabel.text = "Score: " + str(GameData.prevoiusScore)
+	binoAccuracyLabel.text = "Accuracy: " + str(GameData.prevoiusAccuracy)
+	binoLevelLabel.text = "Level: " + GameData.Levels.keys()[GameData.prevoiusLevel]
+	binoTimeLabel.text = "Time: " + str(GameData.prevoiusTime)
 	playerNameLabel.text = "PlayerName: " + str(PlayerData.playerName)
+
+
 
 func _input(event: InputEvent) -> void:
 	GlobalTimer.reset()
@@ -41,9 +51,10 @@ func resetData():
 	ColorBlindData.reset()
 	PlayerData.reset()
 	ReactionTestData.reset()
+	GameData.fullReset()
 
 func getProgress():
-	return ReactionTestData.isCleared as int + ColorBlindData.isGameClear as int
+	return ReactionTestData.isCleared as int + ColorBlindData.isGameClear as int + GameData.gameEnd as int
 
 func _on_ProgressBar_gui_input(event:InputEvent) -> void:
 	if Input.is_action_just_released("click"):

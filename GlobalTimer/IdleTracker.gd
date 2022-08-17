@@ -18,3 +18,4 @@ func _process(delta: float) -> void:
 		ColorBlindData.reset()
 		PlayerData.reset()
 		ReactionTestData.reset()
+		GameData.fullReset()

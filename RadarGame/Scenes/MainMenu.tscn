@@ -53,7 +53,7 @@ margin_bottom = 344.0
 [node name="VBoxContainer" type="VBoxContainer" parent="DifficultyContainer"]
 margin_left = 8.0
 margin_right = 76.0
-margin_bottom = 89.0
+margin_bottom = 120.0
 
 [node name="EasyButton" type="Button" parent="DifficultyContainer/VBoxContainer"]
 margin_right = 68.0
@@ -72,7 +72,13 @@ margin_right = 68.0
 margin_bottom = 89.0
 text = "Hard"
 
-[node name="Title" type="Label" parent="."]
+[node name="BackButton" type="Button" parent="DifficultyContainer/VBoxContainer"]
+margin_top = 93.0
+margin_right = 68.0
+margin_bottom = 120.0
+text = "Back"
+
+[node name="TitleLabel" type="Label" parent="."]
 margin_left = 448.0
 margin_top = 186.0
 margin_right = 576.0
@@ -81,7 +87,7 @@ text = "Radar Operator"
 align = 1
 valign = 1
 
-[node name="Difficulty" type="Label" parent="."]
+[node name="DifficultyLabel" type="Label" parent="."]
 visible = false
 margin_left = 448.0
 margin_top = 216.0
@@ -109,3 +115,4 @@ margin_bottom = -10.0
 [connection signal="pressed" from="DifficultyContainer/VBoxContainer/EasyButton" to="." method="_on_EasyButton_pressed"]
 [connection signal="pressed" from="DifficultyContainer/VBoxContainer/NormalButton" to="." method="_on_NormalButton_pressed"]
 [connection signal="pressed" from="DifficultyContainer/VBoxContainer/HardButton" to="." method="_on_HardButton_pressed"]
+[connection signal="pressed" from="DifficultyContainer/VBoxContainer/BackButton" to="." method="_on_BackButton_pressed"]

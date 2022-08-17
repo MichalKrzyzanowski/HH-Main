@@ -70,8 +70,41 @@ margin_bottom = 492.0
 margin_left = 10.0
 margin_top = 13.0
 margin_right = 86.0
-margin_bottom = 22.0
+margin_bottom = 27.0
+rect_pivot_offset = Vector2( 38, 79 )
 text = "Binoculars"
+
+[node name="BinocularsScore" type="Label" parent="StatsMenu"]
+margin_left = 10.0
+margin_top = 33.0
+margin_right = 86.0
+margin_bottom = 47.0
+rect_pivot_offset = Vector2( 38, 79 )
+text = "Score:"
+
+[node name="BinocularsAccuracy" type="Label" parent="StatsMenu"]
+margin_left = 10.0
+margin_top = 47.0
+margin_right = 86.0
+margin_bottom = 61.0
+rect_pivot_offset = Vector2( -269, -89 )
+text = "Accuracy:"
+
+[node name="BinocularsLevel" type="Label" parent="StatsMenu"]
+margin_left = 10.0
+margin_top = 61.0
+margin_right = 86.0
+margin_bottom = 75.0
+rect_pivot_offset = Vector2( 38, 79 )
+text = "Level: "
+
+[node name="BinocularsTime" type="Label" parent="StatsMenu"]
+margin_left = 10.0
+margin_top = 75.0
+margin_right = 86.0
+margin_bottom = 89.0
+rect_pivot_offset = Vector2( 59, 14 )
+text = "Time: "
 
 [node name="ReactionTestStats" type="Label" parent="StatsMenu"]
 margin_left = 10.0

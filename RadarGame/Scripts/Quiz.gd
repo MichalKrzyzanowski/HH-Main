@@ -23,13 +23,13 @@ func setData(data : GameData.PlaneData, index : int):
 
 func _on_FriendlyButton_pressed():
 	if faction == "allied":
-		GameData.score += 1
+		GameData.currentScore += 1
 	delete()
 
 
 func _on_EnemyButton_pressed():
 	if faction == "axis":
-		GameData.score += 1
+		GameData.currentScore += 1
 	delete()
 
 func delete():

@@ -12,8 +12,20 @@ var enemyArray : Array
 var enemyscene = load("res://RadarGame/Prefabs/Plane.tscn")
 var planeNodes : Array
 var pingNodes : Array
-var score : int = 0
 var gameEnd : bool
+
+enum Levels {Easy,Normal,Hard}
+
+#The game stats for the main menu
+var currentScore : int = 0
+var currentTime : float
+var currentLevel : int
+var currentAccuracy : float
+# past game
+var prevoiusScore : int
+var prevoiusTime : float
+var prevoiusLevel : int = -1
+var prevoiusAccuracy : float
 
 #####################################
 #			Class Data				#
@@ -76,3 +88,15 @@ func _setData(_plane : PlaneData):
 			_plane.faction = "axis"
 			_plane.planeTexture = load("res://RadarGame/Sprites/Axis/fock-wulf.png")
 			#TODO add meshloder here
+
+func gameReset():
+	currentScore = 0
+	currentTime = 0
+	currentLevel = 0
+	currentAccuracy = 0
+
+func fullReset():
+	prevoiusScore = 0
+	prevoiusTime = 0
+	prevoiusAccuracy = 0
+	prevoiusLevel = 0
