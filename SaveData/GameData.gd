@@ -100,3 +100,4 @@ func fullReset():
 	prevoiusTime = 0
 	prevoiusAccuracy = 0
 	prevoiusLevel = 0
+	gameEnd = false
