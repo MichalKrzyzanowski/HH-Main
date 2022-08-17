@@ -1,8 +1,6 @@
 extends Sprite
 
-export (float) var rotation_speed = 1.5
-export (int) var speed = 200
+var rotation_speed = 60
 
 func _process(delta):
-	self.rotation += (PI / 2 * delta)
-
+	self.rotation_degrees += rotation_speed * delta

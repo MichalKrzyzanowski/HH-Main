@@ -19,7 +19,7 @@ func _ready():
 	self.modulate.a = 0
 
 func _process(delta):
-	self.modulate.a -= 0.005
+	self.modulate.a -= 0.025
 
 #####################################
 #			Signals					#

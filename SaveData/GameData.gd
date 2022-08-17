@@ -94,6 +94,9 @@ func gameReset():
 	currentTime = 0
 	currentLevel = 0
 	currentAccuracy = 0
+	GameData.enemyArray.clear()
+	GameData.pingNodes.clear()
+	GameData.planeNodes.clear()
 
 func fullReset():
 	prevoiusScore = 0

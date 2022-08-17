@@ -26,8 +26,8 @@ func _on_PlayButton_pressed():
 
 func _getBestResult():
 	#check if its a good stat
-	GameData.currentAccuracy = (GameData.currentScore / GameData.enemyAmount) * 100
 	GameData.gameEnd = true
+	GameData.currentAccuracy = (GameData.currentScore / GameData.enemyAmount) * 100
 	if GameData.currentLevel >= GameData.prevoiusLevel:
 		GameData.prevoiusLevel = GameData.currentLevel
 		if GameData.currentScore > GameData.prevoiusScore && GameData.currentAccuracy > GameData.prevoiusAccuracy:

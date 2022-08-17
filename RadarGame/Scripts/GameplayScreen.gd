@@ -4,6 +4,7 @@ onready var bino = $Pivot
 onready var radar = $Radar
 onready var cheatSheet = $Pivot/HandbookButton/CheatSheet
 onready var handbookButton = $Pivot/HandbookButton
+var gameQuit : bool;
 
 func _ready():
 	bino.visible = true
@@ -19,9 +20,10 @@ func _input(event: InputEvent) -> void:
 func _process(delta):
 	GameData.currentTime += delta
 	$Control/Score.text = "Score: " + str(GameData.currentScore)
-	if GameData.planeNodes.size() == 0 || GameData.pingNodes.size() == 0:
-		get_tree().root.get_node("Root").queue_free()
-		get_tree().change_scene("res://RadarGame/Scenes/EndScene.tscn")
+	if !gameQuit:
+		if GameData.planeNodes.size() == 0 || GameData.pingNodes.size() == 0:
+			get_tree().root.get_node("Root").queue_free()
+			get_tree().change_scene("res://RadarGame/Scenes/EndScene.tscn")
 
 func _physics_process(delta):
 	for _i in GameData.enemyArray.size():
