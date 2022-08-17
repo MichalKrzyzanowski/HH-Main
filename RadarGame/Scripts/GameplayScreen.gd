@@ -40,5 +40,6 @@ func _on_RadarButton_pressed():
 	handbookButton.visible = !handbookButton.visible
 
 func _on_QuitButton_pressed():
+	GameData.gameReset()
 	get_tree().root.get_node("Root").queue_free()
 	get_tree().change_scene("res://RadarGame/Scenes/MainMenu.tscn")
