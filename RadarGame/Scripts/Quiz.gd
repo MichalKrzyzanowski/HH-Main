@@ -37,7 +37,7 @@ func delete():
 	var temp2 = GameData.planeNodes[slot]
 	GameData.pingNodes.remove(slot)
 	GameData.planeNodes.remove(slot)
-	GameData.enemyArray.remove(slot)
+	GameData.planeDataArray.remove(slot)
 	temp1.queue_free()
 	temp2.queue_free()
 	self.visible = false

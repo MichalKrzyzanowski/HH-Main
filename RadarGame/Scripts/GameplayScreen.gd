@@ -20,13 +20,12 @@ func _input(event: InputEvent) -> void:
 func _process(delta):
 	GameData.currentTime += delta
 	$Control/Score.text = "Score: " + str(GameData.currentScore)
-	if !gameQuit:
-		if GameData.planeNodes.size() == 0 || GameData.pingNodes.size() == 0:
-			get_tree().root.get_node("Root").queue_free()
-			get_tree().change_scene("res://RadarGame/Scenes/EndScene.tscn")
+	if GameData.planeNodes.size() == 0 || GameData.pingNodes.size() == 0:
+		get_tree().root.get_node("Root").queue_free()
+		get_tree().change_scene("res://RadarGame/Scenes/EndScene.tscn")
 
 func _physics_process(delta):
-	for _i in GameData.enemyArray.size():
+	for _i in GameData.planeDataArray.size():
 		GameData.pingNodes[_i].position.x = GameData.planeNodes[_i].get_child(0).get_child(0).global_transform.origin.x
 		GameData.pingNodes[_i].position.y = GameData.planeNodes[_i].get_child(0).get_child(0).global_transform.origin.z
 

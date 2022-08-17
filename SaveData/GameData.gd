@@ -7,7 +7,7 @@ var random = RandomNumberGenerator.new()
 #change the value if you want to test the scene
 var enemyAmount : float
 var current_rotation : float
-var enemyArray : Array
+var planeDataArray : Array
 #change this prefab to its actual plane model
 var enemyscene = load("res://RadarGame/Prefabs/Plane.tscn")
 var planeNodes : Array
@@ -54,7 +54,7 @@ func _startSpawn():
 		add_child(enemy)
 		plane.planePosition = new_pos
 		plane.planeID = _i
-		enemyArray.append(plane)
+		planeDataArray.append(plane)
 
 func _setData(_plane : PlaneData):
 	match _plane.planeType:
@@ -94,9 +94,14 @@ func gameReset():
 	currentTime = 0
 	currentLevel = 0
 	currentAccuracy = 0
-	GameData.enemyArray.clear()
-	GameData.pingNodes.clear()
-	GameData.planeNodes.clear()
+
+	for _plane in get_tree().get_nodes_in_group("PlaneNodes"):
+		_plane.queue_free()
+
+	for _ping in get_tree().get_nodes_in_group("pingNodes"):
+		_ping.queue_free()
+
+	planeDataArray.clear()
 
 func fullReset():
 	prevoiusScore = 0
