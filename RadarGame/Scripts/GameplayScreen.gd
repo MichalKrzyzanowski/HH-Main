@@ -19,7 +19,7 @@ func _input(event: InputEvent) -> void:
 
 func _process(delta):
 	GameData.currentTime += delta
-	$Control/Score.text = "Score: " + str(GameData.currentScore)
+	$Pivot/Control/Score.text = "Score: " + str(GameData.currentScore)
 	if GameData.planeNodes.size() == 0 || GameData.pingNodes.size() == 0:
 		get_tree().root.get_node("Root").queue_free()
 		get_tree().change_scene("res://RadarGame/Scenes/EndScene.tscn")
