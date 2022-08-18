@@ -62,3 +62,24 @@ func _on_ProgressBar_gui_input(event:InputEvent) -> void:
 	if event is InputEventScreenTouch:
 		if event.pressed:
 			statsMenu.visible = !statsMenu.visible
+
+func sendEmail():
+	print("email")
+	var recipient := "monkegigaman@gmail.com"
+	var subject := "Certificate test"
+	var body := "Well done " + str(PlayerData.playerName) + ". You are a certified Monke"
+
+	var mailtoCommand := "mailto:" + recipient + "?subject=" + subject.http_escape() + "&body=" + body.http_escape()
+	print(mailtoCommand)
+	if OS.shell_open(mailtoCommand) == FAILED:
+		print("failed to send email")
+
+
+func _on_Email_button_up():
+	# sendEmail()
+	var output: Array = []
+	
+	OS.execute("cmd.exe",
+	 ["/c", "Python/Portable Python 3.2.5.1/App/python.exe", "Email/SendEmail.py"], true, output)
+		 
+	print(output)
