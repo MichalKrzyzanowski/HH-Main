@@ -1,10 +1,13 @@
 extends Control
+#####################################
+#			Varibable				#
+#####################################
 var faction : String
-var slot
+var slot : int
 
-func _ready():
-	pass
-
+#####################################
+#		Public Functions			#
+#####################################
 func _input(event):
 	if event is InputEventMouseButton:
 		for i in GameData.pingNodes.size():
@@ -12,25 +15,12 @@ func _input(event):
 				setData(GameData.pingNodes[i].planeData, i)
 				self.visible = true
 
-
 func setData(data : GameData.PlaneData, index : int):
 	$ImageCenterContainer/PlaneSprite.texture = data.planeTexture
 	$ImageCenterContainer/PlaneSprite/AircraftName.text = data.aircraftName
 	faction = data.faction
 	slot = index
 	print(index)
-
-
-func _on_FriendlyButton_pressed():
-	if faction == "allied":
-		GameData.currentScore += 1
-	delete()
-
-
-func _on_EnemyButton_pressed():
-	if faction == "axis":
-		GameData.currentScore += 1
-	delete()
 
 func delete():
 	var temp1 = GameData.pingNodes[slot]
@@ -41,3 +31,18 @@ func delete():
 	temp1.queue_free()
 	temp2.queue_free()
 	self.visible = false
+
+#####################################
+#		Signal Functions			#
+#####################################
+func _on_FriendlyButton_pressed():
+	if faction == "allied":
+		GameData.currentScore += 1
+	delete()
+
+func _on_EnemyButton_pressed():
+	if faction == "axis":
+		GameData.currentScore += 1
+	delete()
+
+

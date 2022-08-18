@@ -1,8 +1,18 @@
 extends Control
 
+#####################################
+#		Public Functions			#
+#####################################
 func _input(event: InputEvent) -> void:
 	GlobalTimer.reset()
 
+func startGame():
+	get_tree().root.get_node("Root").queue_free()
+	get_tree().change_scene("res://RadarGame/Scenes/GameplayScreen.tscn")
+
+#####################################
+#		Signal Functions			#
+#####################################
 func _on_PlayButton_pressed():
 	$CenterContainer.visible = false;
 	$DifficultyContainer.visible = true
@@ -10,7 +20,6 @@ func _on_PlayButton_pressed():
 
 func _on_TutorialButton_pressed():
 	pass # TODO create a help screen
-
 
 func _on_QuitButton_pressed():
 	get_tree().root.get_node("Root").queue_free()
@@ -30,11 +39,6 @@ func _on_HardButton_pressed():
 	GameData.enemyAmount = 12
 	GameData.currentLevel = GameData.Levels.Hard
 	startGame()
-
-func startGame():
-	get_tree().root.get_node("Root").queue_free()
-	get_tree().change_scene("res://RadarGame/Scenes/GameplayScreen.tscn")
-
 
 func _on_BackButton_pressed():
 	$CenterContainer.visible = true

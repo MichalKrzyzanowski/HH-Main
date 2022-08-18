@@ -1,9 +1,15 @@
 extends Spatial
+#####################################
+#		      Variables      			#
+#####################################
 var random = RandomNumberGenerator.new()
 var velocity : Vector3
 var speed : float = 10.0
 onready var plane = get_child(0)
 
+#####################################
+#		   Public Functions		   	#
+#####################################
 func _ready():
 	random.randomize()
 	speed = random.randf_range(5,15)

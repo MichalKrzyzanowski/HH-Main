@@ -1,11 +1,16 @@
 extends Node2D
 
+#####################################
+#			Variables				#
+#####################################
 onready var bino = $Pivot
 onready var radar = $Radar
 onready var cheatSheet = $Pivot/HandbookButton/CheatSheet
 onready var handbookButton = $Pivot/HandbookButton
-var gameQuit : bool;
 
+#####################################
+#		Public Functions			#
+#####################################
 func _ready():
 	bino.visible = true
 	radar.visible = false
@@ -29,7 +34,9 @@ func _physics_process(delta):
 		GameData.pingNodes[_i].position.x = GameData.planeNodes[_i].get_child(0).get_child(0).global_transform.origin.x
 		GameData.pingNodes[_i].position.y = GameData.planeNodes[_i].get_child(0).get_child(0).global_transform.origin.z
 
-
+#####################################
+#		Signal Functions			#
+#####################################
 func _on_HandbookButton_button_down():
 	cheatSheet.visible = !cheatSheet.visible
 
