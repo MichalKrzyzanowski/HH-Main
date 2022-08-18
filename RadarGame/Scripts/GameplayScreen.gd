@@ -19,7 +19,7 @@ func _ready():
 	GameData.pingNodes = get_tree().get_nodes_in_group("PingNodes")
 	GameData.planeNodes = get_tree().get_nodes_in_group("PlaneNodes")
 
-func _input(event: InputEvent) -> void:
+func _input(event: InputEvent):
 	GlobalTimer.reset()
 
 func _process(delta):

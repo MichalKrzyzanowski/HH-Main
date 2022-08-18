@@ -28,7 +28,7 @@ var prevoiusLevel : int = -1
 var prevoiusAccuracy : float
 
 #####################################
-#			Class Data				#
+#		PlaneData Class				#
 #####################################
 class PlaneData:
 	var planeID : int
