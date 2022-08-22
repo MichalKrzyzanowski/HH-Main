@@ -63,7 +63,7 @@ func _on_VSlider_drag_started():
 	is_zooming = true
 
 func _on_VSlider_drag_ended(value_changed:bool):
-	is_zooming = value_changed
+	is_zooming = false
 
 func _on_VSlider_gui_input(event: InputEvent):
 	if event is InputEventMouseButton:
