@@ -17,7 +17,7 @@ func _on_QuitButton_pressed():
 	get_tree().change_scene("res://MainMenu/Scenes/MainMenuScene.tscn")
 
 func _on_EasyButton_pressed():
-	GameData.enemyAmount = 6
+	GameData.enemyAmount = 1
 	GameData.currentLevel = GameData.Levels.Easy
 	startGame()
 
