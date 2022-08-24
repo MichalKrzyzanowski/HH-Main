@@ -14,7 +14,7 @@ onready var player = get_tree().root.get_node("Root").get_child(0)
 func _ready():
 	random.randomize()
 	speed = random.randf_range(-15,15)
-	behaviour = 1
+	behaviour = random.randi_range(0, 2)
 	match behaviour:
 		0:
 			xDirection = true
@@ -25,11 +25,13 @@ func _ready():
 		1:
 			zDirection = true
 			plane.get_child(0).transform.basis = plane.get_child(0).transform.basis.rotated(
-				Vector3(0,1,0), deg2rad(270))
+				Vector3(0,1,0), deg2rad(90))
+			plane.get_child(0).transform.basis = plane.get_child(0).transform.basis.rotated(
+				Vector3(0,0,1), deg2rad(180))
 			if speed < 0:
 				plane.get_child(0).transform.basis = plane.get_child(0).transform.basis.rotated(
 					Vector3(0,1,0), deg2rad(180))
-			rotationTarget = Quat(plane.get_child(0).transform.basis)
+			rotationTarget = plane.get_child(0).transform.basis.get_rotation_quat()
 			#print(Quat(plane.get_child(0).transform.basis))
 			#print(rotationTarget)
 		2:
@@ -52,16 +54,16 @@ func _physics_process(delta: float) -> void:
 			rotationTarget = Quat(plane.get_child(0).transform.basis.rotated(Vector3(0,1,0), deg2rad(180)))
 		velocity += plane.transform.basis.x * speed
 	elif zDirection:
-		if firstTurn:
-			plane.get_child(0).transform.basis = Basis(Quat(plane.get_child(0).transform.basis).slerp(
-				rotationTarget, 0.05))
+		# if firstTurn:
+		plane.get_child(0).transform.basis = Basis(plane.get_child(0).transform.basis.get_rotation_quat().slerp(
+			rotationTarget, 0.05))
 		if plane.transform.origin.distance_to(player.transform.origin) >= 60:
 			#print(plane.transform.origin.distance_to(player.transform.origin))
 			speed = -speed
 			print(rotationTarget)
-			rotationTarget = Quat(plane.get_child(0).transform.basis.rotated(Vector3(0,1,0), deg2rad(180)))
+			rotationTarget = plane.get_child(0).transform.basis.rotated(Vector3(0, 1, 0), deg2rad(180)).get_rotation_quat()
 			print(rotationTarget)
-			if !firstTurn:
-				firstTurn = true
+			# if !firstTurn:
+			# 	firstTurn = true
 		velocity += plane.transform.basis.z * speed
 	plane.move_and_collide(velocity * delta)
