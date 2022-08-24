@@ -6,10 +6,15 @@ var random = RandomNumberGenerator.new()
 var velocity : Vector3
 var speed : float = 10.0
 onready var plane = get_child(0)
+var data : GameData.PlaneData
 
 #####################################
 #		   Public Functions		   	#
 #####################################
+
+func _process(delta):
+   $KinematicBody/f6f/AnimationPlayer.play()
+
 func _ready():
 	random.randomize()
 	speed = random.randf_range(5,15)

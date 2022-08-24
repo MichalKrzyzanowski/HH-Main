@@ -9,7 +9,8 @@ var movement := Vector2()
 var movementWeight := 0.2
 onready var slider = $Control/VSlider
 var eventId = -1
-
+onready var target = $RayCast
+var countDown : float = 5
 #####################################
 #		Public Functions			#
 #####################################
@@ -55,6 +56,14 @@ func _process(_delta):
 		$Control.visible = true
 	else:
 		$Control.visible = false
+
+func _physics_process(delta):
+	if target.is_colliding():
+		#$Camera.rotate_y(target.global_transform.y)
+		#print(target.global_transform.origin,Vector3.UP)
+		pass
+		#look_at_from_position($Camera.global_rotation,target.global_rotation,Vector3.UP)
+		#print($Camera.global_rotation)
 
 #####################################
 #		Signal Functions			#

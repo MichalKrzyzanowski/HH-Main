@@ -7,7 +7,7 @@ var random = RandomNumberGenerator.new()
 
 #<-----------GameData-------------->#
 enum Levels {Easy,Normal,Hard}
-var enemyAmount : float
+var enemyAmount : float = 2
 var current_rotation : float
 var planeDataArray : Array
 var enemyscene = load("res://RadarGame/Prefabs/Plane.tscn")
@@ -53,6 +53,7 @@ func startSpawn():
 		add_child(enemy)
 		plane.planePosition = new_pos
 		plane.planeID = _i
+		enemy.data = plane
 		planeDataArray.append(plane)
 
 func setData(_plane : PlaneData):

@@ -5,5 +5,11 @@
 [node name="f6f" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0711064, 0.0200453, 0.0140076 )
 
-[node name="Cylinder" parent="." index="0"]
-transform = Transform( 0, 4.31553, 0.0378472, -0.986659, 0, 0, 0, -0.163447, 0.999284, 0.61125, 0.0018576, 0.0964361 )
+[node name="helice" parent="." index="26"]
+transform = Transform( 0.999946, -0.00441856, 0.00938418, 0.0084944, -0.170355, -0.985346, 0.00595245, 0.985373, -0.170308, -4.74072, 0.0945904, 0.0133084 )
+
+[node name="pistons008" parent="." index="55"]
+transform = Transform( 1, 0, 0, 0, 0.766045, -0.642787, 0, 0.642787, 0.766045, -4.13557, 0.10518, 0 )
+
+[node name="AnimationPlayer" parent="." index="111"]
+autoplay = "heliceAction003"
