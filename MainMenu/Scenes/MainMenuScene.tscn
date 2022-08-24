@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://MainMenu/Scenes/MainMenuScene.gd" type="Script" id=1]
 [ext_resource path="res://GlobalTimer/ResetGamePopup.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Email/CreateCert.gd" type="Script" id=3]
 
 [node name="Root" type="Control"]
 anchor_right = 1.0
@@ -184,6 +185,7 @@ anchor_right = 1.0
 margin_left = -108.0
 margin_bottom = 20.0
 text = "Email"
+script = ExtResource( 3 )
 
 [connection signal="button_up" from="ReactionTestButton" to="." method="_on_ReactionTestButton_button_up"]
 [connection signal="button_up" from="BinocularsProjectButton" to="." method="_on_BinocularsProjectButton_button_up"]
