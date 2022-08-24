@@ -1,4 +1,7 @@
 
+Python/*
+!Python/readme.txt
+
 # Godot-specific ignores
 .import/
 export.cfg

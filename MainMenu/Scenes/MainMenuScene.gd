@@ -10,10 +10,12 @@ onready var binoScoreLabel = $StatsMenu/BinocularsScore
 onready var binoAccuracyLabel = $StatsMenu/BinocularsAccuracy
 onready var binoLevelLabel = $StatsMenu/BinocularsLevel
 onready var binoTimeLabel = $StatsMenu/BinocularsTime
+onready var emailButton = $Email
 
 func _ready() -> void:
 	$BinocularsProjectButton.grab_focus()
 	progressBar.value = getProgress()
+	emailButton.hide()
 	reactionScoreLabel.text = "Highscore: " + str(ReactionTestData.highscore) + "pts"
 	reactionTimeLabel.text = "Clear Time: " + str(ReactionTestData.fastestTime) + "s"
 	colorBlindVerdictLabel.text = "Highest Verdict: " + str(ColorBlindData.highestVerdict)
@@ -63,23 +65,29 @@ func _on_ProgressBar_gui_input(event:InputEvent) -> void:
 		if event.pressed:
 			statsMenu.visible = !statsMenu.visible
 
+func _process(delta: float) -> void:
+	if getProgress() >= 1:
+		emailButton.show()
+
 func sendEmail():
 	print("email")
-	var recipient := "monkegigaman@gmail.com"
-	var subject := "Certificate test"
-	var body := "Well done " + str(PlayerData.playerName) + ". You are a certified Monke"
+	var to := "monkegigaman@gmail.com"
+	var subject := "Certificate of completion"
+	var body := "Well done " + str(PlayerData.playerName) + ". You have cleared the games"
+	emailButton.saveImage()
 
-	var mailtoCommand := "mailto:" + recipient + "?subject=" + subject.http_escape() + "&body=" + body.http_escape()
-	print(mailtoCommand)
-	if OS.shell_open(mailtoCommand) == FAILED:
-		print("failed to send email")
+	var currentPath := ProjectSettings.globalize_path(Directory.new().get_current_dir())
+	OS.execute("cmd.exe",
+	["/c",
+	 currentPath + "/Python/WPy64-31050/python-3.10.5.amd64/python.exe",
+	 currentPath + "/Email/SendEmail.py",
+	  to, subject, body,
+	  currentPath + "/Email/NamedCert.png"], false)
 
 
 func _on_Email_button_up():
+	if getProgress() >= 1:
+		sendEmail()
+	else:
+		"not all games have been finished!"
 	# sendEmail()
-	var output: Array = []
-	
-	OS.execute("cmd.exe",
-	 ["/c", "Python/Portable Python 3.2.5.1/App/python.exe", "Email/SendEmail.py"], true, output)
-		 
-	print(output)
