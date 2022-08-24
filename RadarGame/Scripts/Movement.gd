@@ -18,8 +18,6 @@ func _ready():
 	match behaviour:
 		0:
 			xDirection = true
-			# plane.get_child(0).transform.basis = plane.get_child(0).transform.basis.rotated(
-			# 	Vector3(0,1,0), deg2rad(90))
 			plane.get_child(0).transform.basis = plane.get_child(0).transform.basis.rotated(
 				Vector3(0,0,1), deg2rad(180))
 			if speed < 0:
@@ -36,8 +34,6 @@ func _ready():
 				plane.get_child(0).transform.basis = plane.get_child(0).transform.basis.rotated(
 					Vector3(0,1,0), deg2rad(180))
 			rotationTarget = plane.get_child(0).transform.basis.get_rotation_quat()
-			#print(Quat(plane.get_child(0).transform.basis))
-			#print(rotationTarget)
 		2:
 			orbiting = true
 			if speed < 0:
@@ -51,24 +47,17 @@ func _physics_process(delta: float) -> void:
 		plane.global_transform = plane.global_transform.interpolate_with(tr, 0.1)
 		velocity += plane.transform.basis.x * speed
 	elif xDirection:
-		plane.get_child(0).transform.basis = Basis(plane.get_child(0).transform.basis.get_rotation_quat().slerp(
-			rotationTarget, 0.05))
-		if plane.transform.origin.distance_to(player.transform.origin) >= 60:
-			#print(plane.transform.origin.distance_to(player.transform.origin))
-			speed = -speed
-			rotationTarget = plane.get_child(0).transform.basis.rotated(Vector3(0, 1, 0), deg2rad(180)).get_rotation_quat()
+		_rotate_plane()
 		velocity += plane.transform.basis.x * speed
 	elif zDirection:
-		# if firstTurn:
-		plane.get_child(0).transform.basis = Basis(plane.get_child(0).transform.basis.get_rotation_quat().slerp(
-			rotationTarget, 0.05))
-		if plane.transform.origin.distance_to(player.transform.origin) >= 60:
-			#print(plane.transform.origin.distance_to(player.transform.origin))
-			speed = -speed
-			print(rotationTarget)
-			rotationTarget = plane.get_child(0).transform.basis.rotated(Vector3(0, 1, 0), deg2rad(180)).get_rotation_quat()
-			print(rotationTarget)
-			# if !firstTurn:
-			# 	firstTurn = true
+		_rotate_plane()
 		velocity += plane.transform.basis.z * speed
 	plane.move_and_collide(velocity * delta)
+
+func _rotate_plane() -> void:
+	plane.get_child(0).transform.basis = Basis(plane.get_child(0).transform.basis.get_rotation_quat().slerp(
+			rotationTarget, 0.05))
+	if plane.transform.origin.distance_to(player.transform.origin) >= 60:
+		speed = -speed
+		rotationTarget = plane.get_child(0).transform.basis.rotated(
+			Vector3(0, 1, 0), deg2rad(180)).get_rotation_quat()
