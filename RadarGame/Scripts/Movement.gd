@@ -18,10 +18,14 @@ func _ready():
 	match behaviour:
 		0:
 			xDirection = true
+			# plane.get_child(0).transform.basis = plane.get_child(0).transform.basis.rotated(
+			# 	Vector3(0,1,0), deg2rad(90))
+			plane.get_child(0).transform.basis = plane.get_child(0).transform.basis.rotated(
+				Vector3(0,0,1), deg2rad(180))
 			if speed < 0:
 				plane.get_child(0).transform.basis = plane.get_child(0).transform.basis.rotated(
 					Vector3(0,1,0), deg2rad(180))
-			rotationTarget = Quat(plane.get_child(0).transform.basis)
+			rotationTarget = plane.get_child(0).transform.basis.get_rotation_quat()
 		1:
 			zDirection = true
 			plane.get_child(0).transform.basis = plane.get_child(0).transform.basis.rotated(
@@ -47,11 +51,12 @@ func _physics_process(delta: float) -> void:
 		plane.global_transform = plane.global_transform.interpolate_with(tr, 0.1)
 		velocity += plane.transform.basis.x * speed
 	elif xDirection:
-		plane.get_child(0).transform.basis = Basis(Quat(plane.get_child(0).transform.basis).slerp(rotationTarget, 0.05))
+		plane.get_child(0).transform.basis = Basis(plane.get_child(0).transform.basis.get_rotation_quat().slerp(
+			rotationTarget, 0.05))
 		if plane.transform.origin.distance_to(player.transform.origin) >= 60:
 			#print(plane.transform.origin.distance_to(player.transform.origin))
 			speed = -speed
-			rotationTarget = Quat(plane.get_child(0).transform.basis.rotated(Vector3(0,1,0), deg2rad(180)))
+			rotationTarget = plane.get_child(0).transform.basis.rotated(Vector3(0, 1, 0), deg2rad(180)).get_rotation_quat()
 		velocity += plane.transform.basis.x * speed
 	elif zDirection:
 		# if firstTurn:
