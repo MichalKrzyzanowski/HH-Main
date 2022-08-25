@@ -1,4 +1,7 @@
 
+# ignore python
+Python/
+
 # Godot-specific ignores
 .import/
 export.cfg
