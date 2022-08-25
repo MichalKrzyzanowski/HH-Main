@@ -11,8 +11,8 @@ func _ready() -> void:
 	pause_mode = PAUSE_MODE_PROCESS
 
 func _process(delta: float) -> void:
-	timer += delta
-	#print("idle time: " + str(timer))
+    timer += delta
+    #print("idle time: " + str(timer))
 
 func thresholdReached():
 	return timer >= threshold

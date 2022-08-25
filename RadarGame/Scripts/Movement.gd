@@ -12,11 +12,13 @@ var firstTurn = false
 var behaviour : int
 var rotationTarget 
 onready var plane = get_child(0)
+var data : GameData.PlaneData
 onready var player = get_tree().root.get_node("Root").get_child(0)
 
 #####################################
 #		   Public Functions		   	#
 #####################################
+
 func _ready():
 	random.randomize()
 	speed = random.randf_range(-15,15)

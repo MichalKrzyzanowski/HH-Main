@@ -7,6 +7,7 @@
 [node name="Root" type="Spatial"]
 
 [node name="Player" type="Spatial" parent="."]
+transform = Transform( 0.999998, 0.00183508, -0.000232128, -0.0018363, 0.999984, -0.00536202, 0.000222281, 0.00536244, 0.999986, 0, 0, 0 )
 script = ExtResource( 1 )
 
 [node name="Camera" type="Camera" parent="Player"]
@@ -37,6 +38,11 @@ min_value = 1.0
 max_value = 70.0
 step = 0.5
 value = 70.0
+
+[node name="RayCast" type="RayCast" parent="Player"]
+transform = Transform( 0.999996, 0.00259743, 0.00128351, 0.00128808, -0.00175934, -0.999998, -0.00259516, 0.999995, -0.00176267, 0, 0, 0 )
+enabled = true
+cast_to = Vector3( 0, -400, 0 )
 
 [node name="Plane" type="Spatial" parent="."]
 script = ExtResource( 3 )
