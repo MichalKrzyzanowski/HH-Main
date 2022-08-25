@@ -23,4 +23,4 @@ func saveImage():
 	yield(get_tree(), "idle_frame")
 	viewportImage = viewport.get_texture().get_data()
 	viewportImage.flip_y()
-	viewportImage.save_png("res://Email/NamedCert.png")
+	viewportImage.save_png("user://NamedCert.png")

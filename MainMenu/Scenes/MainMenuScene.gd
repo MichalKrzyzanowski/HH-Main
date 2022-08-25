@@ -77,12 +77,23 @@ func sendEmail():
 	emailButton.saveImage()
 
 	var currentPath := ProjectSettings.globalize_path(Directory.new().get_current_dir())
-	OS.execute("cmd.exe",
-	["/c",
-	 currentPath + "/Python/WPy64-31050/python-3.10.5.amd64/python.exe",
-	 currentPath + "/Email/SendEmail.py",
-	  to, subject, body,
-	  currentPath + "/Email/NamedCert.png"], false)
+
+	if OS.has_feature("standalone"):
+		print("exported build")
+		currentPath = OS.get_executable_path().get_base_dir()
+	else:
+		print("editor")
+
+	yield(emailButton.saveImage(), "completed")
+	var command = 'cd ' + currentPath \
+	 + ' && Python\\WPy64-31050\\python-3.10.5.amd64\\python.exe Email/SendEmail.py "' \
+	 + to + '" "' + subject \
+	 + '" "' + body + '" "' + ProjectSettings.globalize_path("user://NamedCert.png") + '"'
+	
+	OS.execute('cmd', ['/C', command], false)
+	
+	print(command)
+	
 
 
 func _on_Email_button_up():
