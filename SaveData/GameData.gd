@@ -10,7 +10,7 @@ enum Levels {Easy,Normal,Hard}
 var enemyAmount : float = 2
 var current_rotation : float
 var planeDataArray : Array
-var enemyscene = load("res://RadarGame/Prefabs/Plane.tscn")
+
 var planeNodes : Array
 var pingNodes : Array
 var gameEnd : bool
@@ -37,6 +37,7 @@ class PlaneData:
 	var aircraftName : String
 	var planeTexture : Texture
 	var planePosition : Vector3
+	var planeScene : String
 
 #####################################
 #		Public Functions			#
@@ -47,6 +48,7 @@ func startSpawn():
 		random.randomize()
 		plane.planeType = random.randi_range(0,5)
 		setData(plane)
+		var enemyscene = load(plane.planeScene)
 		var enemy = enemyscene.instance()
 		var new_pos = Vector3(random.randf_range(-200,200),random.randf_range(80,200),random.randf_range(-200,200))
 		enemy.transform.origin = new_pos
@@ -62,32 +64,32 @@ func setData(_plane : PlaneData):
 			_plane.aircraftName = "F6F Hellcat"
 			_plane.faction = "allied"
 			_plane.planeTexture = load("res://RadarGame/Sprites/Allied/f6f hellcat.png")
-			#TODO add meshloder here
+			_plane.planeScene = "res://RadarGame/Prefabs/F6Fplane.tscn"
 		1:
 			_plane.aircraftName = "P-38 Lightning"
 			_plane.faction = "allied"
 			_plane.planeTexture = load("res://RadarGame/Sprites/Allied/p-38 lightning.png")
-			#TODO add meshloder here
+			_plane.planeScene = "res://RadarGame/Prefabs/P38plane.tscn"
 		2:
 			_plane.aircraftName = "B-17 Flying Fortress"
 			_plane.faction = "allied";
 			_plane.planeTexture = load("res://RadarGame/Sprites/Allied/b-17 flying fortress.png")
-			#TODO add meshloder here
+			_plane.planeScene = "res://RadarGame/Prefabs/B-17plane.tscn"
 		3:
 			_plane.aircraftName = "Messerschmit 'ME. 110'"
 			_plane.faction = "axis"
 			_plane.planeTexture = load("res://RadarGame/Sprites/Axis/messerschmitt.png")
-			#TODO add meshloder here
+			_plane.planeScene = "res://RadarGame/Prefabs/BF110plane.tscn"
 		4:
 			_plane.aircraftName = "Heinkel 'HE.111'"
 			_plane.faction = "axis";
 			_plane.planeTexture = load("res://RadarGame/Sprites/Axis/heinkel.png")
-			#TODO add meshloder here
+			_plane.planeScene = "res://RadarGame/Prefabs/HE111plane.tscn"
 		5:
 			_plane.aircraftName = "Focke-wulf 'F.W.200'"
 			_plane.faction = "axis"
 			_plane.planeTexture = load("res://RadarGame/Sprites/Axis/fock-wulf.png")
-			#TODO add meshloder here
+			_plane.planeScene = "res://RadarGame/Prefabs/Fockplane.tscn"
 
 func gameReset():
 	currentScore = 0

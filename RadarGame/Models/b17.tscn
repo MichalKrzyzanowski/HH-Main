@@ -6,16 +6,16 @@
 [node name="b17" instance=ExtResource( 1 )]
 
 [node name="heliceGI" parent="." index="15"]
-transform = Transform( 1, 0, 0, 0, -0.51499, 0.857197, 0, -0.857197, -0.51499, -8.433, -0.585, 3.021 )
+transform = Transform( 1, 0, 0, 0, 0.319573, 0.947562, 0, -0.947562, 0.319573, -8.433, -0.585, 3.021 )
 
 [node name="heliceGE" parent="." index="16"]
-transform = Transform( 1, 0, 0, 0, -0.51499, 0.857197, 0, -0.857197, -0.51499, -7.8517, -0.184, 6.505 )
+transform = Transform( 1, 0, 0, 0, 0.319573, 0.947562, 0, -0.947562, 0.319573, -7.8517, -0.184, 6.505 )
 
 [node name="heliceDI" parent="." index="17"]
-transform = Transform( 1, 0, 0, 0, -0.51499, 0.857197, 0, -0.857197, -0.51499, -8.433, -0.585, -3.021 )
+transform = Transform( 1, 0, 0, 0, 0.319573, 0.947562, 0, -0.947562, 0.319573, -8.433, -0.585, -3.021 )
 
 [node name="heliceDE" parent="." index="18"]
-transform = Transform( 1, 0, 0, 0, -0.51499, 0.857197, 0, -0.857197, -0.51499, -7.8517, -0.184001, -6.505 )
+transform = Transform( 1, 0, 0, 0, 0.319573, 0.947562, 0, -0.947562, 0.319573, -7.8517, -0.184001, -6.505 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="248"]
 anims/b-17-anim = ExtResource( 2 )

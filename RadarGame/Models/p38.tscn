@@ -23,10 +23,10 @@ tracks/1/keys = PoolRealArray( 0, 1, -4.19903, 0.12918, 2.41641, 0, 0, 0, 1, 1, 
 [node name="p38" instance=ExtResource( 1 )]
 
 [node name="heliceG" parent="." index="28"]
-transform = Transform( 1, 0, 0, 0, 0.868942, 0.494913, 0, -0.494913, 0.868942, -4.19903, 0.12918, 2.41641 )
+transform = Transform( 1, 0, 0, 0, 0.721489, 0.692425, 0, -0.692425, 0.721489, -4.19903, 0.12918, 2.41641 )
 
 [node name="heliceD" parent="." index="29"]
-transform = Transform( 1, 0, 0, 0, 0.868942, 0.494913, 0, -0.494913, 0.868942, -4.19903, 0.129181, -2.404 )
+transform = Transform( 1, 0, 0, 0, 0.721489, 0.692425, 0, -0.692425, 0.721489, -4.19903, 0.129181, -2.404 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="158"]
 anims/p-38-anim = SubResource( 1 )
