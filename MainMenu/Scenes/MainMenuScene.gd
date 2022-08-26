@@ -10,10 +10,12 @@ onready var binoScoreLabel = $StatsMenu/BinocularsScore
 onready var binoAccuracyLabel = $StatsMenu/BinocularsAccuracy
 onready var binoLevelLabel = $StatsMenu/BinocularsLevel
 onready var binoTimeLabel = $StatsMenu/BinocularsTime
+onready var emailButton = $Email
 
 func _ready() -> void:
 	$BinocularsProjectButton.grab_focus()
 	progressBar.value = getProgress()
+	emailButton.hide()
 	reactionScoreLabel.text = "Highscore: " + str(ReactionTestData.highscore) + "pts"
 	reactionTimeLabel.text = "Clear Time: " + str(ReactionTestData.fastestTime) + "s"
 	colorBlindVerdictLabel.text = "Highest Verdict: " + str(ColorBlindData.highestVerdict)
@@ -62,3 +64,41 @@ func _on_ProgressBar_gui_input(event:InputEvent) -> void:
 	if event is InputEventScreenTouch:
 		if event.pressed:
 			statsMenu.visible = !statsMenu.visible
+
+func _process(delta: float) -> void:
+	if getProgress() >= 1:
+		emailButton.show()
+
+func sendEmail():
+	print("email")
+	var to := "monkegigaman@gmail.com"
+	var subject := "Certificate of completion"
+	var body := "Well done " + str(PlayerData.playerName) + ". You have cleared the games"
+	emailButton.saveImage()
+
+	var currentPath := ProjectSettings.globalize_path(Directory.new().get_current_dir())
+
+	if OS.has_feature("standalone"):
+		print("exported build")
+		currentPath = OS.get_executable_path().get_base_dir()
+	else:
+		print("editor")
+
+	yield(emailButton.saveImage(), "completed")
+	var command = 'cd ' + currentPath \
+	 + ' && Python\\WPy64-31050\\python-3.10.5.amd64\\python.exe Email/SendEmail.py "' \
+	 + to + '" "' + subject \
+	 + '" "' + body + '" "' + ProjectSettings.globalize_path("user://NamedCert.png") + '"'
+	
+	OS.execute('cmd', ['/C', command], false)
+	
+	print(command)
+	
+
+
+func _on_Email_button_up():
+	if getProgress() >= 1:
+		sendEmail()
+	else:
+		"not all games have been finished!"
+	# sendEmail()
