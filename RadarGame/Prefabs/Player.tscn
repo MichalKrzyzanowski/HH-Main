@@ -40,7 +40,7 @@ step = 0.5
 value = 70.0
 
 [node name="RayCast" type="RayCast" parent="Player"]
-transform = Transform( 0.999996, 0.00259743, 0.00128351, 0.00128808, -0.00175934, -0.999998, -0.00259516, 0.999995, -0.00176267, 0, 0, 0 )
+transform = Transform( 4, 0, 0, 0, -1.74846e-07, -4, 0, 4, -1.74846e-07, 0, 0, 0 )
 enabled = true
 cast_to = Vector3( 0, -400, 0 )
 

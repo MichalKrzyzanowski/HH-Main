@@ -6,7 +6,7 @@
 [sub_resource type="CubeMesh" id=1]
 
 [sub_resource type="CapsuleShape" id=4]
-radius = 2.71778
+radius = 2.96713
 height = 0.002
 
 [node name="Pivot" type="Spatial" groups=["PlaneNodes"]]
@@ -16,7 +16,7 @@ script = ExtResource( 1 )
 [node name="KinematicBody" type="KinematicBody" parent="."]
 
 [node name="bf110" parent="KinematicBody" instance=ExtResource( 2 )]
-transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0 )
+transform = Transform( -1, 0, -8.74228e-08, -1.52855e-14, 1, 1.74846e-07, 8.74228e-08, 1.74846e-07, -1, 0, 0, 0 )
 
 [node name="Mesh" type="MeshInstance" parent="KinematicBody/bf110"]
 transform = Transform( 1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, -19.7102, -0.0915779, 0.982221 )
@@ -25,5 +25,5 @@ mesh = SubResource( 1 )
 skeleton = NodePath("")
 
 [node name="CollisionShape" type="CollisionShape" parent="KinematicBody"]
-transform = Transform( -1.31134e-07, 0, 3, 0, 2, 0, -3, 0, -1.31134e-07, 0, 0, 0 )
+transform = Transform( -1.31134e-07, 0, 3, 0, 2, 0, -3, 0, -1.31134e-07, 0, 0, -4.65661e-10 )
 shape = SubResource( 4 )

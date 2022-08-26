@@ -11,6 +11,8 @@ onready var slider = $Control/VSlider
 var eventId = -1
 onready var target = $RayCast
 var countDown : float = 5
+var following : bool = false
+var targetPostion
 #####################################
 #		Public Functions			#
 #####################################
@@ -56,10 +58,10 @@ func _process(_delta):
 		$Control.visible = true
 	else:
 		$Control.visible = false
-
+ 
 func _physics_process(delta):
 	if target.is_colliding():
-		$Camera.rotate_y(target.global_transform.y)
+		$Camera.global_transform = $Camera.global_transform.looking_at(target.get_collider().get_child(0).global_transform.origin,Vector3.UP)
 
 #####################################
 #		Signal Functions			#

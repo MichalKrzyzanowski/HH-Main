@@ -6,6 +6,7 @@
 [sub_resource type="CubeMesh" id=1]
 
 [sub_resource type="CapsuleShape" id=4]
+radius = 2.37379
 
 [node name="Pivot" type="Spatial" groups=["PlaneNodes"]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.234138, 0, -0.00416374 )

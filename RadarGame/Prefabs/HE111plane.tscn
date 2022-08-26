@@ -6,7 +6,7 @@
 [sub_resource type="CubeMesh" id=1]
 
 [sub_resource type="CapsuleShape" id=4]
-radius = 3.07322
+radius = 4.10617
 height = 0.002
 
 [node name="Pivot" type="Spatial" groups=["PlaneNodes"]]

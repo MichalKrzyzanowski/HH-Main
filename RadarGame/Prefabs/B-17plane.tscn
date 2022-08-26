@@ -3,11 +3,11 @@
 [ext_resource path="res://RadarGame/Models/b17.tscn" type="PackedScene" id=1]
 [ext_resource path="res://RadarGame/Scripts/Movement.gd" type="Script" id=2]
 
-[sub_resource type="CapsuleShape" id=4]
-radius = 2.71778
-height = 0.002
-
 [sub_resource type="CubeMesh" id=1]
+
+[sub_resource type="CapsuleShape" id=4]
+radius = 5.4239
+height = 0.002
 
 [node name="Pivot" type="Spatial" groups=["PlaneNodes"]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.234138, 0, -0.00416374 )
@@ -18,12 +18,12 @@ script = ExtResource( 2 )
 [node name="b17" parent="KinematicBody" instance=ExtResource( 1 )]
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0 )
 
-[node name="CollisionShape" type="CollisionShape" parent="KinematicBody"]
-transform = Transform( -1.31134e-07, 0, 3, 0, 2, 0, -3, 0, -1.31134e-07, 0, 0, 0 )
-shape = SubResource( 4 )
-
-[node name="Mesh" type="MeshInstance" parent="KinematicBody"]
-transform = Transform( -1, 0, 8.74232e-08, 0, 1, 0, -8.74232e-08, 0, -1, 19.7102, -0.0915779, -0.982223 )
+[node name="Mesh" type="MeshInstance" parent="KinematicBody/b17"]
+transform = Transform( 1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, -19.7102, -0.0915779, 0.982221 )
 visible = false
 mesh = SubResource( 1 )
 skeleton = NodePath("")
+
+[node name="CollisionShape" type="CollisionShape" parent="KinematicBody"]
+transform = Transform( -1.31134e-07, 0, 3, 0, 2, 0, -3, 0, -1.31134e-07, 0, 0, 0 )
+shape = SubResource( 4 )

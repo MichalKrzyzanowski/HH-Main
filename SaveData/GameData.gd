@@ -7,7 +7,7 @@ var random = RandomNumberGenerator.new()
 
 #<-----------GameData-------------->#
 enum Levels {Easy,Normal,Hard}
-var enemyAmount : float = 2
+var enemyAmount : float = 1
 var current_rotation : float
 var planeDataArray : Array
 var planeNodes : Array

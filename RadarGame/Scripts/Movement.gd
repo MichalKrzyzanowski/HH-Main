@@ -62,6 +62,8 @@ func _physics_process(delta: float) -> void:
 		velocity += plane.transform.basis.z * speed
 	plane.move_and_collide(velocity * delta)
 
+	data.planePosition = plane.global_transform.origin
+
 func _rotate_plane() -> void:
 	plane.get_child(0).transform.basis = Basis(plane.get_child(0).transform.basis.get_rotation_quat().slerp(
 			rotationTarget, 0.05))
