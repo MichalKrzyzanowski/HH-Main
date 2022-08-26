@@ -20,6 +20,7 @@ ColorBlindData="*res://SaveData/ColorBlindData.gd"
 PlayerData="*res://SaveData/PlayerData.gd"
 GlobalTimer="*res://GlobalTimer/GlobalTimer.gd"
 GameData="*res://SaveData/GameData.gd"
+SoundManager="*res://SoundManager/SoundManager.gd"
 
 [display]
 
