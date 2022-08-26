@@ -10,7 +10,6 @@ enum Levels {Easy,Normal,Hard}
 var enemyAmount : float = 2
 var current_rotation : float
 var planeDataArray : Array
-
 var planeNodes : Array
 var pingNodes : Array
 var gameEnd : bool

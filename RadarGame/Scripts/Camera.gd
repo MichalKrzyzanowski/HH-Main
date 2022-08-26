@@ -59,11 +59,7 @@ func _process(_delta):
 
 func _physics_process(delta):
 	if target.is_colliding():
-		#$Camera.rotate_y(target.global_transform.y)
-		#print(target.global_transform.origin,Vector3.UP)
-		pass
-		#look_at_from_position($Camera.global_rotation,target.global_rotation,Vector3.UP)
-		#print($Camera.global_rotation)
+		$Camera.rotate_y(target.global_transform.y)
 
 #####################################
 #		Signal Functions			#
