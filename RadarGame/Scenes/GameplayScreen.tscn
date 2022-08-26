@@ -6,11 +6,11 @@
 [ext_resource path="res://RadarGame/Sprites/HandBook/CheatSheet.png" type="Texture" id=4]
 [ext_resource path="res://GlobalTimer/ResetGamePopup.tscn" type="PackedScene" id=5]
 
-[sub_resource type="ProceduralSky" id=1]
+[sub_resource type="ProceduralSky" id=3]
 
 [sub_resource type="Environment" id=2]
 background_mode = 2
-background_sky = SubResource( 1 )
+background_sky = SubResource( 3 )
 
 [node name="Root" type="Node2D"]
 rotation = -0.000396126
@@ -44,21 +44,28 @@ position = Vector2( -92.794, -260.348 )
 scale = Vector2( 0.55, 0.55 )
 texture = ExtResource( 4 )
 
+[node name="QuitButton" type="Button" parent="Pivot"]
+margin_left = 16.0
+margin_top = 572.0
+margin_right = 56.0
+margin_bottom = 592.0
+text = "Quit"
+
+[node name="Control" type="Control" parent="Pivot"]
+margin_right = 40.0
+margin_bottom = 40.0
+rect_scale = Vector2( 2.8, 2.47968 )
+
+[node name="Score" type="Label" parent="Pivot/Control"]
+margin_right = 40.0
+margin_bottom = 14.0
+
 [node name="Radar" parent="." instance=ExtResource( 1 )]
 margin_left = 10.0
 margin_top = -1.0
 margin_right = 10.0
 margin_bottom = -1.0
 rect_rotation = -0.0754832
-
-[node name="Control" type="Control" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
-rect_scale = Vector2( 2.8, 2.47968 )
-
-[node name="Score" type="Label" parent="Control"]
-margin_right = 40.0
-margin_bottom = 14.0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 2 )
@@ -78,14 +85,7 @@ margin_bottom = -10.0
 [node name="Timer" type="Timer" parent="."]
 autostart = true
 
-[node name="QuitButton" type="Button" parent="."]
-margin_left = 15.7734
-margin_top = 572.006
-margin_right = 55.7734
-margin_bottom = 592.006
-text = "Quit"
-
 [connection signal="pressed" from="Pivot/RadarButton" to="." method="_on_RadarButton_pressed"]
 [connection signal="pressed" from="Pivot/RadarButton/RadarButton" to="." method="_on_RadarButton_pressed"]
 [connection signal="button_down" from="Pivot/HandbookButton" to="." method="_on_HandbookButton_button_down"]
-[connection signal="pressed" from="QuitButton" to="." method="_on_QuitButton_pressed"]
+[connection signal="pressed" from="Pivot/QuitButton" to="." method="_on_QuitButton_pressed"]

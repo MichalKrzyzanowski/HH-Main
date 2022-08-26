@@ -1,4 +1,7 @@
 extends Spatial
 
+#####################################
+#		Public Functions			#
+#####################################
 func _ready():
-	GameData._startSpawn()
+	GameData.startSpawn()
