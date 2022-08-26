@@ -1,6 +1,5 @@
-
-# ignore python
-Python/
+Python/*
+!Python/readme.txt
 
 # Godot-specific ignores
 .import/

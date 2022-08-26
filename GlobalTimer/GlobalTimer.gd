@@ -12,7 +12,8 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
     timer += delta
-    #print("idle time: " + str(timer))
+    # print("idle time: " + str(timer))
+
 
 func thresholdReached():
 	return timer >= threshold
