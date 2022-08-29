@@ -21,7 +21,7 @@ onready var player = get_tree().root.get_node("Root").get_child(0)
 
 func _ready():
 	random.randomize()
-	speed = random.randf_range(-15,15)
+	speed = random.randf_range(-50,50)
 	behaviour = random.randi_range(0, 2)
 	match behaviour:
 		0:
