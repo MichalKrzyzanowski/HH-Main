@@ -6,7 +6,7 @@
 [sub_resource type="CubeMesh" id=1]
 
 [sub_resource type="CapsuleShape" id=4]
-radius = 2.71778
+radius = 2.96713
 height = 0.002
 
 [node name="Pivot" type="Spatial" groups=["PlaneNodes"]]
@@ -25,5 +25,5 @@ mesh = SubResource( 1 )
 skeleton = NodePath("")
 
 [node name="CollisionShape" type="CollisionShape" parent="KinematicBody"]
-transform = Transform( -1.31134e-07, 0, 3, 0, 2, 0, -3, 0, -1.31134e-07, 0, 0, 0 )
+transform = Transform( -1.31134e-07, 0, 3, 0, 2, 0, -3, 0, -1.31134e-07, 0, 0, -4.65661e-10 )
 shape = SubResource( 4 )

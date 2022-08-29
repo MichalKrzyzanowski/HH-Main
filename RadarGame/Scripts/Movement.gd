@@ -10,7 +10,7 @@ var zDirection = false
 var orbiting = false
 var firstTurn = false
 var behaviour : int
-var rotationTarget 
+var rotationTarget
 onready var plane = get_child(0)
 var data : GameData.PlaneData
 onready var player = get_tree().root.get_node("Root").get_child(0)
@@ -21,7 +21,7 @@ onready var player = get_tree().root.get_node("Root").get_child(0)
 
 func _ready():
 	random.randomize()
-	speed = random.randf_range(-15,15)
+	speed = random.randf_range(-50,50)
 	behaviour = random.randi_range(0, 2)
 	match behaviour:
 		0:
@@ -61,6 +61,8 @@ func _physics_process(delta: float) -> void:
 		_rotate_plane()
 		velocity += plane.transform.basis.z * speed
 	plane.move_and_collide(velocity * delta)
+
+	data.planePosition = plane.global_transform.origin
 
 func _rotate_plane() -> void:
 	plane.get_child(0).transform.basis = Basis(plane.get_child(0).transform.basis.get_rotation_quat().slerp(
