@@ -13,6 +13,7 @@ panorama = ExtResource( 6 )
 [sub_resource type="Environment" id=2]
 background_mode = 2
 background_sky = SubResource( 3 )
+background_sky_custom_fov = 92.6
 
 [node name="Root" type="Node2D"]
 rotation = -0.000396126
