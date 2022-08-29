@@ -40,9 +40,11 @@ step = 0.5
 value = 70.0
 
 [node name="RayCast" type="RayCast" parent="Player"]
-transform = Transform( 4, 0, 0, 0, -1.74846e-07, -4, 0, 4, -1.74846e-07, 0, 0, 0 )
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
 enabled = true
 cast_to = Vector3( 0, -400, 0 )
+
+[node name="Cooldown" type="Timer" parent="Player"]
 
 [node name="Plane" type="Spatial" parent="."]
 script = ExtResource( 3 )

@@ -10,9 +10,9 @@ var movementWeight := 0.2
 onready var slider = $Control/VSlider
 var eventId = -1
 onready var target = $RayCast
-var countDown : float = 5
-var following : bool = false
-var targetPostion
+var planeTargeted : Node
+var isFound = false
+
 #####################################
 #		Public Functions			#
 #####################################
@@ -25,6 +25,7 @@ func _input(event: InputEvent) -> void:
 		if event is InputEventMouseButton:
 			if event.pressed && event.button_index == BUTTON_LEFT:
 				eventId = 1
+				_resetCamera()
 			else:
 				eventId = -1
 		elif event is InputEventMouseMotion:
@@ -58,10 +59,21 @@ func _process(_delta):
 		$Control.visible = true
 	else:
 		$Control.visible = false
- 
+
+	if $Cooldown.time_left <= 0.2:
+		target.enabled = true
+		$Cooldown.stop()
+
+
+
 func _physics_process(delta):
-	if target.is_colliding():
-		$Camera.global_transform = $Camera.global_transform.looking_at(target.get_collider().get_child(0).global_transform.origin,Vector3.UP)
+	if target.is_colliding() && !isFound:
+		planeTargeted = target.get_collider().get_child(0)
+		isFound = true
+
+	if isFound:
+		self.global_transform = $Camera.global_transform.looking_at(planeTargeted.global_transform.origin,Vector3.UP)
+
 
 #####################################
 #		Signal Functions			#
@@ -79,3 +91,10 @@ func _on_VSlider_gui_input(event: InputEvent):
 	if event is InputEventScreenTouch:
 		if event.pressed:
 			eventId = -1
+
+func _resetCamera() -> void:
+	if isFound:
+		target.enabled = false
+		isFound = false
+		$Cooldown.wait_time = 2
+		$Cooldown.start()
