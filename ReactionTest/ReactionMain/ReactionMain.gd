@@ -64,18 +64,22 @@ func _on_QuitButton_button_up() -> void:
 	quitConfirm.show()
 	$HUD/Theme/WindowDialog/ConfirmButton.grab_focus()
 	get_tree().paused = true
+	SoundManager.playSound("res://ReactionTest/Sounds/ConfirmSound.wav")
 
 func _on_ConfirmButton_button_up() -> void:
 	get_tree().root.get_node("Root").queue_free()
 	get_tree().paused = false
+	SoundManager.playSound("res://ReactionTest/Sounds/ConfirmSound.wav")
 	get_tree().change_scene("res://ReactionTest/Scenes/MenuScene.tscn")
 
 
 func _on_CancelButton_button_up() -> void:
 	quitConfirm.hide()
 	get_tree().paused = false
+	SoundManager.playSound("res://ReactionTest/Sounds/BackSound.wav")
 
 
 func _on_ReplayButton_button_up():
 	endPop.hide()
 	get_tree().reload_current_scene()
+	SoundManager.playSound("res://ReactionTest/Sounds/ConfirmSound.wav")
