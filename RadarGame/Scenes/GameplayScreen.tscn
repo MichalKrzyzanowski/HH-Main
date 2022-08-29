@@ -1,16 +1,19 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://RadarGame/Scenes/RadarScene.tscn" type="PackedScene" id=1]
 [ext_resource path="res://RadarGame/Prefabs/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://RadarGame/Scripts/GameplayScreen.gd" type="Script" id=3]
 [ext_resource path="res://RadarGame/Sprites/HandBook/CheatSheet.png" type="Texture" id=4]
 [ext_resource path="res://GlobalTimer/ResetGamePopup.tscn" type="PackedScene" id=5]
+[ext_resource path="res://RadarGame/Environment/background.jpeg" type="Texture" id=6]
 
-[sub_resource type="ProceduralSky" id=3]
+[sub_resource type="PanoramaSky" id=3]
+panorama = ExtResource( 6 )
 
 [sub_resource type="Environment" id=2]
 background_mode = 2
 background_sky = SubResource( 3 )
+background_sky_custom_fov = 92.6
 
 [node name="Root" type="Node2D"]
 rotation = -0.000396126
