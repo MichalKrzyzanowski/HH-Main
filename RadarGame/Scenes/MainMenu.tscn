@@ -110,6 +110,54 @@ margin_top = -50.0
 margin_right = -88.0
 margin_bottom = -10.0
 
+[node name="Tutorial" type="Panel" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 233.0
+margin_top = 133.0
+margin_right = -233.0
+margin_bottom = -154.0
+
+[node name="Label" type="Label" parent="Tutorial"]
+margin_right = 558.0
+margin_bottom = 46.0
+text = "how to play"
+align = 1
+valign = 1
+uppercase = true
+
+[node name="Label2" type="Label" parent="Tutorial"]
+margin_top = 157.0
+margin_right = 558.0
+margin_bottom = 241.0
+rect_pivot_offset = Vector2( 291, 91 )
+text = "The game is to find all aircraft and identifiy them if they are friendly or not.
+Your score will be marked in Time, Accuracy and Difficulty"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Label3" type="Label" parent="Tutorial"]
+margin_left = 15.0
+margin_top = 46.0
+margin_right = 532.0
+margin_bottom = 139.0
+rect_pivot_offset = Vector2( 291, 91 )
+text = "Move around by touching the screen to move the camera.
+Use the slider to move the binocular closer to the target.
+The Binocular will lock on the aircraft and a prompt will ask if its a friendly or enemy plane."
+align = 1
+valign = 1
+autowrap = true
+
+[node name="BackButton" type="Button" parent="Tutorial"]
+margin_left = 241.0
+margin_top = 263.0
+margin_right = 325.0
+margin_bottom = 290.0
+text = "Back"
+
 [connection signal="pressed" from="CenterContainer/VBoxContainer/PlayButton" to="." method="_on_PlayButton_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/TutorialButton" to="." method="_on_TutorialButton_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/QuitButton" to="." method="_on_QuitButton_pressed"]
@@ -117,3 +165,4 @@ margin_bottom = -10.0
 [connection signal="pressed" from="DifficultyContainer/VBoxContainer/NormalButton" to="." method="_on_NormalButton_pressed"]
 [connection signal="pressed" from="DifficultyContainer/VBoxContainer/HardButton" to="." method="_on_HardButton_pressed"]
 [connection signal="pressed" from="DifficultyContainer/VBoxContainer/BackButton" to="." method="_on_BackButton_pressed"]
+[connection signal="pressed" from="Tutorial/BackButton" to="." method="_on_BackButtonTutorial_pressed"]

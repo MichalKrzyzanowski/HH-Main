@@ -19,7 +19,7 @@ func _on_PlayButton_pressed():
 	$DifficultyLabel.visible = true
 
 func _on_TutorialButton_pressed():
-	pass # TODO create a help screen
+	$Tutorial.visible = true
 
 func _on_QuitButton_pressed():
 	get_tree().root.get_node("Root").queue_free()
@@ -44,3 +44,7 @@ func _on_BackButton_pressed():
 	$CenterContainer.visible = true
 	$DifficultyContainer.visible = false
 	$DifficultyLabel.visible = false
+
+
+func _on_BackButtonTutorial_pressed():
+	$Tutorial.visible = false
