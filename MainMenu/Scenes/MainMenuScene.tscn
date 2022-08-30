@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://MainMenu/Scenes/MainMenuScene.gd" type="Script" id=1]
 [ext_resource path="res://GlobalTimer/ResetGamePopup.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Email/CreateCert.gd" type="Script" id=3]
 
 [node name="Root" type="Control"]
 anchor_right = 1.0
@@ -70,8 +71,41 @@ margin_bottom = 492.0
 margin_left = 10.0
 margin_top = 13.0
 margin_right = 86.0
-margin_bottom = 22.0
+margin_bottom = 27.0
+rect_pivot_offset = Vector2( 38, 79 )
 text = "Binoculars"
+
+[node name="BinocularsScore" type="Label" parent="StatsMenu"]
+margin_left = 10.0
+margin_top = 33.0
+margin_right = 86.0
+margin_bottom = 47.0
+rect_pivot_offset = Vector2( 38, 79 )
+text = "Score:"
+
+[node name="BinocularsAccuracy" type="Label" parent="StatsMenu"]
+margin_left = 10.0
+margin_top = 47.0
+margin_right = 86.0
+margin_bottom = 61.0
+rect_pivot_offset = Vector2( -269, -89 )
+text = "Accuracy:"
+
+[node name="BinocularsLevel" type="Label" parent="StatsMenu"]
+margin_left = 10.0
+margin_top = 61.0
+margin_right = 86.0
+margin_bottom = 75.0
+rect_pivot_offset = Vector2( 38, 79 )
+text = "Level: "
+
+[node name="BinocularsTime" type="Label" parent="StatsMenu"]
+margin_left = 10.0
+margin_top = 75.0
+margin_right = 86.0
+margin_bottom = 89.0
+rect_pivot_offset = Vector2( 59, 14 )
+text = "Time: "
 
 [node name="ReactionTestStats" type="Label" parent="StatsMenu"]
 margin_left = 10.0
@@ -129,7 +163,7 @@ anchor_right = 1.0
 margin_left = -341.0
 margin_right = -10.0
 margin_bottom = 50.0
-text = "Game Completion"
+text = "Certificate Progress"
 align = 1
 valign = 1
 
@@ -145,8 +179,17 @@ margin_top = -50.0
 margin_right = -88.0
 margin_bottom = -10.0
 
+[node name="Email" type="Button" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -108.0
+margin_bottom = 20.0
+text = "Email"
+script = ExtResource( 3 )
+
 [connection signal="button_up" from="ReactionTestButton" to="." method="_on_ReactionTestButton_button_up"]
 [connection signal="button_up" from="BinocularsProjectButton" to="." method="_on_BinocularsProjectButton_button_up"]
 [connection signal="button_up" from="QuitButton" to="." method="_on_QuitButton_button_up"]
 [connection signal="button_up" from="ColorBlindTestButton" to="." method="_on_ColorBlindTestButton_button_up"]
 [connection signal="gui_input" from="Control/ProgressBar" to="." method="_on_ProgressBar_gui_input"]
+[connection signal="button_up" from="Email" to="." method="_on_Email_button_up"]

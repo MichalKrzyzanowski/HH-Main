@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://RadarGame/Models/bf110.glb" type="PackedScene" id=1]
+[ext_resource path="res://RadarGame/Models/Animation/bf-110-anim.tres" type="Animation" id=2]
+[ext_resource path="res://RadarGame/Scripts/Animation.gd" type="Script" id=3]
+
+[node name="bf110" instance=ExtResource( 1 )]
+script = ExtResource( 3 )
+
+[node name="heliceG" parent="." index="24"]
+transform = Transform( 1, 0, 0, 0, -0.0301321, 0.999546, 0, -0.999546, -0.0301321, -4.95761, 0.0858093, 2.35171 )
+
+[node name="heliceD" parent="." index="25"]
+transform = Transform( 1, 0, 0, 0, -0.0301321, 0.999546, 0, -0.999546, -0.0301321, -4.95761, 0.085809, -2.35171 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="172"]
+anims/bf-110-anim = ExtResource( 2 )

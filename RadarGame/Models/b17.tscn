@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://RadarGame/Models/b17.glb" type="PackedScene" id=1]
+[ext_resource path="res://RadarGame/Models/Animation/b-17-anim.tres" type="Animation" id=2]
+[ext_resource path="res://RadarGame/Scripts/Animation.gd" type="Script" id=3]
+
+[node name="b17" instance=ExtResource( 1 )]
+script = ExtResource( 3 )
+
+[node name="heliceGI" parent="." index="15"]
+transform = Transform( 1, 0, 0, 0, 0.948957, 0.315407, 0, -0.315407, 0.948957, -8.433, -0.585, 3.021 )
+
+[node name="heliceGE" parent="." index="16"]
+transform = Transform( 1, 0, 0, 0, 0.948957, 0.315407, 0, -0.315407, 0.948957, -7.8517, -0.184, 6.505 )
+
+[node name="heliceDI" parent="." index="17"]
+transform = Transform( 1, 0, 0, 0, 0.948957, 0.315407, 0, -0.315407, 0.948957, -8.433, -0.585, -3.021 )
+
+[node name="heliceDE" parent="." index="18"]
+transform = Transform( 1, 0, 0, 0, 0.948957, 0.315407, 0, -0.315407, 0.948957, -7.8517, -0.184001, -6.505 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="248"]
+anims/b-17-anim = ExtResource( 2 )
