@@ -28,7 +28,4 @@ func _on_TextureButton_pressed():
 #####################################
 #		Getter Functions			#
 #####################################
-func getOnPressed() -> bool:
-	return isFound
-
 

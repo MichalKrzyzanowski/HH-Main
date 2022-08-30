@@ -13,7 +13,6 @@ onready var handbookButton = $Pivot/HandbookButton
 #####################################
 func _ready():
 	bino.visible = true
-	radar.visible = false
 	cheatSheet.visible = false
 	handbookButton.visible = true
 	GameData.pingNodes = get_tree().get_nodes_in_group("PingNodes")
@@ -39,13 +38,6 @@ func _physics_process(delta):
 #####################################
 func _on_HandbookButton_button_down():
 	cheatSheet.visible = !cheatSheet.visible
-
-func _on_RadarButton_pressed():
-	bino.visible = !bino.visible
-	radar.visible = !bino.visible
-	if cheatSheet.visible:
-		cheatSheet.visible = false
-	handbookButton.visible = !handbookButton.visible
 
 func _on_QuitButton_pressed():
 	GameData.gameReset()

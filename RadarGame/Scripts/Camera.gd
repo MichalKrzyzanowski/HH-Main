@@ -13,6 +13,9 @@ onready var target = $RayCast
 var planeTargeted : Node
 var isFound = false
 
+var faction : String
+var slot : int
+
 #####################################
 #		Public Functions			#
 #####################################
@@ -72,12 +75,15 @@ func _process(_delta):
 		self.global_transform = $Camera.global_transform.looking_at(planeTargeted.global_transform.origin,Vector3.UP)
 
 
-
 func _physics_process(delta):
 	if target.is_colliding() && !isFound && isZooming:
+		target.enabled = false
 		planeTargeted = target.get_collider().get_child(0)
+		faction = target.get_collider().get_parent().data.faction
+		slot = target.get_collider().get_parent().data.planeID
+		$Control/Quiz.visible = true
 		isFound = true
-
+		print(slot)
 
 
 #####################################
@@ -105,3 +111,37 @@ func _resetCamera() -> void:
 		isFound = false
 		$Cooldown.wait_time = 2
 		$Cooldown.start()
+		$Control/Quiz.visible = false
+
+
+func _on_FriendlyButton_pressed():
+	if faction == "allied":
+		GameData.currentScore += 1
+	delete()
+
+func _on_HostileButton_pressed():
+	if faction == "axis":
+		GameData.currentScore += 1
+	delete()
+
+func delete():
+	for _i in range(0,GameData.planeDataArray.size()):
+		if GameData.planeDataArray[_i].planeID == slot:
+			var temp1 = GameData.pingNodes[_i]
+			var temp2 = GameData.planeNodes[_i]
+			GameData.pingNodes.remove(_i)
+			GameData.planeNodes.remove(_i)
+			GameData.planeDataArray.remove(_i)
+			temp1.queue_free()
+			temp2.queue_free()
+			break
+	target.enabled = false
+	$Control/Quiz.visible = false
+	isFound = false
+	planeTargeted = null
+	$Cooldown.wait_time = 2
+	$Cooldown.start()
+
+
+
+
