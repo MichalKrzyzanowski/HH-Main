@@ -68,6 +68,8 @@ func _on_ProgressBar_gui_input(event:InputEvent) -> void:
 func _process(delta: float) -> void:
 	if getProgress() >= 1:
 		emailButton.show()
+		progressBar.removeCorners()
+		$AnimationPlayer.play("Flash")
 
 func sendEmail():
 	print("email")
