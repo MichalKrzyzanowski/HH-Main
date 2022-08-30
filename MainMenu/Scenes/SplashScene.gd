@@ -36,6 +36,8 @@ func _on_QuitButton_button_up() -> void:
 func _on_StartButton_button_down():
 	get_node("StartButton").set_disabled(true)
 	get_node("StartButton").visible = false
+	get_node("QuitButton").set_disabled(true)
+	get_node("QuitButton").visible = false
 	get_node("NameEntry").visible = true
 
 func _on_IncreaseButton_button_down(extra_arg_0:String):
