@@ -14,8 +14,8 @@ var rotationTarget
 onready var plane = get_child(0)
 var data : GameData.PlaneData
 onready var player = get_tree().root.get_node("Root").get_child(0)
-onready var visibilityNotifier = $VisibilityNotifier
-var tagged := false
+onready var visibilityNotifier = plane.get_child(0).get_node("VisibilityNotifier")
+onready var tagged := false
 
 #####################################
 #		   Public Functions		   	#

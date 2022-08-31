@@ -17,6 +17,10 @@ script = ExtResource( 2 )
 [node name="f6f" parent="KinematicBody" instance=ExtResource( 1 )]
 transform = Transform( -1, 0, 0, 0, 1, 0, 0, 0, 1, -0.071, 0.02, 0.014 )
 
+[node name="VisibilityNotifier" type="VisibilityNotifier" parent="KinematicBody/f6f"]
+transform = Transform( -1, 0, 0, 0, 1, 0, 0, 0, 1, -0.071, -0.02, -0.014 )
+aabb = AABB( -5.43812, -1.66755, -6.31277, 10.8762, 3.3351, 12.6255 )
+
 [node name="Mesh" type="MeshInstance" parent="KinematicBody/f6f"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, 1 )
 visible = false
@@ -25,6 +29,3 @@ mesh = SubResource( 1 )
 [node name="CollisionShape" type="CollisionShape" parent="KinematicBody"]
 transform = Transform( -1.31134e-07, 0, 3, 0, 2, 0, -3, 0, -1.31134e-07, 0, 0, 0 )
 shape = SubResource( 4 )
-
-[node name="VisibilityNotifier" type="VisibilityNotifier" parent="."]
-aabb = AABB( -5.43812, -1.66755, -6.31277, 10.8762, 3.3351, 12.6255 )
