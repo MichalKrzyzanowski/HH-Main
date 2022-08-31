@@ -9,10 +9,9 @@ onready var quitConfirm = get_node("HUD/Theme/WindowDialog")
 onready var endPop = get_node("HUD/Theme/EndPopUp")
 onready var shapeScene = preload("res://ReactionTest/Shape/Shape.tscn")
 
-var screenSize := OS.get_window_safe_area()
-var rng := RandomNumberGenerator.new()
-
 var score := 0.0
+
+var rng := RandomNumberGenerator.new()
 
 var isGameOver := true
 export var shapesAmount := 0
@@ -61,6 +60,9 @@ func setupShapeGrid():
 	isGameOver = false
 
 func _on_QuitButton_button_up() -> void:
+	if isGameOver == true:
+		return
+		
 	quitConfirm.show()
 	$HUD/Theme/WindowDialog/ConfirmButton.grab_focus()
 	get_tree().paused = true

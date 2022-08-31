@@ -1,12 +1,13 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
-[ext_resource path="res://ReactionTest/CircleSpinner/CircleSpinner.tscn" type="PackedScene" id=1]
-[ext_resource path="res://ReactionTest/ReactionMain/ReactionMain.gd" type="Script" id=2]
-[ext_resource path="res://ReactionTest/Theme/theme.tres" type="Theme" id=3]
-[ext_resource path="res://ReactionTest/Menu/cogButton.png" type="Texture" id=4]
-[ext_resource path="res://ReactionTest/Menu/popupBackground.png" type="Texture" id=5]
-[ext_resource path="res://ReactionTest/Menu/CheckInput.gd" type="Script" id=6]
-[ext_resource path="res://GlobalTimer/ResetGamePopup.tscn" type="PackedScene" id=7]
+[ext_resource path="res://ReactionTest/ReactionMain/ReactionMain.gd" type="Script" id=1]
+[ext_resource path="res://GlobalTimer/ResetGamePopup.tscn" type="PackedScene" id=2]
+[ext_resource path="res://ReactionTest/CircleSpinner/CircleSpinner.tscn" type="PackedScene" id=3]
+[ext_resource path="res://ReactionTest/Theme/theme.tres" type="Theme" id=4]
+[ext_resource path="res://ReactionTest/Menu/CheckInput.gd" type="Script" id=5]
+[ext_resource path="res://ReactionTest/Menu/cogButton.png" type="Texture" id=6]
+[ext_resource path="res://ReactionTest/Menu/popupBackground.png" type="Texture" id=7]
+[ext_resource path="res://ReactionTest/Menu/blackboard.jpg" type="Texture" id=8]
 
 [sub_resource type="ProceduralSky" id=2]
 
@@ -37,8 +38,14 @@ scancode = 16777217
 shortcut = SubResource( 3 )
 
 [node name="Root" type="Node2D"]
-script = ExtResource( 2 )
+script = ExtResource( 1 )
 shapesAmount = 108
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 517.972, 301.951 )
+rotation = 1.5708
+scale = Vector2( 1.06173, 1.33843 )
+texture = ExtResource( 8 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 1 )
@@ -49,7 +56,7 @@ layer = 2
 [node name="Theme" type="Control" parent="HUD"]
 margin_right = 1024.0
 margin_bottom = 128.0
-theme = ExtResource( 3 )
+theme = ExtResource( 4 )
 
 [node name="ScoreLabel" type="Label" parent="HUD/Theme"]
 margin_left = 20.0
@@ -91,7 +98,7 @@ margin_top = -75.0
 margin_right = 128.0
 margin_bottom = 75.0
 mouse_filter = 1
-script = ExtResource( 6 )
+script = ExtResource( 5 )
 
 [node name="ColorRect" type="TextureRect" parent="HUD/Theme/WindowDialog"]
 margin_left = 268.0
@@ -101,7 +108,7 @@ margin_bottom = 920.0
 rect_min_size = Vector2( 256, 150 )
 rect_rotation = 90.0
 rect_scale = Vector2( 0.3, 0.3 )
-texture = ExtResource( 5 )
+texture = ExtResource( 7 )
 
 [node name="Label" type="Label" parent="HUD/Theme/WindowDialog"]
 margin_right = 256.0
@@ -151,7 +158,7 @@ margin_top = -75.0
 margin_right = 128.0
 margin_bottom = 75.0
 mouse_filter = 1
-script = ExtResource( 6 )
+script = ExtResource( 5 )
 
 [node name="ColorRect" type="TextureRect" parent="HUD/Theme/EndPopUp"]
 margin_left = 268.0
@@ -161,7 +168,7 @@ margin_bottom = 966.0
 rect_min_size = Vector2( 256, 150 )
 rect_rotation = 90.0
 rect_scale = Vector2( 0.3, 0.3 )
-texture = ExtResource( 5 )
+texture = ExtResource( 7 )
 stretch_mode = 1
 
 [node name="Label" type="Label" parent="HUD/Theme/EndPopUp"]
@@ -216,9 +223,9 @@ margin_right = 716.0
 margin_bottom = 820.0
 rect_scale = Vector2( 0.08, 0.08 )
 shortcut = SubResource( 4 )
-texture_normal = ExtResource( 4 )
+texture_normal = ExtResource( 6 )
 
-[node name="Popup" parent="HUD" instance=ExtResource( 7 )]
+[node name="Popup" parent="HUD" instance=ExtResource( 2 )]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -239,7 +246,7 @@ custom_constants/vseparation = 5
 custom_constants/hseparation = 5
 columns = 12
 
-[node name="CircleSpinner" parent="CanvasLayer" instance=ExtResource( 1 )]
+[node name="CircleSpinner" parent="CanvasLayer" instance=ExtResource( 3 )]
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
