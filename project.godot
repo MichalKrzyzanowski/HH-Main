@@ -35,6 +35,10 @@ click={
  ]
 }
 
+[logging]
+
+file_logging/default_environment=""
+
 [physics]
 
 common/enable_pause_aware_picking=true
