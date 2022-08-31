@@ -70,7 +70,6 @@ text = "North"
 align = 1
 valign = 1
 uppercase = true
-percent_visible = -0.2
 
 [node name="South" type="Label" parent="."]
 visible = false

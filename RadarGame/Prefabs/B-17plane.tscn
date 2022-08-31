@@ -18,6 +18,10 @@ script = ExtResource( 2 )
 [node name="b17" parent="KinematicBody" instance=ExtResource( 1 )]
 transform = Transform( -1, 0, 0, 0, 1, 0, 0, 0, 1, -0.071, 0.02, 0.014 )
 
+[node name="VisibilityNotifier" type="VisibilityNotifier" parent="KinematicBody/b17"]
+transform = Transform( -1, 0, 0, 0, 1, 0, 0, 0, 1, -0.071, -0.02, -0.014 )
+aabb = AABB( -11.6862, -1.34573, -7.70791, 23.3725, 2.69145, 15.4158 )
+
 [node name="Mesh" type="MeshInstance" parent="KinematicBody/b17"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, 1 )
 visible = false
