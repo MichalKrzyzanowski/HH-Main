@@ -7,7 +7,7 @@ var random = RandomNumberGenerator.new()
 
 #<-----------GameData-------------->#
 enum Levels {Easy,Normal,Hard}
-var enemyAmount : float = 1
+var enemyAmount : float = 0
 var current_rotation : float
 var planeDataArray : Array
 var planeNodes : Array
@@ -107,4 +107,10 @@ func fullReset():
 	prevoiusTime = 0
 	prevoiusAccuracy = 0
 	prevoiusLevel = 0
+	for _plane in get_tree().get_nodes_in_group("PlaneNodes"):
+		_plane.queue_free()
+
+	for _ping in get_tree().get_nodes_in_group("pingNodes"):
+		_ping.queue_free()
+	planeDataArray.clear()
 	gameEnd = false
