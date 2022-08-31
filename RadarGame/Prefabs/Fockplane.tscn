@@ -27,3 +27,6 @@ skeleton = NodePath("")
 [node name="CollisionShape" type="CollisionShape" parent="KinematicBody"]
 transform = Transform( -1.31134e-07, 0, 3, -0.122592, 1.99833, -5.35866e-09, -2.99749, -0.0817281, -1.31024e-07, 0, 0, 0 )
 shape = SubResource( 4 )
+
+[node name="VisibilityNotifier" type="VisibilityNotifier" parent="."]
+aabb = AABB( -10.7407, -2.48521, -12.9202, 21.4814, 4.97042, 25.8404 )

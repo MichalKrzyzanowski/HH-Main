@@ -25,3 +25,6 @@ mesh = SubResource( 1 )
 [node name="CollisionShape" type="CollisionShape" parent="KinematicBody"]
 transform = Transform( -1.31134e-07, 0, 3, 0, 2, 0, -3, 0, -1.31134e-07, 0, 0, 0 )
 shape = SubResource( 4 )
+
+[node name="VisibilityNotifier" type="VisibilityNotifier" parent="."]
+aabb = AABB( -5.43812, -1.66755, -6.31277, 10.8762, 3.3351, 12.6255 )

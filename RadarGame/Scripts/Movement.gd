@@ -14,12 +14,16 @@ var rotationTarget
 onready var plane = get_child(0)
 var data : GameData.PlaneData
 onready var player = get_tree().root.get_node("Root").get_child(0)
+onready var visibilityNotifier = $VisibilityNotifier
+var tagged := false
 
 #####################################
 #		   Public Functions		   	#
 #####################################
 
 func _ready():
+	visibilityNotifier.connect("camera_exited", self, "on_visibilityNotifier_camera_exited")
+
 	random.randomize()
 	speed = random.randf_range(-50,50)
 	behaviour = random.randi_range(0, 2)
@@ -71,3 +75,8 @@ func _rotate_plane() -> void:
 		speed = -speed
 		rotationTarget = plane.get_child(0).transform.basis.rotated(
 			Vector3(0, 1, 0), deg2rad(180)).get_rotation_quat()
+
+func on_visibilityNotifier_camera_exited(camera: Camera):
+	if tagged:
+		print("camera exited: " + data.aircraftName)
+		queue_free()

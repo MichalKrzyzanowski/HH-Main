@@ -79,6 +79,9 @@ func _physics_process(delta):
 	if target.is_colliding() && !isFound && isZooming:
 		target.enabled = false
 		planeTargeted = target.get_collider().get_child(0)
+		if target.get_collider().get_parent().tagged:
+			return
+
 		faction = target.get_collider().get_parent().data.faction
 		slot = target.get_collider().get_parent().data.planeID
 		$Control/Quiz.visible = true
@@ -133,7 +136,7 @@ func delete():
 			GameData.planeNodes.remove(_i)
 			GameData.planeDataArray.remove(_i)
 			temp1.queue_free()
-			temp2.queue_free()
+			temp2.tagged = true
 			break
 	target.enabled = false
 	$Control/Quiz.visible = false
