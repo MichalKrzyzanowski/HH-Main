@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/MonkeCert.png-fc5fa4d25cdb828463166c465669a899.stex"
+path="res://.import/Cert.png-147a77f0e97e141336f7ca5cf80ce115.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Email/MonkeCert.png"
-dest_files=[ "res://.import/MonkeCert.png-fc5fa4d25cdb828463166c465669a899.stex" ]
+source_file="res://Email/Cert.png"
+dest_files=[ "res://.import/Cert.png-147a77f0e97e141336f7ca5cf80ce115.stex" ]
 
 [params]
 

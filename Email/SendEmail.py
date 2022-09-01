@@ -14,11 +14,11 @@ def sendEmail(to, subject, body, img=None):
     smtp = smtplib.SMTP("smtp.gmail.com", 587)
     smtp.ehlo()
     smtp.starttls()
-    smtp.login("michael.krzyzanowski.11@gmail.com", "aazetchyjekoviqf")
+    smtp.login("hhinfobot@gmail.com", "mycxjcjywqmgngph")
     
     msg = message(subject, body, img)
     
-    smtp.sendmail(from_addr = "michael.krzyzanowski.11@gmail.com", to_addrs = to, msg = msg.as_string())
+    smtp.sendmail(from_addr = "hhinfobot@gmail.com", to_addrs = to, msg = msg.as_string())
     smtp.quit()
 
 def message(subject = "", text = "", img = None):
