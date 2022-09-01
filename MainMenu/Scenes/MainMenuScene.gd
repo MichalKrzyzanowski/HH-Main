@@ -74,8 +74,9 @@ func _process(delta: float) -> void:
 func sendEmail():
 	print("email")
 	var to := "monkegigaman@gmail.com"
+	# var to := "HHRECEPTION@ocfair.com"
 	var subject := "Certificate of completion"
-	var body := "Well done " + str(PlayerData.playerName) + ". You have cleared the games"
+	var body := "Well done " + str(PlayerData.playerName) + ". You have cleared all the games"
 	emailButton.saveImage()
 
 	var currentPath := ProjectSettings.globalize_path(Directory.new().get_current_dir())

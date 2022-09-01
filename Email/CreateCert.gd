@@ -11,7 +11,7 @@ func _ready() -> void:
 	viewport.render_target_update_mode = Viewport.UPDATE_ALWAYS
 	self.add_child(viewport)
 	var textureItem = TextureRect.new()
-	textureItem.texture = load("res://Email/MonkeCert.png")
+	textureItem.texture = load("res://Email/Cert.png")
 	viewport.add_child(textureItem)
 	cvitem = Control.new()
 	viewport.add_child(cvitem)
