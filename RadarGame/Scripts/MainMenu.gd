@@ -20,6 +20,7 @@ func _on_PlayButton_pressed():
 
 func _on_TutorialButton_pressed():
 	$Tutorial.visible = true
+	$CenterContainer.visible = false
 
 func _on_QuitButton_pressed():
 	get_tree().root.get_node("Root").queue_free()
@@ -48,3 +49,4 @@ func _on_BackButton_pressed():
 
 func _on_BackButtonTutorial_pressed():
 	$Tutorial.visible = false
+	$CenterContainer.visible = true

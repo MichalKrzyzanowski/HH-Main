@@ -29,9 +29,9 @@ position = Vector2( 512, 160 )
 texture = ExtResource( 8 )
 
 [node name="StartButton" type="Button" parent="."]
-margin_left = 454.0
+margin_left = 455.0
 margin_top = 264.0
-margin_right = 570.0
+margin_right = 571.0
 margin_bottom = 336.0
 rect_pivot_offset = Vector2( 58, 36 )
 text = "Start"

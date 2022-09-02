@@ -1,8 +1,12 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://RadarGame/Scripts/Camera.gd" type="Script" id=1]
 [ext_resource path="res://RadarGame/Sprites/Background/binoculars.png" type="Texture" id=2]
 [ext_resource path="res://RadarGame/Scripts/Spawner.gd" type="Script" id=3]
+[ext_resource path="res://RadarGame/Font/TravelingTypewriter.ttf" type="DynamicFontData" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 4 )
 
 [node name="Root" type="Spatial"]
 
@@ -35,12 +39,13 @@ margin_bottom = 598.0
 [node name="VSlider" type="VSlider" parent="Player/Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -749.219
-margin_top = -335.453
-margin_right = -1747.22
-margin_bottom = -522.453
+margin_left = 978.0
+margin_top = -389.0
+margin_right = -20.0009
+margin_bottom = -576.0
 rect_rotation = 180.0
-rect_pivot_offset = Vector2( 874.109, 400.726 )
+rect_scale = Vector2( 1.3, 1.3 )
+rect_pivot_offset = Vector2( 12.2292, 404.611 )
 min_value = 1.0
 max_value = 70.0
 step = 0.5
@@ -56,37 +61,42 @@ margin_bottom = 548.0
 [node name="Title" type="Label" parent="Player/Control/Quiz"]
 margin_right = 302.0
 margin_bottom = 28.0
+custom_fonts/font = SubResource( 1 )
 text = "Aircraft Detected!"
 align = 1
 valign = 1
 uppercase = true
 
 [node name="Label2" type="Label" parent="Player/Control/Quiz"]
-margin_top = 28.0
-margin_right = 302.0
+margin_top = 26.0
+margin_right = 301.0
 margin_bottom = 112.0
+custom_fonts/font = SubResource( 1 )
 text = "Is this a Friendly or Hostile aircraft?"
 align = 1
 valign = 1
+autowrap = true
 uppercase = true
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Player/Control/Quiz"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 86.0
+margin_left = 68.0
 margin_top = 105.0
-margin_right = -91.0
-margin_bottom = -0.999969
+margin_right = -70.0
+margin_bottom = -0.999939
 
 [node name="FriendlyButton" type="Button" parent="Player/Control/Quiz/HBoxContainer"]
-margin_right = 63.0
+margin_right = 86.0
 margin_bottom = 40.0
+custom_fonts/font = SubResource( 1 )
 text = "Friendly"
 
 [node name="HostileButton" type="Button" parent="Player/Control/Quiz/HBoxContainer"]
-margin_left = 67.0
-margin_right = 125.0
+margin_left = 90.0
+margin_right = 164.0
 margin_bottom = 40.0
+custom_fonts/font = SubResource( 1 )
 text = "Hostile"
 
 [node name="Cooldown" type="Timer" parent="Player"]
