@@ -1,99 +1,103 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://RadarGame/Font/TravelingTypewriter.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://MainMenu/UI/mainMenuTheme.tres" type="Theme" id=1]
 [ext_resource path="res://RadarGame/Scripts/MainMenu.gd" type="Script" id=2]
 [ext_resource path="res://GlobalTimer/ResetGamePopup.tscn" type="PackedScene" id=3]
-
-[sub_resource type="DynamicFont" id=1]
-font_data = ExtResource( 1 )
-
-[sub_resource type="Theme" id=2]
-default_font = SubResource( 1 )
+[ext_resource path="res://RadarGame/Sprites/UI/Background.png" type="Texture" id=4]
+[ext_resource path="res://MainMenu/Sprites/Logo.png" type="Texture" id=5]
 
 [node name="Root" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-theme = SubResource( 2 )
+theme = ExtResource( 1 )
 script = ExtResource( 2 )
 
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 507, 306 )
+scale = Vector2( 1.93129, 1.80465 )
+texture = ExtResource( 4 )
+
 [node name="CenterContainer" type="CenterContainer" parent="."]
-margin_left = 4.0
-margin_right = 1028.0
-margin_bottom = 600.0
+margin_left = 542.0
+margin_top = -54.0
+margin_right = 965.0
+margin_bottom = 570.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
-margin_left = 470.0
-margin_top = 255.0
-margin_right = 554.0
-margin_bottom = 344.0
+margin_left = 175.0
+margin_top = 276.0
+margin_right = 247.0
+margin_bottom = 347.0
 
 [node name="PlayButton" type="Button" parent="CenterContainer/VBoxContainer"]
-margin_right = 84.0
-margin_bottom = 27.0
+margin_right = 72.0
+margin_bottom = 21.0
+theme = ExtResource( 1 )
 text = "Play"
 
 [node name="TutorialButton" type="Button" parent="CenterContainer/VBoxContainer"]
-margin_top = 31.0
-margin_right = 84.0
-margin_bottom = 58.0
+margin_top = 25.0
+margin_right = 72.0
+margin_bottom = 46.0
 text = "Tutorial"
 
 [node name="QuitButton" type="Button" parent="CenterContainer/VBoxContainer"]
-margin_top = 62.0
-margin_right = 84.0
-margin_bottom = 89.0
+margin_top = 50.0
+margin_right = 72.0
+margin_bottom = 71.0
 text = "Quit"
 
 [node name="DifficultyContainer" type="CenterContainer" parent="."]
 visible = false
-margin_left = 470.0
-margin_top = 255.0
-margin_right = 554.0
-margin_bottom = 344.0
+margin_left = 667.0
+margin_top = 210.0
+margin_right = 834.0
+margin_bottom = 334.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="DifficultyContainer"]
-margin_left = 8.0
-margin_right = 76.0
-margin_bottom = 120.0
+margin_left = 55.0
+margin_top = 14.0
+margin_right = 111.0
+margin_bottom = 110.0
 
 [node name="EasyButton" type="Button" parent="DifficultyContainer/VBoxContainer"]
-margin_right = 68.0
-margin_bottom = 27.0
+margin_right = 56.0
+margin_bottom = 21.0
 text = "Easy"
 
 [node name="NormalButton" type="Button" parent="DifficultyContainer/VBoxContainer"]
-margin_top = 31.0
-margin_right = 68.0
-margin_bottom = 58.0
+margin_top = 25.0
+margin_right = 56.0
+margin_bottom = 46.0
 text = "Normal"
 
 [node name="HardButton" type="Button" parent="DifficultyContainer/VBoxContainer"]
-margin_top = 62.0
-margin_right = 68.0
-margin_bottom = 89.0
+margin_top = 50.0
+margin_right = 56.0
+margin_bottom = 71.0
 text = "Hard"
 
 [node name="BackButton" type="Button" parent="DifficultyContainer/VBoxContainer"]
-margin_top = 93.0
-margin_right = 68.0
-margin_bottom = 120.0
+margin_top = 75.0
+margin_right = 56.0
+margin_bottom = 96.0
 text = "Back"
 
 [node name="TitleLabel" type="Label" parent="."]
-margin_left = 448.0
-margin_top = 186.0
-margin_right = 576.0
-margin_bottom = 207.0
+margin_left = 652.0
+margin_top = 154.0
+margin_right = 862.0
+margin_bottom = 202.0
 text = "Radar Operator"
 align = 1
 valign = 1
 
 [node name="DifficultyLabel" type="Label" parent="."]
 visible = false
-margin_left = 448.0
-margin_top = 216.0
-margin_right = 576.0
-margin_bottom = 237.0
+margin_left = 692.0
+margin_top = 188.0
+margin_right = 820.0
+margin_bottom = 209.0
 text = "Difficulty"
 align = 1
 valign = 1
@@ -110,27 +114,29 @@ margin_top = -50.0
 margin_right = -88.0
 margin_bottom = -10.0
 
-[node name="Tutorial" type="Panel" parent="."]
+[node name="Logo" type="Sprite" parent="."]
+position = Vector2( 223, 156 )
+texture = ExtResource( 5 )
+
+[node name="Tutorial" type="Sprite" parent="."]
 visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 233.0
-margin_top = 133.0
-margin_right = -233.0
-margin_bottom = -154.0
+position = Vector2( 753, 355 )
 
 [node name="Label" type="Label" parent="Tutorial"]
-margin_right = 558.0
-margin_bottom = 46.0
+margin_left = -130.0
+margin_top = -167.0
+margin_right = 129.0
+margin_bottom = -138.0
 text = "how to play"
 align = 1
 valign = 1
 uppercase = true
 
 [node name="Label2" type="Label" parent="Tutorial"]
-margin_top = 157.0
-margin_right = 558.0
-margin_bottom = 241.0
+margin_left = -262.0
+margin_top = -22.0
+margin_right = 270.0
+margin_bottom = 62.0
 rect_pivot_offset = Vector2( 291, 91 )
 text = "The game is to find all aircraft and identifiy them if they are friendly or not.
 Your score will be marked in Time, Accuracy and Difficulty"
@@ -139,10 +145,10 @@ valign = 1
 autowrap = true
 
 [node name="Label3" type="Label" parent="Tutorial"]
-margin_left = 15.0
-margin_top = 46.0
-margin_right = 532.0
-margin_bottom = 139.0
+margin_left = -259.0
+margin_top = -141.0
+margin_right = 251.0
+margin_bottom = -24.0
 rect_pivot_offset = Vector2( 291, 91 )
 text = "Move around by touching the screen to move the camera.
 Use the slider to move the binocular closer to the target.
@@ -152,10 +158,10 @@ valign = 1
 autowrap = true
 
 [node name="BackButton" type="Button" parent="Tutorial"]
-margin_left = 241.0
-margin_top = 263.0
-margin_right = 325.0
-margin_bottom = 290.0
+margin_left = -45.6409
+margin_top = 83.7239
+margin_right = 38.3591
+margin_bottom = 110.724
 text = "Back"
 
 [connection signal="pressed" from="CenterContainer/VBoxContainer/PlayButton" to="." method="_on_PlayButton_pressed"]
