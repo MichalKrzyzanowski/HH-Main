@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://ReactionTest/Shape/rectangle.png" type="Texture" id=1]
-[ext_resource path="res://GlobalTimer/IdleTracker.gd" type="Script" id=2]
+[ext_resource path="res://Email/GlobalTimer/IdleTracker.gd" type="Script" id=2]
 
 [node name="Popup" type="Popup"]
 pause_mode = 2

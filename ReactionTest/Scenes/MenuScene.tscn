@@ -4,7 +4,7 @@
 [ext_resource path="res://ReactionTest/Theme/theme.tres" type="Theme" id=2]
 [ext_resource path="res://ReactionTest/Menu/blackboard.jpg" type="Texture" id=3]
 [ext_resource path="res://ReactionTest/Menu/ReactionTestTitle.png" type="Texture" id=4]
-[ext_resource path="res://GlobalTimer/ResetGamePopup.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Email/GlobalTimer/ResetGamePopup.tscn" type="PackedScene" id=5]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Fade In"

@@ -2,7 +2,7 @@
 
 [ext_resource path="res://MainMenu/UI/mainMenuTheme.tres" type="Theme" id=1]
 [ext_resource path="res://RadarGame/Scripts/MainMenu.gd" type="Script" id=2]
-[ext_resource path="res://GlobalTimer/ResetGamePopup.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Email/GlobalTimer/ResetGamePopup.tscn" type="PackedScene" id=3]
 [ext_resource path="res://RadarGame/Sprites/UI/Background.png" type="Texture" id=4]
 [ext_resource path="res://MainMenu/Sprites/Logo.png" type="Texture" id=5]
 

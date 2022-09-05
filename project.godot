@@ -17,7 +17,7 @@ run/main_scene="res://MainMenu/Scenes/SplashScene.tscn"
 
 ReactionTestData="*res://SaveData/ReactionTestData.gd"
 ColorBlindData="*res://SaveData/ColorBlindData.gd"
-GlobalTimer="*res://GlobalTimer/GlobalTimer.gd"
+GlobalTimer="*res://Email/GlobalTimer/GlobalTimer.gd"
 PlayerData="*res://SaveData/PlayerData.gd"
 GameData="*res://SaveData/GameData.gd"
 SoundManager="*res://SoundManager/SoundManager.gd"

@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://MainMenu/Scenes/MainMenuScene.gd" type="Script" id=1]
-[ext_resource path="res://GlobalTimer/ResetGamePopup.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Email/GlobalTimer/ResetGamePopup.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Email/CreateCert.gd" type="Script" id=3]
 [ext_resource path="res://MainMenu/UI/mainMenuTheme.tres" type="Theme" id=4]
 [ext_resource path="res://MainMenu/UI/button.jpg" type="Texture" id=5]

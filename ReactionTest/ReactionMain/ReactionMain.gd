@@ -31,7 +31,7 @@ func shapeTouched():
 func endGame():
 	isGameOver = true
 	ReactionTestData.highscore = max(score, ReactionTestData.highscore)
-	ReactionTestData.fastestTime = min(timeSpent, ReactionTestData.fastestTime)
+	ReactionTestData.fastestTime = max(stepify(timeSpent, 0.01), ReactionTestData.fastestTime)
 	ReactionTestData.isCleared = true
 	endPop.show()
 	endPop.get_node("Label2").text = "Final Score: " + String(score)
