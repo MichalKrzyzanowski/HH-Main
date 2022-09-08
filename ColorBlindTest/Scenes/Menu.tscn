@@ -55,15 +55,54 @@ margin_bottom = 40.0
 theme = ExtResource( 2 )
 
 [node name="TutorialSprite" type="Sprite" parent="TutorialScreen"]
+scale = Vector2( 0.555, 0.555 )
 texture = ExtResource( 14 )
 centered = false
 
 [node name="ReturnButton" type="Button" parent="TutorialScreen"]
-margin_left = 456.0
-margin_top = 552.0
-margin_right = 590.0
-margin_bottom = 602.0
+margin_left = 472.0
+margin_top = 544.0
+margin_right = 606.0
+margin_bottom = 594.0
 text = "Main Menu"
+
+[node name="TutorialMessages" type="Control" parent="TutorialScreen"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="TimeTutorial" type="Label" parent="TutorialScreen/TutorialMessages"]
+margin_left = 424.0
+margin_top = 168.0
+margin_right = 655.0
+margin_bottom = 213.0
+text = "Time remaining
+in the test"
+align = 1
+
+[node name="CalculatorTutorial" type="Label" parent="TutorialScreen/TutorialMessages"]
+margin_left = 424.0
+margin_top = 240.0
+margin_right = 655.0
+margin_bottom = 357.0
+text = "Tap on the keys to 
+type out the number 
+on the left, then 
+tap the Enter button
+ to finalise your 
+answer"
+align = 1
+
+[node name="PassTutorial" type="Label" parent="TutorialScreen/TutorialMessages"]
+margin_left = 312.0
+margin_top = 408.0
+margin_right = 762.0
+margin_bottom = 525.0
+text = "If you can't see a 
+number diaplayed 
+on the left, 
+tap the pass button
+ to move on"
+align = 1
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
