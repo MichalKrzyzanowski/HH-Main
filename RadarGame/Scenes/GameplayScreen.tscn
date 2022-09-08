@@ -69,6 +69,8 @@ theme = ExtResource( 7 )
 [node name="Score" type="Label" parent="Pivot/Control"]
 margin_right = 40.0
 margin_bottom = 21.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 4 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 2 )
