@@ -5,7 +5,7 @@
 [ext_resource path="res://RadarGame/Scripts/Spawner.gd" type="Script" id=3]
 [ext_resource path="res://RadarGame/Font/TravelingTypewriter.ttf" type="DynamicFontData" id=4]
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="DynamicFont" id=4]
 font_data = ExtResource( 4 )
 
 [node name="Root" type="Spatial"]
@@ -61,7 +61,7 @@ margin_bottom = 548.0
 [node name="Title" type="Label" parent="Player/Control/Quiz"]
 margin_right = 302.0
 margin_bottom = 28.0
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 4 )
 text = "Aircraft Detected!"
 align = 1
 valign = 1
@@ -71,7 +71,7 @@ uppercase = true
 margin_top = 26.0
 margin_right = 301.0
 margin_bottom = 112.0
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 4 )
 text = "Is this a Friendly or Hostile aircraft?"
 align = 1
 valign = 1
@@ -89,52 +89,20 @@ margin_bottom = -0.999939
 [node name="FriendlyButton" type="Button" parent="Player/Control/Quiz/HBoxContainer"]
 margin_right = 86.0
 margin_bottom = 40.0
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 4 )
 text = "Friendly"
 
 [node name="HostileButton" type="Button" parent="Player/Control/Quiz/HBoxContainer"]
 margin_left = 90.0
 margin_right = 164.0
 margin_bottom = 40.0
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 4 )
 text = "Hostile"
 
 [node name="Cooldown" type="Timer" parent="Player"]
 
 [node name="Plane" type="Spatial" parent="."]
 script = ExtResource( 3 )
-
-[node name="Label3D" type="Label3D" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00122556, 0.0228651, -335.483 )
-pixel_size = 1.0
-text = "North"
-__meta__ = {
-"_editor_description_": ""
-}
-
-[node name="Label3D2" type="Label3D" parent="."]
-transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.00245111, 0.0457302, 383.068 )
-pixel_size = 1.0
-text = "South"
-__meta__ = {
-"_editor_description_": ""
-}
-
-[node name="Label3D3" type="Label3D" parent="."]
-transform = Transform( 1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 366.384, 0.0685952, -4.53412 )
-pixel_size = 1.0
-text = "East"
-__meta__ = {
-"_editor_description_": ""
-}
-
-[node name="Label3D4" type="Label3D" parent="."]
-transform = Transform( -0.0010963, -0.00108124, 0.999999, 0.00285739, 0.999995, 0.00108435, -0.999995, 0.00285857, -0.00109322, -309.64, 0.0685953, -4.53412 )
-pixel_size = 1.0
-text = "West"
-__meta__ = {
-"_editor_description_": ""
-}
 
 [connection signal="drag_ended" from="Player/Control/VSlider" to="Player" method="_on_VSlider_drag_ended"]
 [connection signal="drag_started" from="Player/Control/VSlider" to="Player" method="_on_VSlider_drag_started"]
