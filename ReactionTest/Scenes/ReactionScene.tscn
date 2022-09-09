@@ -237,16 +237,6 @@ rect_scale = Vector2( 0.08, 0.08 )
 shortcut = SubResource( 4 )
 texture_normal = ExtResource( 6 )
 
-[node name="Popup" parent="HUD" instance=ExtResource( 2 )]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -128.0
-margin_top = -50.0
-margin_right = -88.0
-margin_bottom = -10.0
-
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="GridContainer" type="GridContainer" parent="CanvasLayer"]
@@ -267,6 +257,17 @@ margin_left = -520.0
 margin_top = -520.0
 margin_right = 0.0
 margin_bottom = 0.0
+
+[node name="Popup" parent="CanvasLayer" instance=ExtResource( 2 )]
+visible = true
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -200.0
+margin_top = -100.0
+margin_right = 200.0
+margin_bottom = 100.0
 
 [connection signal="button_up" from="HUD/Theme/WindowDialog/ConfirmButton" to="." method="_on_ConfirmButton_button_up"]
 [connection signal="button_up" from="HUD/Theme/WindowDialog/CancelButton" to="." method="_on_CancelButton_button_up"]

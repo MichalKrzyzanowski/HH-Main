@@ -291,10 +291,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -128.0
-margin_top = -50.0
-margin_right = -88.0
-margin_bottom = -10.0
+margin_left = -200.0
+margin_top = -100.0
+margin_right = 200.0
+margin_bottom = 100.0
 
 [connection signal="button_down" from="Gameplay/InputUI/InputButtons/Button1" to="." method="_on_Button_button_down" binds= [ "Button1" ]]
 [connection signal="button_down" from="Gameplay/InputUI/InputButtons/Button2" to="." method="_on_Button_button_down" binds= [ "Button2" ]]

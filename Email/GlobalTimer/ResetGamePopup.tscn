@@ -6,37 +6,32 @@
 
 [node name="Popup" type="Popup"]
 pause_mode = 2
-visible = true
-margin_right = 40.0
-margin_bottom = 40.0
+margin_right = 400.0
+margin_bottom = 200.0
 script = ExtResource( 2 )
 
 [node name="ColorRect" type="TextureRect" parent="."]
 modulate = Color( 0.219608, 0.219608, 0.219608, 1 )
-margin_left = 268.0
-margin_top = -34.0
-margin_right = 736.0
-margin_bottom = 920.0
-rect_min_size = Vector2( 256, 150 )
-rect_rotation = 90.0
-rect_scale = Vector2( 0.3, 0.3 )
+anchor_right = 1.0
+anchor_bottom = 1.0
 texture = ExtResource( 1 )
 expand = true
 
 [node name="Label" type="Label" parent="."]
-margin_right = 256.0
+anchor_right = 1.0
 margin_bottom = 27.0
 custom_fonts/font = ExtResource( 3 )
 text = "INACTIVE"
 align = 1
 
 [node name="Body" type="Label" parent="."]
-margin_left = 11.3333
-margin_top = 27.3333
-margin_right = 245.333
-margin_bottom = 69.3333
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_top = -28.5
+margin_bottom = 28.5
 custom_fonts/font = ExtResource( 3 )
-text = "Return to splash
+text = "You will return to the
 menu in 0s"
 align = 1
 valign = 1

@@ -87,10 +87,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -128.0
-margin_top = -50.0
-margin_right = -88.0
-margin_bottom = -10.0
+margin_left = -200.0
+margin_top = -100.0
+margin_right = 200.0
+margin_bottom = 100.0
 
 [connection signal="pressed" from="Panel/PlayButton" to="." method="_on_PlayButton_pressed"]
 [connection signal="pressed" from="Panel/MainMenuButton" to="." method="_on_MainMenuButton_pressed"]
