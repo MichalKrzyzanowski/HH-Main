@@ -1,10 +1,19 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://ReactionTest/Menu/Help.gd" type="Script" id=1]
 [ext_resource path="res://ReactionTest/Theme/theme.tres" type="Theme" id=2]
 [ext_resource path="res://ReactionTest/Menu/blackboard.jpg" type="Texture" id=3]
 [ext_resource path="res://ReactionTest/Menu/HelpTitle.png" type="Texture" id=4]
 [ext_resource path="res://Email/GlobalTimer/ResetGamePopup.tscn" type="PackedScene" id=5]
+[ext_resource path="res://RadarGame/Font/TravelingTypewriter.ttf" type="DynamicFontData" id=6]
+
+[sub_resource type="DynamicFont" id=1]
+size = 21
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 30
+font_data = ExtResource( 6 )
 
 [node name="Root" type="Control"]
 anchor_right = 1.0
@@ -36,6 +45,7 @@ texture = ExtResource( 4 )
 [node name="DescriptionLabel" type="Label" parent="Control"]
 anchor_right = 1.0
 margin_bottom = 177.0
+custom_fonts/font = SubResource( 1 )
 text = "Tap the red circles while moving one finger on the grey circle in the bottom-right corner of the screen.
 You can increase the score you get from tapping red circles by moving your finger faster on the grey circle."
 align = 1
@@ -47,9 +57,11 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = -45.0
+custom_fonts/font = SubResource( 2 )
 text = "RETURN"
 
 [node name="Popup" parent="." instance=ExtResource( 5 )]
+visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5

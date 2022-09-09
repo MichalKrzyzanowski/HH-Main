@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://ReactionTest/ReactionMain/ReactionMain.gd" type="Script" id=1]
 [ext_resource path="res://Email/GlobalTimer/ResetGamePopup.tscn" type="PackedScene" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://ReactionTest/Menu/cogButton.png" type="Texture" id=6]
 [ext_resource path="res://ReactionTest/Menu/popupBackground.png" type="Texture" id=7]
 [ext_resource path="res://ReactionTest/Menu/blackboard.jpg" type="Texture" id=8]
+[ext_resource path="res://MainMenu/Font/TypeWriterFont.tres" type="DynamicFont" id=9]
 
 [sub_resource type="ProceduralSky" id=2]
 
@@ -63,6 +64,7 @@ margin_left = 20.0
 margin_top = 20.0
 margin_right = 200.0
 margin_bottom = 36.0
+custom_fonts/font = ExtResource( 9 )
 text = "Score: "
 valign = 1
 
@@ -71,6 +73,7 @@ margin_left = 500.0
 margin_top = 20.0
 margin_right = 695.0
 margin_bottom = 47.0
+custom_fonts/font = ExtResource( 9 )
 text = "Time Spent: "
 valign = 1
 
@@ -83,6 +86,7 @@ margin_left = -245.0
 margin_top = 122.0
 margin_right = -92.0
 margin_bottom = 149.0
+custom_fonts/font = ExtResource( 9 )
 text = "Multiplier: x0"
 valign = 1
 
@@ -113,6 +117,7 @@ texture = ExtResource( 7 )
 [node name="Label" type="Label" parent="HUD/Theme/WindowDialog"]
 margin_right = 256.0
 margin_bottom = 27.0
+custom_fonts/font = ExtResource( 9 )
 text = "PAUSED"
 align = 1
 
@@ -120,6 +125,7 @@ align = 1
 margin_top = 40.0
 margin_right = 256.0
 margin_bottom = 90.0
+custom_fonts/font = ExtResource( 9 )
 text = "Return to menu?"
 align = 1
 valign = 1
@@ -133,6 +139,7 @@ margin_left = -68.0
 margin_top = 25.0
 margin_right = -10.0
 margin_bottom = 70.0
+custom_fonts/font = ExtResource( 9 )
 text = "YES"
 
 [node name="CancelButton" type="Button" parent="HUD/Theme/WindowDialog"]
@@ -144,6 +151,7 @@ margin_left = 18.0
 margin_top = 25.0
 margin_right = 68.0
 margin_bottom = 70.0
+custom_fonts/font = ExtResource( 9 )
 text = "NO"
 
 [node name="EndPopUp" type="Popup" parent="HUD/Theme"]
@@ -176,6 +184,7 @@ margin_left = -10.0
 margin_top = 10.0
 margin_right = 246.0
 margin_bottom = 37.0
+custom_fonts/font = ExtResource( 9 )
 text = "GAME OVER"
 align = 1
 
@@ -184,6 +193,7 @@ margin_left = -10.0
 margin_top = 50.0
 margin_right = 246.0
 margin_bottom = 100.0
+custom_fonts/font = ExtResource( 9 )
 text = "FINAL SCORE:"
 align = 1
 valign = 1
@@ -197,6 +207,7 @@ margin_left = -118.0
 margin_top = 45.0
 margin_right = -18.0
 margin_bottom = 90.0
+custom_fonts/font = ExtResource( 9 )
 text = "REPLAY"
 
 [node name="QuitButton" type="Button" parent="HUD/Theme/EndPopUp"]
@@ -208,6 +219,7 @@ margin_left = -8.0
 margin_top = 45.0
 margin_right = 92.0
 margin_bottom = 90.0
+custom_fonts/font = ExtResource( 9 )
 text = "QUIT"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="HUD/Theme"]
