@@ -50,7 +50,7 @@ anchor_bottom = 0.5
 margin_top = -22.5
 margin_bottom = 22.5
 custom_fonts/font = ExtResource( 6 )
-text = "HOW TO PLAY"
+text = "TUTORIAL"
 
 [node name="BackButton" type="Button" parent="Control"]
 anchor_top = 1.0
