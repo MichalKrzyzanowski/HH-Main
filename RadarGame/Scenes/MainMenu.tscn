@@ -138,8 +138,8 @@ margin_top = -22.0
 margin_right = 270.0
 margin_bottom = 62.0
 rect_pivot_offset = Vector2( 291, 91 )
-text = "The game is to find all aircraft and identifiy them if they are friendly or not.
-Your score will be marked in Time, Accuracy and Difficulty"
+text = "The goal is to categorize all aircraft that appear on the radar as either friend or hostile.
+Score is based on speed, accuracy and difficulty."
 align = 1
 valign = 1
 autowrap = true
@@ -150,9 +150,7 @@ margin_top = -141.0
 margin_right = 251.0
 margin_bottom = -24.0
 rect_pivot_offset = Vector2( 291, 91 )
-text = "Move around by touching the screen to move the camera.
-Use the slider to move the binocular closer to the target.
-The Binocular will lock on the aircraft and a prompt will ask if its a friendly or enemy plane."
+text = "To navigate the game, touch the screen to move the camera. Use the slider to zoom in and out with the binoculars to identify the target. When the binoculars lock onto an aircraft, a prompt will ask if it is a friend or enemy."
 align = 1
 valign = 1
 autowrap = true
