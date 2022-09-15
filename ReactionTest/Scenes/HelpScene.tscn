@@ -6,10 +6,7 @@
 [ext_resource path="res://ReactionTest/Menu/HelpTitle.png" type="Texture" id=4]
 [ext_resource path="res://Email/GlobalTimer/ResetGamePopup.tscn" type="PackedScene" id=5]
 [ext_resource path="res://RadarGame/Font/TravelingTypewriter.ttf" type="DynamicFontData" id=6]
-
-[sub_resource type="DynamicFont" id=1]
-size = 21
-font_data = ExtResource( 6 )
+[ext_resource path="res://MainMenu/Font/TypeWriterFont.tres" type="DynamicFont" id=7]
 
 [sub_resource type="DynamicFont" id=2]
 size = 30
@@ -34,6 +31,7 @@ margin_bottom = 512.0
 theme = ExtResource( 2 )
 
 [node name="TextureRect" type="TextureRect" parent="Control"]
+visible = false
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -52.0
@@ -42,17 +40,36 @@ margin_right = 52.0
 margin_bottom = -53.0
 texture = ExtResource( 4 )
 
-[node name="DescriptionLabel" type="Label" parent="Control"]
+[node name="DescriptionLabel" type="RichTextLabel" parent="Control"]
 anchor_right = 1.0
-margin_top = -23.0
-margin_bottom = 214.0
-custom_fonts/font = SubResource( 1 )
-text = "Tap the wooden pegs while moving another finger on the wheel in the bottom-right corner of the screen in a circular motion.
+margin_left = -185.0
+margin_top = -139.0
+margin_right = 185.0
+margin_bottom = 338.0
+custom_fonts/normal_font = ExtResource( 7 )
+bbcode_enabled = true
+bbcode_text = "[center][color=#bd9d82][u]Goal[/u][/color]
+To test hand-eye coordination
+
+[color=#bd9d82][u]How to Score[/u][/color]
+To score, rotate the wheel with one finger while tapping the pegs with the
+other. Each peg is worth one point. The faster the wheel spins, the higher
+your score.
+
+Score is based on the number of pegs you hit before the time runs out.
+
+You can increase the score multiplier by moving your finger faster on the wheel which will increase the score you get when tapping the wooden pegs.[/center]"
+text = "Goal
+To test hand-eye coordination
+
+How to Score
+To score, rotate the wheel with one finger while tapping the pegs with the
+other. Each peg is worth one point. The faster the wheel spins, the higher
+your score.
+
+Score is based on the number of pegs you hit before the time runs out.
 
 You can increase the score multiplier by moving your finger faster on the wheel which will increase the score you get when tapping the wooden pegs."
-align = 1
-valign = 1
-autowrap = true
 
 [node name="Button" type="Button" parent="Control"]
 anchor_top = 1.0
