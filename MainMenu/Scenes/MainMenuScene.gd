@@ -92,11 +92,11 @@ func sendEmail():
 	 + ' && Python\\WPy64-31050\\python-3.10.5.amd64\\python.exe Email/SendEmail.py "' \
 	 + to + '" "' + subject \
 	 + '" "' + body + '" "' + ProjectSettings.globalize_path("user://NamedCert.png") + '"'
-	
+
 	OS.execute('cmd', ['/C', command], false)
-	
+
 	print(command)
-	
+
 
 
 #func _on_Email_button_up():

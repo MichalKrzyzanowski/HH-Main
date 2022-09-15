@@ -62,7 +62,7 @@ func setupShapeGrid():
 func _on_QuitButton_button_up() -> void:
 	if isGameOver == true:
 		return
-		
+
 	quitConfirm.show()
 	$HUD/Theme/WindowDialog/ConfirmButton.grab_focus()
 	get_tree().paused = true

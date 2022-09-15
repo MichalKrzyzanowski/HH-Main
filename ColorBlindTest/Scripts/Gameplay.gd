@@ -103,7 +103,7 @@ func _process(delta):
 					numPlate.set_texture(fifteenPlateTex)
 				"26":
 					numPlate.set_texture(twentySixPlateTex)
-		
+
 		#controls the time during the test
 		timer -= delta
 		if timer <= 0 && sequenceIterator < 6:
@@ -191,7 +191,7 @@ func _on_Button_button_down(extra_arg_0: String):
 		answered = true
 		_check_answer()
 		_next_in_sequence()
-		
+
 	displayedNum.text = currentAnswer
 
 func _on_Restart_button_down():

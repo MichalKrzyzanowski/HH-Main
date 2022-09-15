@@ -44,10 +44,12 @@ texture = ExtResource( 4 )
 
 [node name="DescriptionLabel" type="Label" parent="Control"]
 anchor_right = 1.0
-margin_bottom = 177.0
+margin_top = -23.0
+margin_bottom = 214.0
 custom_fonts/font = SubResource( 1 )
-text = "Tap the red circles while moving one finger on the grey circle in the bottom-right corner of the screen.
-You can increase the score you get from tapping red circles by moving your finger faster on the grey circle."
+text = "Tap the wooden pegs while moving another finger on the wheel in the bottom-right corner of the screen in a circular motion.
+
+You can increase the score multiplier by moving your finger faster on the wheel which will increase the score you get when tapping the wooden pegs."
 align = 1
 valign = 1
 autowrap = true
