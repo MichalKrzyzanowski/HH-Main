@@ -15,6 +15,7 @@ texture = ExtResource( 13 )
 centered = false
 
 [node name="MainMenu" type="Control" parent="."]
+visible = false
 theme = ExtResource( 2 )
 
 [node name="Clipboard" type="Sprite" parent="MainMenu"]
@@ -49,7 +50,6 @@ rect_pivot_offset = Vector2( 69, 25 )
 text = "Quit"
 
 [node name="TutorialScreen" type="Control" parent="."]
-visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 theme = ExtResource( 2 )
@@ -60,9 +60,9 @@ texture = ExtResource( 14 )
 centered = false
 
 [node name="ReturnButton" type="Button" parent="TutorialScreen"]
-margin_left = 472.0
+margin_left = 488.0
 margin_top = 544.0
-margin_right = 606.0
+margin_right = 622.0
 margin_bottom = 594.0
 text = "Main Menu"
 
@@ -71,37 +71,36 @@ margin_right = 40.0
 margin_bottom = 40.0
 
 [node name="TimeTutorial" type="Label" parent="TutorialScreen/TutorialMessages"]
-margin_left = 424.0
+margin_left = 433.0
 margin_top = 168.0
-margin_right = 655.0
-margin_bottom = 213.0
-text = "Time remaining
-in the test"
+margin_right = 664.0
+margin_bottom = 192.0
+text = "Time Remaining"
 align = 1
 
 [node name="CalculatorTutorial" type="Label" parent="TutorialScreen/TutorialMessages"]
-margin_left = 424.0
-margin_top = 240.0
-margin_right = 655.0
+margin_left = 440.0
+margin_top = 216.0
+margin_right = 671.0
 margin_bottom = 357.0
-text = "Tap on the keys to 
-type out the number 
-on the left, then 
-tap the Enter button
- to finalise your 
-answer"
+text = "Tap on the number 
+in the calculator 
+that corresponds 
+with the number
+ in the circle. 
+Then press enter."
 align = 1
 
 [node name="PassTutorial" type="Label" parent="TutorialScreen/TutorialMessages"]
-margin_left = 312.0
+margin_left = 368.0
 margin_top = 408.0
-margin_right = 762.0
+margin_right = 744.0
 margin_bottom = 525.0
-text = "If you can't see a 
-number diaplayed 
-on the left, 
-tap the pass button
- to move on"
+text = "If you don't 
+see a number 
+in the circle, 
+just press 
+\"enter\" or \"pass.\""
 align = 1
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
