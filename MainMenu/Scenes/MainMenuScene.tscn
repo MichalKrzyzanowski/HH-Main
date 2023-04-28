@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://MainMenu/Scenes/MainMenuScene.gd" type="Script" id=1]
 [ext_resource path="res://Email/GlobalTimer/ResetGamePopup.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://MainMenu/UI/mainMenuTheme.tres" type="Theme" id=4]
 [ext_resource path="res://MainMenu/UI/button.jpg" type="Texture" id=5]
 [ext_resource path="res://MainMenu/UI/ProgressBar.gd" type="Script" id=6]
+[ext_resource path="res://MainMenu/Font/TypeWriterFont.tres" type="DynamicFont" id=7]
 
 [sub_resource type="Theme" id=7]
 Label/colors/font_color = Color( 0.776471, 0.776471, 0.776471, 1 )
@@ -59,8 +60,9 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -114.0
 margin_top = -110.5
-margin_right = 100.0
+margin_right = 116.0
 margin_bottom = -33.5
+custom_fonts/font = ExtResource( 7 )
 text = "Reaction Test"
 
 [node name="BinocularsProjectButton" type="Button" parent="."]
@@ -70,9 +72,10 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -114.0
 margin_top = -228.0
-margin_right = 100.0
+margin_right = 116.0
 margin_bottom = -151.0
-text = "Binoculars Project"
+custom_fonts/font = ExtResource( 7 )
+text = "Binoculars"
 
 [node name="QuitButton" type="Button" parent="."]
 anchor_left = 0.5
@@ -81,8 +84,9 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -114.0
 margin_top = 115.0
-margin_right = 100.0
+margin_right = 116.0
 margin_bottom = 192.0
+custom_fonts/font = ExtResource( 7 )
 text = "Quit"
 
 [node name="ColorBlindTestButton" type="Button" parent="."]
@@ -92,8 +96,9 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -114.0
 margin_top = 4.0
-margin_right = 100.0
-margin_bottom = 81.0002
+margin_right = 116.0
+margin_bottom = 81.0
+custom_fonts/font = ExtResource( 7 )
 text = "Color Blind Test"
 
 [node name="PlayerName" type="Label" parent="."]

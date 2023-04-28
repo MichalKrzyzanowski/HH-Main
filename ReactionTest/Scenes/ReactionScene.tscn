@@ -40,7 +40,7 @@ shortcut = SubResource( 3 )
 
 [node name="Root" type="Node2D"]
 script = ExtResource( 1 )
-shapesAmount = 108
+shapesAmount = 56
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 517.972, 301.951 )
@@ -246,7 +246,7 @@ margin_right = 50.0
 margin_bottom = 100.0
 custom_constants/vseparation = 5
 custom_constants/hseparation = 5
-columns = 12
+columns = 8
 
 [node name="CircleSpinner" parent="CanvasLayer" instance=ExtResource( 3 )]
 anchor_left = 1.0

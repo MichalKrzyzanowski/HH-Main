@@ -65,15 +65,15 @@ func _on_ProgressBar_gui_input(event:InputEvent) -> void:
 		if event.pressed:
 			statsMenu.visible = !statsMenu.visible
 
-##func _process(delta: float) -> void:
-#	if getProgress() >= 3:
+#func _process(delta: float) -> void:
+#	if getProgress() >= 1:
 #		emailButton.show()
 #		progressBar.removeCorners()
 #		$AnimationPlayer.play("Flash")
 
 func sendEmail():
 	print("email")
-	var to := "richard.fleming164@gmail.com"
+	var to := "allexis_alvarico@outlook.com"
 	# var to := "HHRECEPTION@ocfair.com"
 	var subject := "Certificate of completion"
 	var body := "Well done " + str(PlayerData.playerName) + ". You have cleared all the games"
@@ -100,7 +100,7 @@ func sendEmail():
 
 
 #func _on_Email_button_up():
-#	if getProgress() >= 3:
+#	if getProgress() >= 1:
 #		sendEmail()
 #	else:
 #		"not all games have been finished!"
