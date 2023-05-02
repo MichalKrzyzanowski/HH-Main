@@ -13,7 +13,6 @@ onready var binoTimeLabel = $StatsMenu/BinocularsTime
 onready var emailButton = $Email
 
 func _ready() -> void:
-	$BinocularsProjectButton.grab_focus()
 	progressBar.value = getProgress()
 	emailButton.hide()
 	reactionScoreLabel.text = "Highscore: " + str(ReactionTestData.highscore) + "pts"

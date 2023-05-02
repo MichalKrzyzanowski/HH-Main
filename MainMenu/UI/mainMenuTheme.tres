@@ -18,7 +18,6 @@ margin_left = 156.849
 margin_right = 255.693
 margin_top = 225.316
 margin_bottom = 266.336
-modulate_color = Color( 0.768627, 0.768627, 0.768627, 1 )
 
 [sub_resource type="StyleBoxTexture" id=8]
 content_margin_left = 0.0
