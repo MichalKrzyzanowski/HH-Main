@@ -74,7 +74,6 @@ custom_styles/normal = SubResource( 5 )
 text = "Quit"
 
 [node name="NameEntry" type="Control" parent="."]
-visible = false
 margin_top = 82.0
 margin_right = 40.0
 margin_bottom = 122.0
@@ -173,6 +172,7 @@ margin_left = 446.0
 margin_top = 349.0
 margin_right = 578.0
 margin_bottom = 430.0
+custom_fonts/font = ExtResource( 12 )
 text = "Enter"
 
 [node name="Hh-main-plane" type="Sprite" parent="."]
