@@ -1,12 +1,17 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://MainMenu/Scenes/MainMenuScene.gd" type="Script" id=1]
 [ext_resource path="res://Email/GlobalTimer/ResetGamePopup.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Email/CreateCert.gd" type="Script" id=3]
 [ext_resource path="res://MainMenu/UI/mainMenuTheme.tres" type="Theme" id=4]
-[ext_resource path="res://MainMenu/UI/button.jpg" type="Texture" id=5]
+[ext_resource path="res://MainMenu/Sprites/new_bg_image.png" type="Texture" id=5]
 [ext_resource path="res://MainMenu/UI/ProgressBar.gd" type="Script" id=6]
 [ext_resource path="res://MainMenu/Font/TypeWriterFont.tres" type="DynamicFont" id=7]
+[ext_resource path="res://MainMenu/UI/chalk_button.png" type="Texture" id=8]
+
+[sub_resource type="StyleBoxTexture" id=8]
+texture = ExtResource( 8 )
+region_rect = Rect2( 0, 0, 2715, 2854 )
 
 [sub_resource type="Theme" id=7]
 Label/colors/font_color = Color( 0.776471, 0.776471, 0.776471, 1 )
@@ -49,46 +54,66 @@ theme = ExtResource( 4 )
 script = ExtResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 531.5, 309.687 )
-scale = Vector2( 0.434384, 0.257953 )
+position = Vector2( -108, 414.647 )
+scale = Vector2( 1.87884, 1.74184 )
 texture = ExtResource( 5 )
-
-[node name="ReactionTestButton" type="Button" parent="."]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -114.0
-margin_top = -34.5
-margin_right = 116.0
-margin_bottom = 42.5
-custom_fonts/font = ExtResource( 7 )
-text = "Reaction Test"
 
 [node name="BinocularsProjectButton" type="Button" parent="."]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -114.0
-margin_top = -238.0
-margin_right = 116.0
-margin_bottom = -161.0
+margin_left = -116.0
+margin_top = -230.0
+margin_right = 114.0
+margin_bottom = -153.0
 rect_pivot_offset = Vector2( 194, 64 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_fonts/font = ExtResource( 7 )
+custom_styles/normal = SubResource( 8 )
 text = "Binoculars"
+
+[node name="ColorBlindTestButton" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -116.0
+margin_top = -127.0
+margin_right = 114.0
+margin_bottom = -50.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = ExtResource( 7 )
+custom_styles/normal = SubResource( 8 )
+text = "Color Blind Test"
+
+[node name="ReactionTestButton" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -116.0
+margin_top = -26.5
+margin_right = 114.0
+margin_bottom = 50.5
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = ExtResource( 7 )
+custom_styles/normal = SubResource( 8 )
+text = "Reaction Test"
 
 [node name="CreditsPageButton" type="Button" parent="."]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -114.0
-margin_top = 74.0
-margin_right = 116.0
-margin_bottom = 151.0
+margin_left = -116.0
+margin_top = 82.0
+margin_right = 114.0
+margin_bottom = 159.0
 rect_pivot_offset = Vector2( 194, 64 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_fonts/font = ExtResource( 7 )
+custom_styles/normal = SubResource( 8 )
 text = "Credits"
 
 [node name="QuitButton" type="Button" parent="."]
@@ -96,30 +121,21 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -114.0
-margin_top = 179.0
-margin_right = 116.0
-margin_bottom = 256.0
+margin_left = -116.0
+margin_top = 187.0
+margin_right = 114.0
+margin_bottom = 264.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_fonts/font = ExtResource( 7 )
+custom_styles/normal = SubResource( 8 )
 text = "Quit"
 
-[node name="ColorBlindTestButton" type="Button" parent="."]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -114.0
-margin_top = -136.0
-margin_right = 116.0
-margin_bottom = -59.0
-custom_fonts/font = ExtResource( 7 )
-text = "Color Blind Test"
-
 [node name="PlayerName" type="Label" parent="."]
-margin_left = 10.0
-margin_top = 10.0
-margin_right = 148.0
-margin_bottom = 31.0
+margin_left = 760.0
+margin_top = 16.0
+margin_right = 898.0
+margin_bottom = 37.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Player Name: AAA"
 
 [node name="StatsMenu" type="PopupMenu" parent="."]
@@ -207,9 +223,10 @@ text = "Highest Verdict: "
 [node name="Control" type="Control" parent="."]
 anchor_left = 1.0
 anchor_right = 1.0
-margin_left = -341.0
-margin_top = 40.0
-margin_bottom = 80.0
+margin_left = -343.0
+margin_top = 48.0
+margin_right = -2.0
+margin_bottom = 88.0
 
 [node name="ProgressBar" type="ProgressBar" parent="Control"]
 anchor_right = 1.0
@@ -225,9 +242,11 @@ script = ExtResource( 6 )
 [node name="Label" type="Label" parent="."]
 anchor_left = 1.0
 anchor_right = 1.0
-margin_left = -341.0
-margin_right = -10.0
-margin_bottom = 50.0
+margin_left = -343.0
+margin_top = 32.0
+margin_right = -12.0
+margin_bottom = 82.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Completion Progress"
 align = 1
 valign = 1
@@ -259,10 +278,10 @@ script = ExtResource( 3 )
 anims/Flash = SubResource( 5 )
 anims/RESET = SubResource( 6 )
 
-[connection signal="button_up" from="ReactionTestButton" to="." method="_on_ReactionTestButton_button_up"]
 [connection signal="button_up" from="BinocularsProjectButton" to="." method="_on_BinocularsProjectButton_button_up"]
+[connection signal="button_up" from="ColorBlindTestButton" to="." method="_on_ColorBlindTestButton_button_up"]
+[connection signal="button_up" from="ReactionTestButton" to="." method="_on_ReactionTestButton_button_up"]
 [connection signal="button_up" from="CreditsPageButton" to="." method="_on_CreditsPageButton_button_up"]
 [connection signal="button_up" from="QuitButton" to="." method="_on_QuitButton_button_up"]
-[connection signal="button_up" from="ColorBlindTestButton" to="." method="_on_ColorBlindTestButton_button_up"]
 [connection signal="gui_input" from="Control/ProgressBar" to="." method="_on_ProgressBar_gui_input"]
 [connection signal="button_up" from="Email" to="." method="_on_Email_button_up"]

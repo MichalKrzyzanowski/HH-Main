@@ -15,6 +15,9 @@ func _ready():
 	get_node("StartButton").set_disabled(false)
 	get_node("StartButton").visible = true
 	get_node("NameEntry").visible = false
+	get_node("PaperBG").visible = false
+	get_node("ChalkBG").visible = true
+	get_node("Hh-main-plane").visible = false
 	firstCharLabel = get_node("NameEntry/FirstChar")
 	secondCharLabel = get_node("NameEntry/SecondChar")
 	thirdCharLabel = get_node("NameEntry/ThirdChar")
@@ -39,6 +42,9 @@ func _on_StartButton_button_down():
 	get_node("QuitButton").set_disabled(true)
 	get_node("QuitButton").visible = false
 	get_node("NameEntry").visible = true
+	get_node("PaperBG").visible = true
+	get_node("ChalkBG").visible = false
+	get_node("Hh-main-plane").visible = true
 
 func _on_IncreaseButton_button_down(extra_arg_0:String):
 	match extra_arg_0:
