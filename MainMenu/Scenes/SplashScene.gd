@@ -41,6 +41,8 @@ func _on_StartButton_button_down():
 	get_node("StartButton").visible = false
 	get_node("QuitButton").set_disabled(true)
 	get_node("QuitButton").visible = false
+	get_node("ScoreboardButton").set_disabled(true)
+	get_node("ScoreboardButton").visible = false
 	get_node("NameEntry").visible = true
 	get_node("PaperBG").visible = true
 	get_node("ChalkBG").visible = false

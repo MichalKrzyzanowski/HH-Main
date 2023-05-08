@@ -106,7 +106,7 @@ func fullReset():
 	prevoiusScore = 0
 	prevoiusTime = 0
 	prevoiusAccuracy = 0
-	prevoiusLevel = 0
+	prevoiusLevel = 01
 	for _plane in get_tree().get_nodes_in_group("PlaneNodes"):
 		_plane.queue_free()
 
