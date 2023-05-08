@@ -87,3 +87,10 @@ func _on_DecreaseButton_button_down(extra_arg_0:String):
 			else:
 				thirdChar = char(ord(thirdChar) - 1)
 			thirdCharLabel.text = thirdChar
+
+
+func _on_ScoreboardButton_button_down():
+	get_node("ScoreboardPanel").visible = true
+
+func _on_BackButton_button_down():
+	get_node("ScoreboardPanel").visible = false
