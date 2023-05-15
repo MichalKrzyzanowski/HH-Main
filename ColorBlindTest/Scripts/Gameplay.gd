@@ -27,6 +27,8 @@ var endUI
 var finalPlates
 var verdict = 0
 var highestVerdict = 0
+var score = 0
+var highestScore = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -45,6 +47,7 @@ func _ready():
 	finalPlates = get_node("EndUI/FinalPlates")
 	currentAnswer = ""
 	verdict = 0
+	score = 0
 	sequenceIterator = 0
 	timer = maxTime
 	for i in rightWrongMarks.size():
@@ -80,13 +83,16 @@ func _process(delta):
 			ColorBlindData.isGameClear = true
 			_end_screen_display()
 			endUI.get_node("DisplayedVerdict").text = "Verdict: " + String(verdict) + "/6"
+			endUI.get_node("DisplayedScore").text = "Score: " + String(score)
 			for i in rightWrongMarks.size():
 				if rightWrongMarks[i] == 1:
 					finalPlates.get_child(i).get_node("RightWrong").set_texture(rightTex)
 				else:
 					finalPlates.get_child(i).get_node("RightWrong").set_texture(wrongTex)
 			highestVerdict = max(highestVerdict, verdict)
+			highestScore = max(highestScore, score)
 			ColorBlindData.highestVerdict = max(highestVerdict, ColorBlindData.highestVerdict)
+			ColorBlindData.highestScore = max(highestScore, ColorBlindData.highestScore)
 		#if the test is still ongoing after answering, change the number plate to display the current number in the sequence
 		if answered == true && sequenceIterator < 6:
 			answered = false
@@ -123,26 +129,32 @@ func _check_answer():
 		"Blind 45":
 			if(currentAnswer == ""):
 				verdict += 1
+				score += 10 * int(timer)
 				rightWrongMarks[0] = 1
 		"5":
 			if(currentAnswer == "5"):
 				verdict += 1
+				score += 10 * int(timer)
 				rightWrongMarks[1] = 1
 		"6":
 			if(currentAnswer == "6"):
 				verdict += 1
+				score += 10 * int(timer)
 				rightWrongMarks[2] = 1
 		"7":
 			if(currentAnswer == "7"):
 				verdict += 1
+				score += 10 * int(timer)
 				rightWrongMarks[3] = 1
 		"15":
 			if(currentAnswer == "15"):
 				verdict += 1
+				score += 10 * int(timer)
 				rightWrongMarks[4] = 1
 		"26":
 			if(currentAnswer == "26"):
 				verdict += 1
+				score += 10 * int(timer)
 				rightWrongMarks[5] = 1
 
 func _end_screen_display():
@@ -185,6 +197,7 @@ func _on_Button_button_down(extra_arg_0: String):
 		answered = true
 		if sequence[sequenceIterator] == "Blind 45":
 			verdict += 1
+			score += 10 * int(timer)
 			rightWrongMarks[0] = 1
 		_next_in_sequence()
 	if extra_arg_0 == "EnterButton":
