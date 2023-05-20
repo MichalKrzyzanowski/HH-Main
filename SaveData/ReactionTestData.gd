@@ -5,6 +5,6 @@ var fastestTime := 0.0
 var isCleared := false
 
 func reset():
-    highscore = 0.0
-    fastestTime = 0.0
-    isCleared = false
+	highscore = 0.0
+	fastestTime = 0.0
+	isCleared = false
