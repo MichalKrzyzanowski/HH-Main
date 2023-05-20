@@ -23,6 +23,8 @@ func _ready() -> void:
 	binoLevelLabel.text = "Level: " + GameData.Levels.keys()[GameData.prevoiusLevel]
 	binoTimeLabel.text = "Time: " + str(GameData.prevoiusTime)
 	playerNameLabel.text = "PlayerName: " + str(PlayerData.playerName)
+	var exec = CommandExecutor.new()
+	exec.run("send-email", ["temp", "args"])
 
 
 

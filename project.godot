@@ -8,6 +8,16 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Node",
+"class": "CommandExecutor",
+"language": "GDScript",
+"path": "res://CommandExecutor/CommandExecutor.gd"
+} ]
+_global_script_class_icons={
+"CommandExecutor": ""
+}
+
 [application]
 
 config/name="Hh- Main"
