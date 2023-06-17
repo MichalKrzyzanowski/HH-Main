@@ -197,6 +197,7 @@ custom_styles/normal = ExtResource( 13 )
 text = "Back"
 
 [node name="NameEntry" type="Control" parent="."]
+visible = false
 margin_top = 82.0
 margin_right = 40.0
 margin_bottom = 122.0

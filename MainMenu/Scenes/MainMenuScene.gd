@@ -57,6 +57,7 @@ func resetData():
 	ColorBlindData.reset()
 	ReactionTestData.reset()
 	GameData.fullReset()
+	
 
 func getProgress():
 	return ReactionTestData.isCleared as int + ColorBlindData.isGameClear as int + GameData.gameEnd as int
@@ -68,7 +69,11 @@ func _on_ProgressBar_gui_input(event:InputEvent) -> void:
 		if event.pressed:
 			statsMenu.visible = !statsMenu.visible
 
-#func _process(delta: float) -> void:
+func _process(delta: float) -> void:
+	if Input.is_action_pressed("ui_page_up"):
+		PlayerData.score += 1000
+		print_debug("Player score: ", PlayerData.score)
+
 #	if getProgress() >= 1:
 #		emailButton.show()
 #		progressBar.removeCorners()

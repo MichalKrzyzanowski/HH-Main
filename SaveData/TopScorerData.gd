@@ -51,7 +51,7 @@ func add_score(name : String, score : int):
 	rankList[str(newKey)] = newRank
 	rankList = sort_scores(rankList) # Sort the scores
 	write_score(rankList, PATH)
-	
+
 func _ready():
 	var rankList = read_score(PATH)
 	write_score(rankList, PATH)
