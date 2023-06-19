@@ -6,7 +6,6 @@ var thirdChar : String = "A"
 var firstCharLabel
 var secondCharLabel
 var thirdCharLabel
-var leaderboard = load("res://SaveData/TopScorerData.gd").new()
 
 
 # Get the VerticalContainer node
@@ -105,8 +104,8 @@ func _on_BackButton_button_down():
 	get_node("ScoreboardPanel").visible = false
 
 func scoreBoardSetup():
-	var player_data
-	player_data = leaderboard.read_score("res://SaveData/TopScore.json")
+	var player_data =  PlayerData.leaderboard.get_rank_list()
+
 	for key in player_data.keys():
 		var index = int(key)
 		var player_label = vertical_container.get_child(index)

@@ -11,3 +11,5 @@ func reset():
 	gamesCleared = 0
 	score = 0
 
+func _exit_tree() -> void:
+	leaderboard.save_to_file()

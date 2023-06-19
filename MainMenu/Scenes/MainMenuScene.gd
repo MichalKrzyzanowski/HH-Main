@@ -57,7 +57,7 @@ func resetData():
 	ColorBlindData.reset()
 	ReactionTestData.reset()
 	GameData.fullReset()
-	
+
 
 func getProgress():
 	return ReactionTestData.isCleared as int + ColorBlindData.isGameClear as int + GameData.gameEnd as int
