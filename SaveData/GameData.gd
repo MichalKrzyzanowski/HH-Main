@@ -26,6 +26,8 @@ var previousTime : float
 var previousLevel : int = -1
 var previousAccuracy : float
 
+var totalScore : int
+
 #####################################
 #		PlaneData Class				#
 #####################################
