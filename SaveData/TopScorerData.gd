@@ -55,7 +55,6 @@ func get_lowest_score(dict: Dictionary):
 
 func add_score(name : String, score : int):
 	var newKey = rankList.size() # Use the current size as the new key
-
 	# update the new key with lowest score key if array is filled up
 	if rankList.size() >= scores_max:
 		var lowest_key = get_lowest_score(rankList)
@@ -63,7 +62,6 @@ func add_score(name : String, score : int):
 		if score > rankList[lowest_key]["Score"]:
 			newKey = lowest_key
 		else: return
-
 	var newRank = { "Name": name, "Score": score }
 	rankList[str(newKey)] = newRank
 	rankList = sort_scores(rankList) # Sort the scores

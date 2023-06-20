@@ -109,4 +109,4 @@ func scoreBoardSetup():
 	for key in player_data.keys():
 		var index = int(key)
 		var player_label = vertical_container.get_child(index)
-		player_label.text = player_data[key]["Name"] + ": " + str(player_data[key]["Score"])
+		player_label.text = str(index + 1) + ". " + player_data[key]["Name"] + "             " + str(player_data[key]["Score"])

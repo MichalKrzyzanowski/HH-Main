@@ -69,10 +69,10 @@ func _on_ProgressBar_gui_input(event:InputEvent) -> void:
 		if event.pressed:
 			statsMenu.visible = !statsMenu.visible
 
-func _process(delta: float) -> void:
-	if Input.is_action_pressed("ui_page_up"):
-		PlayerData.score += 1000
-		print_debug("Player score: ", PlayerData.score)
+#func _process(delta: float) -> void:
+#	if Input.is_action_pressed("ui_up"):
+#		PlayerData.score += 1000
+#		print_debug("Player score: ", PlayerData.score)
 
 #	if getProgress() >= 1:
 #		emailButton.show()
