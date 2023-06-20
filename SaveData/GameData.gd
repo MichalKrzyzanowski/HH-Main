@@ -21,10 +21,10 @@ var currentLevel : int
 var currentAccuracy : float
 
 #<----------Past Stats------------->#
-var prevoiusScore : int
-var prevoiusTime : float
-var prevoiusLevel : int = -1
-var prevoiusAccuracy : float
+var previousScore : int
+var previousTime : float
+var previousLevel : int = -1
+var previousAccuracy : float
 
 #####################################
 #		PlaneData Class				#
@@ -103,10 +103,10 @@ func gameReset():
 	planeDataArray.clear()
 
 func fullReset():
-	prevoiusScore = 0
-	prevoiusTime = 0
-	prevoiusAccuracy = 0
-	prevoiusLevel = 01
+	previousScore = 0
+	previousTime = 0
+	previousAccuracy = 0
+	previousLevel = 01
 	for _plane in get_tree().get_nodes_in_group("PlaneNodes"):
 		_plane.queue_free()
 
@@ -114,3 +114,4 @@ func fullReset():
 		_ping.queue_free()
 	planeDataArray.clear()
 	gameEnd = false
+

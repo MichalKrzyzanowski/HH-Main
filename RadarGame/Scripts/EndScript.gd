@@ -30,9 +30,20 @@ func _on_PlayButton_pressed():
 func _getBestResult():
 	GameData.gameEnd = true
 	GameData.currentAccuracy = (GameData.currentScore / GameData.enemyAmount) * 100
-	if GameData.currentLevel >= GameData.prevoiusLevel:
-		GameData.prevoiusLevel = GameData.currentLevel
-		if GameData.currentScore > GameData.prevoiusScore && GameData.currentAccuracy > GameData.prevoiusAccuracy:
-			GameData.prevoiusAccuracy = GameData.currentAccuracy
-			GameData.prevoiusScore = GameData.currentScore
-			GameData.prevoiusTime = GameData.currentTime
+	if GameData.currentLevel >= GameData.previousLevel:
+		GameData.previousLevel = GameData.currentLevel
+		if GameData.currentScore > GameData.previousScore && GameData.currentAccuracy > GameData.previousAccuracy:
+			GameData.previousAccuracy = GameData.currentAccuracy
+			GameData.previousScore = GameData.currentScore
+			GameData.previousTime = GameData.currentTime
+	OverallScore()
+
+func OverallScore():
+	var temp : int
+	if GameData.previousLevel == GameData.Levels.Easy:
+		temp = (GameData.previousScore * 2) * (GameData.previousTime) * (GameData.previousAccuracy * 2)
+	if GameData.previousLevel == GameData.Levels.Normal:
+		temp = (GameData.previousScore * 4) * (GameData.previousTime) * (GameData.previousAccuracy * 4)
+	if GameData.previousLevel == GameData.Levels.Hard:
+		temp = (GameData.previousScore * 6) * (GameData.previousTime) * (GameData.previousAccuracy * 6)
+	PlayerData.score = temp

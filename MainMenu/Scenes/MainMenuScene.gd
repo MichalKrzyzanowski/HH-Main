@@ -18,10 +18,10 @@ func _ready() -> void:
 	reactionScoreLabel.text = "Highscore: " + str(ReactionTestData.highscore) + "pts"
 	reactionTimeLabel.text = "Clear Time: " + str(ReactionTestData.fastestTime) + "s"
 	colorBlindVerdictLabel.text = "Highest Verdict: " + str(ColorBlindData.highestVerdict)
-	binoScoreLabel.text = "Score: " + str(GameData.prevoiusScore)
-	binoAccuracyLabel.text = "Accuracy: " + str(GameData.prevoiusAccuracy)
-	binoLevelLabel.text = "Level: " + GameData.Levels.keys()[GameData.prevoiusLevel]
-	binoTimeLabel.text = "Time: " + str(GameData.prevoiusTime)
+	binoScoreLabel.text = "Score: " + str(GameData.previousScore)
+	binoAccuracyLabel.text = "Accuracy: " + str(GameData.previousAccuracy)
+	binoLevelLabel.text = "Level: " + GameData.Levels.keys()[GameData.previousLevel]
+	binoTimeLabel.text = "Time: " + str(GameData.previousTime)
 	playerNameLabel.text = "PlayerName: " + str(PlayerData.playerName)
 
 
