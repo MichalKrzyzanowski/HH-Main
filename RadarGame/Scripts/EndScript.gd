@@ -9,6 +9,7 @@ func _ready():
 	$Panel/VBoxContainer/Percentage.text = "Percentage: " + str(GameData.currentAccuracy) + "%"
 	$Panel/VBoxContainer/Time.text = "Time: " + str(GameData.currentTime)
 	$Panel/VBoxContainer/Level.text = "level: " +  GameData.Levels.keys()[GameData.currentLevel]
+	$Panel/VBoxContainer/TotalScore.text = "Total Score: " + str(GameData.totalScore)
 
 func _input(event: InputEvent):
 	GlobalTimer.reset()
@@ -40,10 +41,5 @@ func _getBestResult():
 
 func OverallScore():
 	var temp : int
-	if GameData.previousLevel == GameData.Levels.Easy:
-		temp = (GameData.previousScore * 2) * (GameData.previousTime) * (GameData.previousAccuracy * 2)
-	if GameData.previousLevel == GameData.Levels.Normal:
-		temp = (GameData.previousScore * 4) * (GameData.previousTime) * (GameData.previousAccuracy * 4)
-	if GameData.previousLevel == GameData.Levels.Hard:
-		temp = (GameData.previousScore * 6) * (GameData.previousTime) * (GameData.previousAccuracy * 6)
-	PlayerData.score = temp
+	temp = (GameData.previousScore * 2) * (GameData.previousAccuracy * 2)
+	GameData.totalScore = temp - (GameData.previousTime * 40)

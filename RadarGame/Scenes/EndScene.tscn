@@ -37,21 +37,21 @@ margin_right = 192.706
 margin_bottom = 181.0
 
 [node name="Level" type="Label" parent="Panel/VBoxContainer"]
-margin_right = 96.0
+margin_right = 100.0
 margin_bottom = 21.0
 custom_fonts/font = SubResource( 4 )
 text = "Level:"
 
 [node name="Score" type="Label" parent="Panel/VBoxContainer"]
 margin_top = 25.0
-margin_right = 96.0
+margin_right = 100.0
 margin_bottom = 46.0
 custom_fonts/font = SubResource( 4 )
 text = "Score:"
 
 [node name="Percentage" type="Label" parent="Panel/VBoxContainer"]
 margin_top = 50.0
-margin_right = 96.0
+margin_right = 100.0
 margin_bottom = 71.0
 rect_pivot_offset = Vector2( -150, -97 )
 custom_fonts/font = SubResource( 4 )
@@ -59,10 +59,17 @@ text = "Percentage:"
 
 [node name="Time" type="Label" parent="Panel/VBoxContainer"]
 margin_top = 75.0
-margin_right = 96.0
+margin_right = 100.0
 margin_bottom = 96.0
 custom_fonts/font = SubResource( 4 )
 text = "Time:"
+
+[node name="TotalScore" type="Label" parent="Panel/VBoxContainer"]
+margin_top = 100.0
+margin_right = 100.0
+margin_bottom = 121.0
+custom_fonts/font = SubResource( 4 )
+text = "Total Score:"
 
 [node name="PlayButton" type="Button" parent="Panel"]
 margin_left = 112.0
