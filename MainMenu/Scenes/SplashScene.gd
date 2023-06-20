@@ -7,6 +7,10 @@ var firstCharLabel
 var secondCharLabel
 var thirdCharLabel
 
+
+# Get the VerticalContainer node
+onready var vertical_container = get_node("ScoreboardPanel/VBoxContainer")
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	firstChar = "A"
@@ -24,6 +28,8 @@ func _ready():
 	firstCharLabel.text = "A"
 	secondCharLabel.text = "A"
 	thirdCharLabel.text = "A"
+	scoreBoardSetup()
+
 
 func _input(event: InputEvent) -> void:
 	GlobalTimer.reset()
@@ -41,6 +47,8 @@ func _on_StartButton_button_down():
 	get_node("StartButton").visible = false
 	get_node("QuitButton").set_disabled(true)
 	get_node("QuitButton").visible = false
+	get_node("ScoreboardButton").set_disabled(true)
+	get_node("ScoreboardButton").visible = false
 	get_node("NameEntry").visible = true
 	get_node("PaperBG").visible = true
 	get_node("ChalkBG").visible = false
@@ -87,3 +95,18 @@ func _on_DecreaseButton_button_down(extra_arg_0:String):
 			else:
 				thirdChar = char(ord(thirdChar) - 1)
 			thirdCharLabel.text = thirdChar
+
+
+func _on_ScoreboardButton_button_down():
+	get_node("ScoreboardPanel").visible = true
+
+func _on_BackButton_button_down():
+	get_node("ScoreboardPanel").visible = false
+
+func scoreBoardSetup():
+	var player_data =  PlayerData.leaderboard.get_rank_list()
+
+	for key in player_data.keys():
+		var index = int(key)
+		var player_label = vertical_container.get_child(index)
+		player_label.text = str(index + 1) + ". " + player_data[key]["Name"] + "             " + str(player_data[key]["Score"])

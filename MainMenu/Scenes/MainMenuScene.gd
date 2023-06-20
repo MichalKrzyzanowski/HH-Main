@@ -37,7 +37,7 @@ func _on_ColorBlindTestButton_button_up() -> void:
 func _on_BinocularsProjectButton_button_up() -> void:
 	get_tree().root.get_node("Root").queue_free()
 	get_tree().change_scene("res://RadarGame/Scenes/MainMenu.tscn")
-	
+
 func _on_CreditsPageButton_button_up() -> void:
 	get_tree().root.get_node("Root").queue_free()
 	get_tree().change_scene("res://MainMenu/Scenes/CreditsPage.tscn")
@@ -53,10 +53,11 @@ func _on_QuitButton_button_up() -> void:
 	resetData()
 
 func resetData():
-	ColorBlindData.reset()
 	PlayerData.reset()
+	ColorBlindData.reset()
 	ReactionTestData.reset()
 	GameData.fullReset()
+
 
 func getProgress():
 	return ReactionTestData.isCleared as int + ColorBlindData.isGameClear as int + GameData.gameEnd as int
@@ -69,6 +70,10 @@ func _on_ProgressBar_gui_input(event:InputEvent) -> void:
 			statsMenu.visible = !statsMenu.visible
 
 #func _process(delta: float) -> void:
+#	if Input.is_action_pressed("ui_up"):
+#		PlayerData.score += 1000
+#		print_debug("Player score: ", PlayerData.score)
+
 #	if getProgress() >= 1:
 #		emailButton.show()
 #		progressBar.removeCorners()
